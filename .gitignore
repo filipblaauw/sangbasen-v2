@@ -1,6 +1,7 @@
 /node_modules
 /storage
 /vendor
+/public/uploads
 /.idea
 /.vagrant
 Homestead.json
