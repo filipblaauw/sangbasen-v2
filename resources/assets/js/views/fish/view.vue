@@ -49,8 +49,8 @@
             <div class="card-body">
               <h4 class="card-title">{{trans('fish.description')}}</h4>
               <p v-if="fish.description" class="card-text">{{fish.description}}</p>
-              <small class="text-muted">Lagt til: {{fish.created_at | formatDateTime }}</small><br>
-              <small class="text-muted">Sist endret: {{fish.updated_at | formatDateTime }}</small><br>
+              <small class="text-muted">{{trans('fish.created')}}: {{fish.created_at | formatDateTime }}</small><br>
+              <small class="text-muted">{{trans('fish.edited')}}: {{fish.updated_at | formatDateTime }}</small><br>
             </div>
           </div>
           <div class="btn-group d-flex justify-content-center">

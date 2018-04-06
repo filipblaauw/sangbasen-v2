@@ -21,6 +21,7 @@
   'email_template' => 'Enable Email Template',
   'error_display' => 'Show Error Display',
   'fax' => 'Fax',
+  'fish' => 'Activate Fishlog',
   'footer_credit' => 'Footer Credit',
   'https' => 'Enable HTTPS',
   'ip_filter' => 'Enable IP Filter',

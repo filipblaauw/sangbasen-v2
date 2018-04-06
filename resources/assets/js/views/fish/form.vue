@@ -49,7 +49,6 @@
           <div class="form-group">
             <label for="">{{trans('fish.species')}}</label>
             <species :suggestions="suggestions" v-model="fishForm.species"></species>
-            <!--<input class="form-control" type="text" v-model="fishForm.species" name="species" :placeholder="trans('fish.species')">-->
             <show-error :form-name="fishForm" prop-name="species"></show-error>
           </div>
 
@@ -259,7 +258,7 @@
           { species: i18n.fish.species_searunchar },
           { species: i18n.fish.species_grayling },
           { species: i18n.fish.species_pike },
-          { species: i18n.fish.species_whitefisk },
+          { species: i18n.fish.species_whitefish },
           { species: i18n.fish.species_perch },
           { species: i18n.fish.species_rainbowtrout },
           { species: i18n.fish.species_seabass },
@@ -307,7 +306,7 @@
 		  this.location = ''
       if(this.id) {
         this.getFish();
-      }  
+      }
       else {
         this.geolocate();
       }
