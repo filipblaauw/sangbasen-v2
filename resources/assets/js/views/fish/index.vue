@@ -12,18 +12,6 @@
         <router-link to="/fish/add" class="btn btn-success">{{trans('fish.add_new_fish')}}</router-link>
       </div>
     </div>
-    <!--
-    <div class="row">
-      <div class="col-12 col-sm-4 col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">{{trans('fish.add_new_fish')}}</h4>
-            <router-link to="/fish/add">{{trans('fish.add_new_fish')}}</router-link>
-          </div>
-        </div>
-      </div>
-    </div>
-  -->
     <div class="row">
       <div class="col-12">
 
