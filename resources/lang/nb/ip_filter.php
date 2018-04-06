@@ -1,0 +1,22 @@
+<?php return array (
+  'add_new_ip_filter' => 'Legg til nytt IP-filter',
+  'added' => 'IP-filter lagt til.',
+  'could_not_find' => 'Fant ikke valgt IP-filter.',
+  'delete_ip_filter' => 'Slett IP-filter',
+  'deleted' => 'IP-filter slettet.',
+  'description' => 'Beskrivelse',
+  'edit_ip_filter' => 'Endre IP-filter',
+  'end_ip' => 'Slutt IP',
+  'end_ip_in_range' => 'Slutten på IP finnes i adresseområdet av en annen IP.',
+  'invalid_ip_range' => 'Ikke gyldig adresseomdråde for IP.',
+  'ip_filter' => 'IP-filter',
+  'ip_filter_list' => 'Liste over IP-filtre',
+  'other_ip_in_range' => 'Andre IP-er er i adresseområde for denne IP-en.',
+  'start_ip' => 'Start IP',
+  'start_ip_in_range' => 'Start IP er i adresseområde for en annen IP.',
+  'start_ip_same' => 'Start IP er samme som en annen IP.',
+  'tip_ip_filter' => 'Hvis IP-filter er aktivert i systemkonfigurasjon og IP-er er oppført tabellen under, kan nettsiden bare nås via disse IP-adressene. Du kan liste flere IP-adresser som kan få tilgang til programmet. I så fall blir alle andre IP-adresser blokkert fra å få tilgang til siden. Legg alltid inn din egen IP slik at du selv har tilgang.',
+  'updated' => 'IP-filter oppdatert.',
+  'module_info_title' => 'Legg til IP-filtre',
+  'module_info_description' => 'Forhindre uønsket adgang til siden ved å legge til en liste over godkjente IP-adresser.'
+);
