@@ -214,7 +214,7 @@ export default {
             return;
 
         //return moment(date).format(this.getConfig('date_format'));
-        return moment(date).format('LLL');
+        return moment(date).format('LL');
     },
 
     // to get date time in desired format
