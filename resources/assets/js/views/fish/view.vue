@@ -17,7 +17,7 @@
             <img v-if="fish.photo" :src="scaledImage(fish.photo)" class="card-img-top">
             <div class="card-body">
               <h2 class="card-title text-center">{{fish.species}}</h2>
-
+              <h5 class="card-title text-center">{{fish.date | formatDate }}</h5>
               <ul class="list-group list-group-flush">
     	          <li class="list-group-item">{{trans('fish.river')}}: <span class="pull-right">{{fish.river}}</span></li>
     	          <li v-if="fish.zone" class="list-group-item">{{trans('fish.zone')}}: <span class="pull-right">{{fish.zone}}</span></li>
