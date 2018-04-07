@@ -15188,7 +15188,7 @@ File: scss
 }
 
 .topbar .top-navbar {
-  min-height: 70px;
+  min-height: 50px;
   padding: 0px 15px 0 0;
 }
 
@@ -15197,7 +15197,7 @@ File: scss
 }
 
 .topbar .top-navbar .navbar-header {
-  line-height: 65px;
+  line-height: 45px;
   text-align: center;
 }
 
@@ -15212,7 +15212,7 @@ File: scss
 }
 
 .topbar .top-navbar .navbar-header .navbar-brand b {
-  line-height: 70px;
+  line-height: 50px;
   display: inline-block;
 }
 
@@ -15220,7 +15220,7 @@ File: scss
   padding-left: .75rem;
   padding-right: .75rem;
   font-size: 17px;
-  line-height: 50px;
+  line-height: 34px;
 }
 
 .topbar .top-navbar .navbar-nav > .nav-item.show {
