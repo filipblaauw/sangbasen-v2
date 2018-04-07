@@ -97,8 +97,8 @@
                 <span v-else>Erstatt gjeldende bilde</span>
                 <input id="file-upload" type="file" @change="onFileChange" hidden>
               </label>
-              <div v-if="isUploading" class="d-flex justify-content-center mt-3">
-                <moon-loader :loading="isUploading" color="#007bff" size="40px"></moon-loader>
+              <div v-if="isUploading" class="progress" style="height: 20px;">
+                <div id="progressbar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
             <img v-if="fishForm.photo" :src="scaledImage(fishForm.photo)" class="card-img-bottom">
@@ -238,14 +238,12 @@
 <script>
   import datepicker from 'vuejs-datepicker'
   import autosizeTextarea from '../../components/autosize-textarea'
-  import MoonLoader from 'vue-spinner/src/MoonLoader.vue'
   import Species from '../../components/species'
 
   export default {
     components: {
       datepicker,
       autosizeTextarea,
-      MoonLoader,
       Species
     },
     data() {
@@ -409,13 +407,20 @@
 				var formData = new FormData();
 				formData.append('file', file);
 				formData.append('upload_preset', 'spn50z5f');
-
 				axios({
 					url: 'https://api.cloudinary.com/v1_1/catchesimages/upload',
+          transformRequest: [(data, headers) => {
+              delete headers.common.Authorization
+              return data
+          }],
 					method: 'POST',
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded'
-					},
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          onUploadProgress: function(progressEvent) {
+            var progress = Math.round((progressEvent.loaded * 100.0) / progressEvent.total);
+            document.getElementById('progressbar').style.width = progress + "%";
+          },
 					data: formData
 				}).then(function(res) {
 					self.isUploading = false;
