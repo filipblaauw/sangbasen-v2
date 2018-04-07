@@ -58,7 +58,8 @@ class HomeController extends Controller
 
         //$todos = $this->todo->getQuery()->filterByUserId(\Auth::user()->id)->orderBy('created_at', 'desc')->take(5)->get();
         $fishs = $this->fish->getQuery()->filterByUserId(\Auth::user()->id)->orderBy('created_at', 'desc')->take(10)->get();
+        $mappedfishs = $this->fish->getQuery()->filterByUserId(\Auth::user()->id)->select('uuid', 'date', 'species', 'river', 'zone', 'lat', 'lng')->get();
 
-        return $this->success(compact('users', 'today_registered_users', 'weekly_registered_users', 'monthly_registered_users', 'activity_logs', 'fishs'));
+        return $this->success(compact('users', 'today_registered_users', 'weekly_registered_users', 'monthly_registered_users', 'activity_logs', 'fishs', 'mappedfishs'));
     }
 }

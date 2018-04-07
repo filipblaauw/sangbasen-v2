@@ -105,14 +105,14 @@
                   <tr>
                     <th>{{trans('fish.species')}}</th>
                     <th>{{trans('fish.river')}}</th>
-                    <th class="table-option">{{trans('fish.created_at')}}</th>
+                    <th class="table-option">{{trans('fish.date')}}</th>
                   </tr>
                 </thead>
                   <tbody>
                     <tr v-for="fish in fishs" @click="viewFish(fish)" class="fish-table-list">
                       <td v-text="fish.species"></td>
                       <td v-text="fish.river"></td>
-                      <td class="table-option">{{fish.created_at | moment}}</td>
+                      <td class="table-option">{{fish.date | moment}}</td>
                     </tr>
                   </tbody>
               </table>
@@ -163,6 +163,7 @@
         monthly_registered_users: 0,
         activity_logs: {},
         fishs: {},
+        mappedfishs: {},
         location: '',
         center: {
           lat: 59.9,
@@ -196,15 +197,15 @@
           this.weekly_registered_users = response.weekly_registered_users;
           this.monthly_registered_users = response.monthly_registered_users;
           this.activity_logs = response.activity_logs;
-          this.todos = response.todos;
           this.fishs = response.fishs;
-          this.markers = response.fishs.map(r => {
+          this.mappedfishs = response.mappedfishs;
+          this.markers = response.mappedfishs.map(r => {
             return {
               latLng:
                 {lat: parseFloat(r.lat), lng: parseFloat(r.lng)},
               infoText: moment(r.date).format('LL'),
               infoSpecies: r.species + ', ' + r.river,
-              infoLink: '/fish/'+r.id
+              infoLink: '/fish/'+r.uuid
              }
           });
         })
@@ -215,9 +216,6 @@
 
     },
     methods: {
-      getStatus(todo){
-        return todo.status ? ('<span class="label label-success">'+i18n.todo.complete+'</span>') : ('<span class="label label-danger">'+i18n.todo.incomplete+'</span>') ;
-      },
       hasRole(role){
         return helper.hasRole(role);
       },
