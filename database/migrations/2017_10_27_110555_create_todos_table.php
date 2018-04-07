@@ -16,6 +16,7 @@ class CreateTodosTable extends Migration
         Schema::create('todos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->uuid('uuid')->nullable();
             $table->integer('user_id')->unsigned();
             $table->string('title')->nullable();
             $table->text('description')->nullabe();

@@ -16,6 +16,7 @@ class CreateFishTable extends Migration
       Schema::create('fishes', function (Blueprint $table) {
           $table->engine = 'InnoDB';
           $table->increments('id');
+          $table->uuid('uuid')->nullable();
           $table->integer('user_id')->unsigned();
           $table->date('date')->nullable();
           $table->string('time')->nullable();
