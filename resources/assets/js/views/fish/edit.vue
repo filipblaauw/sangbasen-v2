@@ -16,7 +16,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">{{trans('fish.edit_fish')}}</h4>
-            <todo-form :id="id"></todo-form>
+            <todo-form :uuid="uuid"></todo-form>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
     components : { todoForm },
     data() {
       return {
-        id:this.$route.params.id
+        uuid:this.$route.params.uuid
       }
     },
     mounted(){

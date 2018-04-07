@@ -31,7 +31,7 @@
     components : { fishForm },
     data() {
       return {
-        id:this.$route.params.id
+        uuid:this.$route.params.uuid
       }
     },
     mounted(){

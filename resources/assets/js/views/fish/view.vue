@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     getFish() {
-      axios.get(`/api/fish/${this.$route.params.id}`)
+      axios.get(`/api/fish/${this.$route.params.uuid}`)
         .then((res) => {
           this.fish = res.data
           this.center.lat = parseFloat(res.data.lat)
@@ -99,13 +99,13 @@ export default {
       return img
     },
     editFish(fish){
-      this.$router.push('/fish/'+fish.id+'/edit');
+      this.$router.push('/fish/'+fish.uuid+'/edit');
     },
     confirmDelete(fish){
       return dialog => this.deleteFish(fish);
     },
     deleteFish(fish){
-      axios.delete('/api/fish/'+fish.id)
+      axios.delete('/api/fish/'+fish.uuid)
         .then(response => response.data)
         .then(response => {
             toastr.success(response.message);

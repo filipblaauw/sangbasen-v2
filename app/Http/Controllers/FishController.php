@@ -76,9 +76,9 @@ class FishController extends Controller
      * })
      * @return Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        $fish = $this->repo->findOrFail($id);
+        $fish = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('show', $fish);
 
@@ -93,9 +93,9 @@ class FishController extends Controller
      * })
      * @return Response
      */
-    public function toggleStatus($id)
+    public function toggleStatus($uuid)
     {
-        $fish = $this->repo->findOrFail($id);
+        $fish = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('update', $fish);
 
@@ -120,9 +120,9 @@ class FishController extends Controller
      * })
      * @return Response
      */
-    public function update($id, FishRequest $request)
+    public function update($uuid, FishRequest $request)
     {
-        $fish = $this->repo->findOrFail($id);
+        $fish = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('update', $fish);
 
@@ -145,9 +145,9 @@ class FishController extends Controller
      * })
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($uuid)
     {
-        $fish = $this->repo->findOrFail($id);
+        $fish = $this->repo->findOrFail($uuid);
 
         $this->authorize('delete', $fish);
 

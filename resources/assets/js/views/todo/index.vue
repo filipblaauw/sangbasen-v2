@@ -94,7 +94,7 @@
                                                     <i :class="['fa', (todo.status ?  'fa-times' : 'fa-check')]"></i>
                                                 </button>
                                                 <button class="btn btn-info btn-sm" v-tooltip="trans('todo.edit_todo')" @click.prevent="editTodo(todo)"><i class="fas fa-edit"></i></button>
-                                                <button class="btn btn-danger btn-sm" :key="todo.id" v-confirm="{ok: confirmDelete(todo)}" v-tooltip="trans('todo.delete_todo')"><i class="fas fa-trash"></i></button>
+                                                <button class="btn btn-danger btn-sm" :key="todo.uuid" v-confirm="{ok: confirmDelete(todo)}" v-tooltip="trans('todo.delete_todo')"><i class="fas fa-trash"></i></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -171,13 +171,13 @@
                     });
             },
             editTodo(todo){
-                this.$router.push('/todo/'+todo.id+'/edit');
+                this.$router.push('/todo/'+todo.uuid+'/edit');
             },
             confirmDelete(todo){
                 return dialog => this.deleteTodo(todo);
             },
             deleteTodo(todo){
-                axios.delete('/api/todo/'+todo.id)
+                axios.delete('/api/todo/'+todo.uuid)
                     .then(response => response.data)
                     .then(response => {
                         toastr.success(response.message);
@@ -190,7 +190,7 @@
                 return todo.status ? ('<span class="label label-success">'+i18n.todo.complete+'</span>') : ('<span class="label label-danger">'+i18n.todo.incomplete+'</span>') ;
             },
             toggleStatus(todo){
-                axios.post('/api/todo/'+todo.id+'/status')
+                axios.post('/api/todo/'+todo.uuid+'/status')
                     .then(response => response.data)
                     .then(response => {
                         this.getTodos();

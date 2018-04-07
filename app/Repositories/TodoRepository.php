@@ -4,6 +4,7 @@ namespace App\Repositories;
 use App\Todo;
 use Carbon\Carbon;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Str;
 
 class TodoRepository
 {
@@ -46,6 +47,23 @@ class TodoRepository
         }
         elseif ($todo->user_id != \Auth::user()->id) {
             throw ValidationException::withMessages(['message' => trans('todo.unauthorized')]);
+        }
+
+        return $todo;
+    }
+    /**
+     * Find todo with given uuid or throw an error.
+     *
+     * @param string $uuid
+     * @return Todo
+     */
+
+    public function findByUuidOrFail($uuid)
+    {
+        $todo = $this->todo->whereUuid($uuid)->first();
+
+        if (! $todo) {
+            throw ValidationException::withMessages(['message' => trans('todo.could_not_find')]);
         }
 
         return $todo;
@@ -104,6 +122,7 @@ class TodoRepository
 
         if ($action === 'create') {
             $formatted['user_id'] = \Auth::user()->id;
+            $formatted['uuid'] = Str::uuid();
         }
 
         return $formatted;

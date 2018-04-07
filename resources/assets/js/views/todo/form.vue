@@ -16,10 +16,10 @@
             <show-error :form-name="todoForm" prop-name="description"></show-error>
         </div>
         <button type="submit" class="btn btn-info waves-effect waves-light pull-right">
-            <span v-if="id">{{trans('general.update')}}</span>
+            <span v-if="uuid">{{trans('general.update')}}</span>
             <span v-else>{{trans('general.save')}}</span>
         </button>
-        <router-link to="/todo" class="btn btn-danger waves-effect waves-light pull-right m-r-10" v-show="id">{{trans('general.cancel')}}</router-link>
+        <router-link to="/todo" class="btn btn-danger waves-effect waves-light pull-right m-r-10" v-show="uuid">{{trans('general.cancel')}}</router-link>
     </form>
 </template>
 
@@ -39,14 +39,14 @@
                 })
             };
         },
-        props: ['id'],
+        props: ['uuid'],
         mounted() {
-            if(this.id)
+            if(this.uuid)
                 this.getTodo();
         },
         methods: {
             proceed(){
-                if(this.id)
+                if(this.uuid)
                     this.updateTodo();
                 else
                     this.storeTodo();
@@ -63,7 +63,7 @@
                     });
             },
             getTodo(){
-                axios.get('/api/todo/'+this.id)
+                axios.get('/api/todo/'+this.uuid)
                     .then(response => response.data)
                     .then(response => {
                         this.todoForm.title = response.title;
@@ -77,7 +77,7 @@
             },
             updateTodo(){
                 this.todoForm.date = moment(this.todoForm.date).format('YYYY-MM-DD');
-                this.todoForm.patch('/api/todo/'+this.id)
+                this.todoForm.patch('/api/todo/'+this.uuid)
                     .then(response => {
                         toastr.success(response.message);
                         this.$router.push('/todo');

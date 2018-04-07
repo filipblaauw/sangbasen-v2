@@ -74,7 +74,7 @@
       </div>
       <div v-for="fish in fishs.data" class="col-6 col-md-4 col-lg-3">
         <div class="card mb-4 text-center">
-          <router-link :to="`/fish/${fish.id}`">
+          <router-link :to="`/fish/${fish.uuid}`">
             <div v-if="fish.photo" class="card-image fish-image" v-bind:style="{ backgroundImage: 'url(' + thumbnail(fish.photo)  + ')' }"></div>
             <div v-if="!fish.photo" class="card-image fish-image" v-bind:style="{ backgroundImage: 'url(https://maps.googleapis.com/maps/api/staticmap?center=' + fish.lat + ','+fish.lng+'&zoom=11&scale=false&size=350x200&maptype=roadmap&format=png&visual_refresh=true&markers=icon:http://blaauw.me/wp-content/uploads/2018/03/mapicon.png%7Cshadow:false%%7Clabel:%7C'+fish.lat+','+fish.lng+'&key=AIzaSyBrtgJsdYVSp0lduOmrZWQQezgFTuYOAS8)' }"></div>
           </router-link>
@@ -161,16 +161,16 @@
           });
       },
       editFish(fish){
-        this.$router.push('/fish/'+fish.id+'/edit');
+        this.$router.push('/fish/'+fish.uuid+'/edit');
       },
       viewFish(fish){
-        this.$router.push('/fish/'+fish.id+'');
+        this.$router.push('/fish/'+fish.uuid+'');
       },
       confirmDelete(fish){
           return dialog => this.deleteFish(fish);
       },
       deleteFish(fish){
-        axios.delete('/api/fish/'+fish.id)
+        axios.delete('/api/fish/'+fish.uuid)
           .then(response => response.data)
           .then(response => {
               toastr.success(response.message);

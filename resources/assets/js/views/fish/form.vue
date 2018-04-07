@@ -227,10 +227,10 @@
       </div>
 
       <button type="submit" class="btn btn-info waves-effect waves-light pull-right">
-        <span v-if="id">{{trans('general.update')}}</span>
+        <span v-if="uuid">{{trans('general.update')}}</span>
         <span v-else>{{trans('general.save')}}</span>
       </button>
-      <router-link to="/fish" class="btn btn-danger waves-effect waves-light pull-right m-r-10" v-show="id">{{trans('general.cancel')}}</router-link>
+      <router-link to="/fish" class="btn btn-danger waves-effect waves-light pull-right m-r-10" v-show="uuid">{{trans('general.cancel')}}</router-link>
     </form>
 </template>
 
@@ -300,11 +300,11 @@
         })
       };
     },
-    props: ['id'],
+    props: ['uuid'],
     mounted() {
       this.center = { lat: 58.771028, lng: 5.8488836 }
 		  this.location = ''
-      if(this.id) {
+      if(this.uuid) {
         this.getFish();
       }
       else {
@@ -313,7 +313,7 @@
     },
     methods: {
       proceed(){
-        if(this.id)
+        if(this.uuid)
             this.updateFish();
         else
             this.storeFish();
@@ -358,7 +358,7 @@
           });
       },
       getFish(){
-        axios.get('/api/fish/'+this.id)
+        axios.get('/api/fish/'+this.uuid)
           .then(response => response.data)
           .then(response => {
             this.fishForm.lat = response.lat;
@@ -392,10 +392,10 @@
       },
       updateFish(){
         this.fishForm.date = moment(this.fishForm.date).format('YYYY-MM-DD');
-        this.fishForm.patch('/api/fish/'+this.id)
+        this.fishForm.patch('/api/fish/'+this.uuid)
           .then(response => {
             toastr.success(response.message);
-            this.$router.push('/fish/'+this.id);
+            this.$router.push('/fish/'+this.uuid);
           })
           .catch(error => {
             helper.showErrorMsg(error);

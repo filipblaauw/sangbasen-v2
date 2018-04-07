@@ -124,7 +124,7 @@ let routes = [
                 component: require('./views/todo/index')
             },
             {
-                path: '/todo/:id/edit',
+                path: '/todo/:uuid/edit',
                 component: require('./views/todo/edit')
             },
             {
@@ -136,11 +136,11 @@ let routes = [
                 component: require('./views/fish/add')
             },
             {
-                path: '/fish/:id',
+                path: '/fish/:uuid',
                 component: require('./views/fish/view')
             },
             {
-                path: '/fish/:id/edit',
+                path: '/fish/:uuid/edit',
                 component: require('./views/fish/edit')
             },
             {

@@ -87,18 +87,18 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::get('/email-template/{id}/content','EmailTemplateController@getContent');
 
     Route::get('/todo','TodoController@index');
-    Route::get('/todo/{id}','TodoController@show');
+    Route::get('/todo/{uuid}','TodoController@show');
     Route::post('/todo','TodoController@store');
-    Route::patch('/todo/{id}','TodoController@update');
-    Route::delete('/todo/{id}','TodoController@destroy');
-    Route::post('/todo/{id}/status','TodoController@toggleStatus');
+    Route::patch('/todo/{uuid}','TodoController@update');
+    Route::delete('/todo/{uuid}','TodoController@destroy');
+    Route::post('/todo/{uuid}/status','TodoController@toggleStatus');
 
     Route::get('/fish','FishController@index');
-    Route::get('/fish/{id}','FishController@show');
+    Route::get('/fish/{uuid}','FishController@show');
     Route::post('/fish','FishController@store');
-    Route::patch('/fish/{id}','FishController@update');
-    Route::delete('/fish/{id}','FishController@destroy');
-    Route::post('/fish/{id}/status','FishController@toggleStatus');
+    Route::patch('/fish/{uuid}','FishController@update');
+    Route::delete('/fish/{uuid}','FishController@destroy');
+    Route::post('/fish/{uuid}/status','FishController@toggleStatus');
 
     Route::get('/user/pre-requisite','UserController@preRequisite');
     Route::get('/user/detail','UserController@detail');

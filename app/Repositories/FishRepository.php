@@ -4,6 +4,7 @@ namespace App\Repositories;
 use App\Fish;
 use Carbon\Carbon;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Str;
 
 class FishRepository
 {
@@ -46,6 +47,17 @@ class FishRepository
         }
         elseif ($fish->user_id != \Auth::user()->id) {
             throw ValidationException::withMessages(['message' => trans('fish.unauthorized')]);
+        }
+
+        return $fish;
+    }
+
+    public function findByUuidOrFail($uuid)
+    {
+        $fish = $this->fish->whereUuid($uuid)->first();
+
+        if (! $fish) {
+            throw ValidationException::withMessages(['message' => trans('fish.could_not_find')]);
         }
 
         return $fish;
@@ -121,6 +133,7 @@ class FishRepository
 
         if ($action === 'create') {
             $formatted['user_id'] = \Auth::user()->id;
+            $formatted['uuid'] = Str::uuid();
         }
 
         return $formatted;

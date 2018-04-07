@@ -75,9 +75,9 @@ class TodoController extends Controller
      * })
      * @return Response
      */
-    public function show($id)
+    public function show($uuid)
     {
-        $todo = $this->repo->findOrFail($id);
+        $todo = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('show', $todo);
 
@@ -92,9 +92,9 @@ class TodoController extends Controller
      * })
      * @return Response
      */
-    public function toggleStatus($id)
+    public function toggleStatus($uuid)
     {
-        $todo = $this->repo->findOrFail($id);
+        $todo = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('update', $todo);
 
@@ -119,9 +119,9 @@ class TodoController extends Controller
      * })
      * @return Response
      */
-    public function update($id, TodoRequest $request)
+    public function update($uuid, TodoRequest $request)
     {
-        $todo = $this->repo->findOrFail($id);
+        $todo = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('update', $todo);
 
@@ -144,9 +144,9 @@ class TodoController extends Controller
      * })
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($uuid)
     {
-        $todo = $this->repo->findOrFail($id);
+        $todo = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('delete', $todo);
 
