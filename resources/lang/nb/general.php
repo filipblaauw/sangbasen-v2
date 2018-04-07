@@ -35,6 +35,7 @@
   'main' => 'Hoved',
   'menu' => 'Meny',
   'name' => 'Navn',
+  'no' => 'Nei',
   'no_result_found' => 'Fant ingen resultater.',
   'order' => 'Sortering',
   'page_not_found_heading' => 'Oops! Noe gikk galt.',
@@ -43,6 +44,7 @@
   'permission_denied' => 'Du har ikke tilgang til denne tjenesten.',
   'post' => 'Post',
   'proceed' => 'Fortsett',
+  'proceed_with_request' => 'Vil du slette?',
   'processing' => 'Arbeider...',
   'remove' => 'Slett',
   'restricted_test_mode_action' => 'Denne handlingen er begrenset i testmodus.',
@@ -63,4 +65,5 @@
   'update' => 'Oppdater',
   'upload' => 'Last opp',
   'upload_document' => 'Last opp dokument',
+  'yes' => 'Ja'
 );

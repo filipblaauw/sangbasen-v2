@@ -35,6 +35,7 @@
   'main' => 'Main',
   'menu' => 'Menu',
   'name' => 'Name',
+  'no' => 'No',
   'no_result_found' => 'No result found.',
   'order' => 'Order',
   'page_not_found_heading' => 'Oops! There is something wrong.',
@@ -43,6 +44,7 @@
   'permission_denied' => 'You don\'t have permission to perform this action.',
   'post' => 'Post',
   'proceed' => 'Proceed',
+  'proceed_with_request' => 'Do you want to delete this?',
   'processing' => 'Processing....',
   'remove' => 'Remove',
   'restricted_test_mode_action' => 'This action is restricted in test mode.',
@@ -63,4 +65,5 @@
   'update' => 'Update',
   'upload' => 'Upload',
   'upload_document' => 'Upload Document',
+  'yes' => 'Yes'
 );
