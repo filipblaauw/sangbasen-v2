@@ -44,7 +44,14 @@ Vue.use(VueGoogleMaps, {
 });
 Vue.use(VTooltip);
 Vue.use(VueMask);
-Vue.use(VuejsDialog)
+Vue.use(VuejsDialog, {
+    html: true,
+    loader: true,
+    message: i18n.general.proceed_with_request,
+    okText: i18n.general.yes,
+    cancelText: i18n.general.no,
+    animation: 'bounce',
+})
 Vue.use(Sortable)
 Vue.component('show-tip',showTip);
 Vue.component('pagination-record',paginationRecord);
