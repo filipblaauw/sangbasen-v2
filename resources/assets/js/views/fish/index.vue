@@ -104,6 +104,7 @@
   import switches from 'vue-switches'
   import datepicker from 'vuejs-datepicker'
   import dateRangePicker from '../../components/date-range-picker'
+  import _ from 'lodash'
 
   export default {
     components : { fishForm,switches,datepicker,dateRangePicker },
@@ -160,6 +161,18 @@
               helper.showDataErrorMsg(error);
           });
       },
+      getFilteredFishes: _.debounce(function (page){
+        if (typeof page !== 'number') {
+          page = 1;
+        }
+        let url = helper.getFilterURL(this.filterFishForm);
+        axios.get('/api/fish?page=' + page + url)
+          .then(response => response.data)
+          .then(response => this.fishs = response)
+          .catch(error => {
+              helper.showDataErrorMsg(error);
+          });
+      },500),
       editFish(fish){
         this.$router.push('/fish/'+fish.uuid+'/edit');
       },
@@ -188,7 +201,7 @@
     watch: {
       filterFishForm: {
         handler(val){
-          this.getFishes();
+          this.getFilteredFishes();
         },
         deep: true
       }
