@@ -48,13 +48,13 @@ class PasswordReset extends Notification
         $url = url('/password/reset/'.$this->token);
 
         return (new MailMessage)
-                    ->subject('Password Reset | Script Mint')
-                    ->greeting('Hello '.$this->user->Profile->first_name)
-                    ->line('We have recevied password reset request from you!')
-                    ->line('Click on the below link to reset your password.')
-                    ->action('Reset Password', $url)
-                    ->line('If you haven\'t requested for password reset, please ignore this email.')
-                    ->line('Thank you!');
+                    ->subject(trans('notification.password_reset_subject'))
+                    ->greeting(trans('notification.hello').$this->user->Profile->first_name)
+                    ->line(trans('notification.password_reset_request'))
+                    ->line(trans('notification.password_reset_click'))
+                    ->action(trans('notification.password_reset_action'), $url)
+                    ->line(trans('notification.password_reset_ignore'))
+                    ->line(trans('notification.thankyou'));
     }
 
     /**
