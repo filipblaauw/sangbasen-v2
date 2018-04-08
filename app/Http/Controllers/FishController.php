@@ -147,7 +147,7 @@ class FishController extends Controller
      */
     public function destroy($uuid)
     {
-        $fish = $this->repo->findOrFail($uuid);
+        $fish = $this->repo->findByUuidOrFail($uuid);
 
         $this->authorize('delete', $fish);
 

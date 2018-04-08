@@ -60,7 +60,7 @@
           </div>
           <div class="btn-group d-flex justify-content-center">
             <button class="btn btn-info" v-tooltip="trans('fish.edit_fish')" @click.prevent="editFish(fish)"><i class="fas fa-edit"></i> {{trans('fish.edit_fish')}}</button>
-            <button class="btn btn-danger" :key="fish.id" v-confirm="{ok: confirmDelete(fish)}" v-tooltip="trans('fish.delete_fish')"><i class="fas fa-trash"></i> {{trans('fish.delete_fish')}}</button>
+            <button class="btn btn-danger" :key="fish.uuid" v-confirm="{ok: confirmDelete(fish)}" v-tooltip="trans('fish.delete_fish')"><i class="fas fa-trash"></i> {{trans('fish.delete_fish')}}</button>
           </div>
         </div>
 
