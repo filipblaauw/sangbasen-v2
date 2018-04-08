@@ -29,12 +29,12 @@ class CreateFishTable extends Migration
           $table->string('line')->nullable();
           $table->decimal('lat', 10, 8)->nullable();
           $table->decimal('lng', 10, 8)->nullable();
-          $table->tinyInteger('waterLevel')->unsigned()->nullable();
+          $table->unsignedTinyInteger('waterLevel')->nullable();
           $table->string('waterTemp')->nullable();
-          $table->tinyInteger('sex')->unsigned()->nullable();
-          $table->tinyInteger('wild')->unsigned()->nullable();
-          $table->tinyInteger('lice')->unsigned()->nullable();
-          $table->tinyInteger('released')->unsigned()->nullable();
+          $table->unsignedTinyInteger('sex')->nullable();
+          $table->unsignedTinyInteger('wild')->nullable();
+          $table->unsignedTinyInteger('lice')->nullable();
+          $table->unsignedTinyInteger('released')->nullable();
           $table->string('photo')->nullable();
           $table->text('description')->nullable();
           $table->timestamps();
