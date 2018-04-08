@@ -65,9 +65,9 @@
           </div>
 
           <div class="form-group">
-            <label for="">{{trans('fish.weight')}}</label>
+            <label for="">{{trans('fish.weight_in_grams')}}</label>
             <div class="input-group">
-              <input class="form-control" type="number" v-model="fishForm.weight" name="weight" :placeholder="trans('fish.weight')">
+              <input class="form-control" type="number" min="0" v-model="fishForm.weight" name="weight" :placeholder="trans('fish.weight_in_grams')">
               <div class="input-group-append">
                 <div class="input-group-text">gram</div>
               </div>
@@ -78,7 +78,7 @@
           <div class="form-group">
             <label for="">{{trans('fish.length')}}</label>
             <div class="input-group">
-              <input class="form-control" type="number" v-model="fishForm.length" name="length" :placeholder="trans('fish.length')">
+              <input class="form-control" type="number" min="0" v-model="fishForm.length" name="length" :placeholder="trans('fish.length')">
               <div class="input-group-append">
                 <div class="input-group-text">cm</div>
               </div>
