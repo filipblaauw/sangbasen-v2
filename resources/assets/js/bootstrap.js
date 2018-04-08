@@ -45,8 +45,6 @@ Vue.use(VueGoogleMaps, {
 Vue.use(VTooltip);
 Vue.use(VueMask);
 Vue.use(VuejsDialog, {
-    html: true,
-    loader: true,
     message: i18n.general.proceed_with_request,
     okText: i18n.general.yes,
     cancelText: i18n.general.no,
