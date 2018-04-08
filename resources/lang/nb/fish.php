@@ -10,6 +10,7 @@
   'deleted' => 'Fangsten ble slettet',
   'description' => 'Kommentarer',
   'deselect_label' => 'Trykk for å fjerne',
+  'download_image' => 'Last ned bilde',
   'edit_fish' => 'Endre fangst',
   'edited' => 'Oppdatert',
   'farmed' => 'Vill eller rømt fisk',

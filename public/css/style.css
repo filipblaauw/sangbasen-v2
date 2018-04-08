@@ -21622,6 +21622,12 @@ File: scss
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
+.download-image {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
 .show-dropdown-menu {
   display: block;
 }

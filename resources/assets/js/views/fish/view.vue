@@ -14,6 +14,9 @@
       <div class="row">
         <div class="col-12 col-lg-8">
           <div class="card">
+            <a v-if="fish.photo" :href="fish.photo" target="_blank" class="btn btn-dark btn-sm download-image" v-tooltip.right="trans('fish.download_image')">
+              <i class="fas fa-download"></i>
+            </a>
             <img v-if="fish.photo" :src="scaledImage(fish.photo)" class="card-img-top">
             <div class="card-body">
               <h2 class="card-title text-center">{{fish.species}}</h2>

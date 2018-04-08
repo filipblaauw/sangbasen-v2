@@ -10,6 +10,7 @@
   'deleted' => 'Catch deleted',
   'description' => 'Comments',
   'deselect_label' => 'Click to remove',
+  'download_image' => 'Download image',
   'edit_fish' => 'Edit catch',
   'edited' => 'Updated',
   'farmed' => 'Wild or farmed fish',
