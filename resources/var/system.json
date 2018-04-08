@@ -2,23 +2,23 @@
 	"default_config" : {
 		"color_theme" : "green" ,
 	    "direction" : "ltr" ,
-	    "locale" : "en" ,
-	    "timezone" : "Asia/Kolkata" ,
+	    "locale" : "nb" ,
+	    "timezone" : "Europe/Oslo" ,
 	    "notification_position" : "toast-bottom-right" ,
 	    "date_format" : "DD-MM-YYYY" ,
 	    "time_format" : "H:mm" ,
-	    "page_length" : 10 ,
+	    "page_length" : 12 ,
 	    "driver" : "log" ,
-	    "from_address" : "hello@example.com" ,
+	    "from_address" : "epost@server.com" ,
 	    "from_name" : "Hello" ,
-	    "token_lifetime" : 120 ,
+	    "token_lifetime" : 1440 ,
 	    "reset_password_token_lifetime" : 30 ,
 	    "activity_log" : 1 ,
 	    "email_log" : 1 ,
 	    "reset_password" : 1 ,
 	    "registration" : 1 ,
 	    "mode" : 1 ,
-	    "footer_credit" : "Designed with love by ScriptMint" ,
+	    "footer_credit" : "A footer credit" ,
 	    "multilingual" : 1 ,
 	    "ip_filter" : 1 ,
 	    "email_template" : 1 ,
@@ -34,11 +34,11 @@
 	    "show_email_log_menu" : 1 ,
 	    "show_activity_log_menu" : 1
 	},
-	"default_role" : { 
+	"default_role" : {
 		"admin" : "admin" ,
-		"user" : "user" 
+		"user" : "user"
 	},
-	"default_template_field" : { 
+	"default_template_field" : {
 		"user" : "NAME, EMAIL, COMPANY_NAME, COMPANY_EMAIL, COMPANY_PHONE, COMPANY_WEBSITE, CURRENT_DATE_TIME, CURRENT_DATE, DATE_OF_BIRTH, DATE_OF_ANNIVERSARY"
 	},
 	"hidden_field" : "xxxxxxxxxx",
@@ -76,12 +76,12 @@
         "footer_credit",
         "ip_filter"
 	],
-	"upload_path" : { 
+	"upload_path" : {
 		"logo" : "uploads/logo" ,
-		"avatar" : "uploads/avatar" 
+		"avatar" : "uploads/avatar"
 	},
 	"pagination" : [
-		"1","5","10","25","50","100"
+		"6","12","24","48","96"
 	],
 	"default_permission" : [
 		"access-configuration",
@@ -128,57 +128,57 @@
 		}
 	],
 	"color_themes" : [
-		{ 
+		{
 			"text" : "Blue",
-			"value" : "blue" 
+			"value" : "blue"
 		},
-		{ 	
+		{
 			"text" : "Blue with Dark Sidebar",
 			"value" : "blue-dark"
 		},
-		{ 
+		{
 			"text" : "Red",
 			"value" : "red"
 		},
-		{ 
+		{
 			"text" : "Red with Dark Sidebar",
 			"value" : "red-dark"
 		},
-		{ 
+		{
 			"text" : "Default",
 			"value" : "default"
 		},
-		{ 
+		{
 			"text" : "Default with Dark Sidebar",
 			"value" : "default-dark"
 		},
-		{ 
+		{
 			"text" : "Green",
 			"value" : "green"
 		},
-		{ 
+		{
 			"text" : "Green with Dark Sidebar",
 			"value" : "green-dark"
 		},
-		{ 
+		{
 			"text" : "Megna",
 			"value" : "megna"
 		},
-		{ 
+		{
 			"text" : "Megna with Dark Sidebar",
 			"value" : "megna-dark"
 		},
-		{ 
+		{
 			"text" : "Purple",
 			"value" : "purple"
 		},
-		{ 
+		{
 			"text" : "Purple with Dark Sidebar",
 			"value" : "purple-dark"
 		}
 	],
 	"directions" : [
-		{ 
+		{
 			"text" : "Right to Left",
 			"value" : "rtl"
 		},
@@ -187,47 +187,47 @@
 		}
 	],
 	"date_formats" : [
-		{ 
+		{
 			"text" : "DD-MM-YYYY",
 			"value" : "DD-MM-YYYY"
 		},
-		{ 
+		{
 			"text" : "MM-DD-YYYY",
 			"value" : "MM-DD-YYYY"
 		},
-		{ 
+		{
 			"text" : "DD-MMM-YYYY",
 			"value" : "DD-MMM-YYYY"
 		},
-		{ 
+		{
 			"text" : "MMM-DD-YYYY",
 			"value" : "MMM-DD-YYYY"
 		}
 	],
 	"time_formats" : [
-		{ 
+		{
 			"text" : "H:mm",
 			"value" : "H:mm"
 		},
-		{ 
+		{
 			"text" : "h:mm a",
 			"value" : "h:mm a"
 		}
 	],
 	"notification_positions" : [
-		{ 
+		{
 			"text" : "Top Right",
 			"value" : "toast-top-right"
 		},
-		{ 
+		{
 			"text" : "Top Left",
 			"value" : "toast-top-left"
 		},
-		{ 
+		{
 			"text" : "Bottom Right",
 			"value" : "toast-bottom-right"
 		},
-		{ 
+		{
 			"text" : "Bottom Left",
 			"value" : "toast-bottom-left"
 		}
