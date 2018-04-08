@@ -220,7 +220,7 @@
         return helper.hasRole(role);
       },
       viewFish(fish){
-        this.$router.push('/fish/'+fish.id+'');
+        this.$router.push('/fish/'+fish.uuid+'');
       },
       toggleInfoWindow: function(marker, idx) {
         this.infoWindowPos = marker.latLng;
