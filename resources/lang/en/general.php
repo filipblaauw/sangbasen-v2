@@ -58,6 +58,7 @@
   'sort_by' => 'Sort By',
   'start_date' => 'Start Date',
   'system' => 'System',
+  'tnc_text' => 'Terms and conditions',
   'to' => 'to',
   'toggle_sidebar' => 'Toggle Sidebar',
   'token_expired' => 'Your session is expired, please login again.',
@@ -65,5 +66,5 @@
   'update' => 'Update',
   'upload' => 'Upload',
   'upload_document' => 'Upload Document',
-  'yes' => 'Yes'
+  'yes' => 'Yes',
 );

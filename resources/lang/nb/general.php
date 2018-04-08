@@ -58,6 +58,7 @@
   'sort_by' => 'Sorter etter',
   'start_date' => 'Fra dato',
   'system' => 'System',
+  'tnc_text' => 'For å opprette bruker må du registrere deg med navn og e-postadresse. Vi gir ikke disse opplysningene til noen andre. Du laster opp innhold på eget ansvar, og Fiskelogg.no kan ikke holdes ansvarlig for mistet innhold.',
   'to' => 'til',
   'toggle_sidebar' => 'Sidebar av/på',
   'token_expired' => 'Økten din er utløpt. Vennligst logg inn igjen.',
@@ -65,5 +66,5 @@
   'update' => 'Oppdater',
   'upload' => 'Last opp',
   'upload_document' => 'Last opp dokument',
-  'yes' => 'Ja'
+  'yes' => 'Ja',
 );
