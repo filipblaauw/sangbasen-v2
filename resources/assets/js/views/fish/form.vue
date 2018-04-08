@@ -284,7 +284,7 @@
           lat: '',
           lng: '',
           weight: '',
-          length: '',
+          length: 0,
           bait: '',
           line: '',
           waterTemp: '',
