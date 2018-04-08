@@ -1,28 +1,32 @@
 <template>
-    <section id="wrapper">
-        <div class="login-register">
-            <div class="login-box card">
-                <div class="card-body">
-                    <h3 class="box-title m-b-20">{{trans('auth.tnc')}}</h3>
-                    <p>Here goes terms and conditions!</p>
-                     <div class="text-center m-t-20">
-                        <div class="col-xs-12">
-                            <router-link class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" to="/">{{trans('general.back')}}</router-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{trans('auth.tnc')}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </section>
+        <div class="modal-body">
+          {{trans('general.tnc_text')}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('general.close')}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
     export default {
-        mounted(){
+      mounted(){
 
-            if(!helper.featureAvailable('terms_and_conditions')){
-                helper.featureNotAvailableMsg();
-                this.$router.push('/home');
-            }
-        }
+        //if(!helper.featureAvailable('terms_and_conditions')){
+        //    helper.featureNotAvailableMsg();
+        //    this.$router.push('/home');
+        //}
+      }
     }
 </script>

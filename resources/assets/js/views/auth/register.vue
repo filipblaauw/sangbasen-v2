@@ -42,14 +42,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" v-if="getConfig('terms_and_conditions')">
+                    <div class="form-group">
                         <div class="col-md-12">
                             <div class="checkbox checkbox-success p-t-0 p-l-10">
                                 <input id="checkbox-signup" type="checkbox" v-model="registerForm.tnc" name="tnc">
-                                <label for="checkbox-signup"> <a target="_blank" href="/terms-and-conditions">{{trans('auth.accept_tnc')}}</a></label>
+                                <label for="checkbox-signup"> <a href="#" data-toggle="modal" data-target="#exampleModal">{{trans('auth.accept_tnc')}}</a></label>
                             </div>
                             <show-error :form-name="registerForm" prop-name="tnc"></show-error>
                         </div>
+
                     </div>
                     <div class="g-recaptcha" v-if="getConfig('recaptcha') && getConfig('register_recaptcha')" :data-sitekey="getConfig('recaptcha_key')"></div>
                     <div class="form-group text-center m-t-20">
@@ -65,6 +66,8 @@
             <guest-footer></guest-footer>
           </div>
         </div>
+        <!-- Modal -->
+        <termsAndConditions></termsAndConditions>
 
     </section>
 </template>
@@ -72,6 +75,7 @@
 <script>
     import guestFooter from '../../layouts/guest-footer.vue'
     import password from 'vue-password-strength-meter'
+    import termsAndConditions from '../pages/terms-and-conditions.vue'
 
     export default {
         data() {
@@ -87,7 +91,7 @@
             }
         },
         components: {
-            guestFooter,password
+            guestFooter,password,termsAndConditions
         },
         mounted(){
             if(!helper.featureAvailable('registration')){
