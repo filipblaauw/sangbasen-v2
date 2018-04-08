@@ -30,11 +30,13 @@
                                 <datepicker language="nb-no" :monday-first="true" v-model="profileForm.date_of_birth" :bootstrapStyling="true" name="date_of_birth" @selected="profileForm.errors.clear('date_of_birth')"></datepicker>
                                 <show-error :form-name="profileForm" prop-name="date_of_birth"></show-error>
                             </div>
+                            <!--
                             <div class="form-group">
                                 <label for="">{{trans('user.date_of_anniversary')}}</label>
                                 <datepicker language="nb-no" :monday-first="true" v-model="profileForm.date_of_anniversary" :bootstrapStyling="true" name="date_of_anniversary" @selected="profileForm.errors.clear('date_of_anniversary')"></datepicker>
                                 <show-error :form-name="profileForm" prop-name="date_of_anniversary"></show-error>
                             </div>
+                            -->
                             <div class="form-group">
                                 <label for="">{{trans('user.gender')}}</label>
                                 <div class="radio radio-info" v-for="gender in genders">
@@ -93,7 +95,7 @@
                     first_name : '',
                     last_name : '',
                     date_of_birth : '',
-                    date_of_anniversary : '',
+                    //date_of_anniversary : '',
                     gender : '',
                     facebook_profile : '',
                     twitter_profile : '',
@@ -120,7 +122,7 @@
                     this.profileForm.first_name = response.profile.first_name;
                     this.profileForm.last_name = response.profile.last_name;
                     this.profileForm.date_of_birth = response.profile.date_of_birth;
-                    this.profileForm.date_of_anniversary = response.profile.date_of_anniversary;
+                    //this.profileForm.date_of_anniversary = response.profile.date_of_anniversary;
                     this.profileForm.gender = response.profile.gender;
                     this.profileForm.facebook_profile = response.profile.facebook_profile;
                     this.profileForm.twitter_profile = response.profile.twitter_profile;
@@ -135,7 +137,7 @@
         methods: {
             updateProfile() {
                 this.profileForm.date_of_birth = (this.profileForm.date_of_birth) ? moment(this.profileForm.date_of_birth).format('YYYY-MM-DD') : null;
-                this.profileForm.date_of_anniversary = (this.profileForm.date_of_anniversary) ? moment(this.profileForm.date_of_anniversary).format('YYYY-MM-DD') : null;
+                //this.profileForm.date_of_anniversary = (this.profileForm.date_of_anniversary) ? moment(this.profileForm.date_of_anniversary).format('YYYY-MM-DD') : null;
                 this.profileForm.post('/api/user/profile/update')
                     .then(response => {
                         toastr.success(response.message);

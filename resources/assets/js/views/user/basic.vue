@@ -45,6 +45,11 @@
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <div class="form-group">
+                                                        <label for="">{{trans('user.date_of_birth')}}</label>
+                                                        <datepicker language="nb-no" :monday-first="true" v-model="userForm.date_of_birth" :bootstrapStyling="true" name="date_of_birth" @selected="userForm.errors.clear('date_of_birth')"></datepicker>
+                                                        <show-error :form-name="userForm" prop-name="date_of_birth"></show-error>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="">{{trans('user.gender')}}</label>
                                                         <div class="radio radio-info" v-for="gender in genders">
                                                             <input type="radio" :value="gender.id" :id="gender.id" v-model="userForm.gender" :checked="userForm.gender == gender.id" name="gender">
@@ -63,13 +68,7 @@
                                                         </div>
                                                     </div>
                                                 </template>
-                                                <div class="col-12 col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="">{{trans('user.date_of_birth')}}</label>
-                                                        <datepicker language="nb-no" :monday-first="true" v-model="userForm.date_of_birth" :bootstrapStyling="true" name="date_of_birth" @selected="userForm.errors.clear('date_of_birth')"></datepicker>
-                                                        <show-error :form-name="userForm" prop-name="date_of_birth"></show-error>
-                                                    </div>
-                                                </div>
+                                                <!--
                                                 <div class="col-12 col-md-6">
                                                     <div class="form-group">
                                                         <label for="">{{trans('user.date_of_anniversary')}}</label>
@@ -77,6 +76,7 @@
                                                         <show-error :form-name="userForm" prop-name="date_of_anniversary"></show-error>
                                                     </div>
                                                 </div>
+                                                -->
                                             </div>
                                         </div>
                                     </div>
@@ -110,7 +110,7 @@
                     email: '',
                     gender: '',
                     date_of_birth: '',
-                    date_of_anniversary: '',
+                    //date_of_anniversary: '',
                     role_id: []
                 },false),
                 user: '',
@@ -139,7 +139,7 @@
                         this.userForm.email = response.user.email;
                         this.userForm.gender = response.user.profile.gender;
                         this.userForm.date_of_birth = response.user.profile.date_of_birth;
-                        this.userForm.date_of_anniversary = response.user.profile.date_of_anniversary;
+                        //this.userForm.date_of_anniversary = response.user.profile.date_of_anniversary;
                         this.userForm.role_id = response.roles;
                         this.selected_roles = response.selected_roles;
                     })
@@ -169,7 +169,7 @@
             },
             submit(){
                 this.userForm.date_of_birth = (this.userForm.date_of_birth) ? moment(this.userForm.date_of_birth).format('YYYY-MM-DD') : null;
-                this.userForm.date_of_anniversary = (this.userForm.date_of_anniversary) ? moment(this.userForm.date_of_anniversary).format('YYYY-MM-DD') : null;
+                //this.userForm.date_of_anniversary = (this.userForm.date_of_anniversary) ? moment(this.userForm.date_of_anniversary).format('YYYY-MM-DD') : null;
                 this.userForm.patch('/api/user/'+this.id)
                     .then(response => {
                         this.fetchUserData();
