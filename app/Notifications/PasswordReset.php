@@ -48,7 +48,7 @@ class PasswordReset extends Notification
         $url = url('/password/reset/'.$this->token);
 
         return (new MailMessage)
-                    ->subject(trans('notification.password_reset_subject'))
+                    ->subject(trans('notification.password_reset_subject').' | '.config('config.company_name'))
                     ->greeting(trans('notification.hello').$this->user->Profile->first_name)
                     ->line(trans('notification.password_reset_request'))
                     ->line(trans('notification.password_reset_click'))

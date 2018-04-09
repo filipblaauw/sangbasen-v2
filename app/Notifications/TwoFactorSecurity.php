@@ -44,9 +44,9 @@ class TwoFactorSecurity extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Two Factor Auth | '.config('config.company_name'))
-                    ->line('Your one time two factor security code is: '.$this->code.'.')
-                    ->line('Thank you for using our application!');
+            ->subject(trans('notification.twofactor_subject').' | '.config('config.company_name'))
+                    ->line(trans('notification.twofactor_yourcode').$this->code.'.')
+                    ->line(trans('notification.thankyou'));
     }
 
     /**

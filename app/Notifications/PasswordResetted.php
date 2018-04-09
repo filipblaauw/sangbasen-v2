@@ -46,13 +46,13 @@ class PasswordResetted extends Notification
         $url = url('/');
 
         return (new MailMessage)
-                    ->subject('Password Updated | Script Mint')
-                    ->greeting('Hello '.$this->user->Profile->first_name)
-                    ->line('Your password has been reset successfully!')
-                    ->line('Click on the below link to continue login.')
-                    ->action('Login', $url)
-                    ->line('If you haven\'t changed your password, please contact ScriptMint.')
-                    ->line('Thank you!');
+                    ->subject(trans('notification.password_updated_subject').' | '.config('config.company_name'))
+                    ->greeting(trans('notification.hello').$this->user->Profile->first_name)
+                    ->line(trans('notification.password_updated_success'))
+                    ->line(trans('notification.password_updated_click'))
+                    ->action(trans('auth.login'), $url)
+                    ->line(trans('notification.password_updated_contact'))
+                    ->line(trans('notification.thankyou'));
     }
 
     /**
