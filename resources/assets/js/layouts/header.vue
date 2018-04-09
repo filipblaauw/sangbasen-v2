@@ -1,7 +1,7 @@
 <template>
     <header class="topbar">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
-            <div class="navbar-header">
+            <!--<div class="navbar-header">
                 <router-link class="navbar-brand" to="/">
                     <b>
                         <img :src="getSidebarLogo" alt="" class="dark-logo" />
@@ -9,12 +9,18 @@
                     </b>
                     <span>
                      <img :src="getMainLogo" alt="" class="dark-logo" />
-                     <img :src="getMainLogo" class="light-logo" alt="" /></span> </router-link>
-            </div>
+                     <img src="https://www.fiskelogg.no/" class="light-logo" alt="" /></span> </router-link>
+            </div>-->
             <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-md-0 ">
                     <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="fas fa-bars"></i></a> </li>
-                    <li class="nav-item" v-tooltip.right="trans('general.toggle_sidebar')"> <a class="nav-link sidebartoggler hidden-sm-down text-muted" href="javascript:void(0)"><i class="icon-arrow-left-circle"></i></a> </li>
+
+                    <!--<li class="nav-item" v-tooltip.right="trans('general.toggle_sidebar')"> <a class="nav-link sidebartoggler hidden-sm-down text-muted" href="javascript:void(0)"><i class="icon-arrow-left-circle"></i></a> </li>-->
+                </ul>
+                <ul class="nav navbar-nav navbar-logo mx-auto">
+                  <li class="nav-item">
+                    <router-link class="nav-link" to="/">{{getConfig('company_name')}}</router-link>
+                  </li>
                 </ul>
                 <ul class="navbar-nav my-lg-0">
                     <li class="nav-item" v-tooltip.bottom="trans('fish.fish')" v-if="getConfig('fish') && hasPermission('access-fish')">

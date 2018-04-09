@@ -15428,8 +15428,8 @@ File: scss
 
 .right-sidebar {
   position: fixed;
-  right: -240px;
-  width: 240px;
+  right: -200px;
+  width: 200px;
   display: none;
   z-index: 1100;
   background: #ffffff;
@@ -15477,7 +15477,7 @@ File: scss
 
 .shw-rside {
   right: 0px;
-  width: 240px;
+  width: 200px;
   display: block;
 }
 
@@ -19556,11 +19556,11 @@ Main sidebar
 
 .left-sidebar {
   position: absolute;
-  width: 240px;
+  width: 200px;
   height: 100%;
   top: 0px;
   z-index: 20;
-  padding-top: 70px;
+  padding-top: 40px;
   background: #fff;
   /*box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);*/
 }
@@ -19678,7 +19678,7 @@ sidebar footer
   left: 0px;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-  width: 240px;
+  width: 200px;
   background: #e8eff0;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
 }
@@ -19870,7 +19870,6 @@ When click on sidebar toggler and also for tablet
   }
 
   .mini-sidebar .user-profile {
-    padding-bottom: 30px;
     width: 60px;
   }
 
@@ -19925,7 +19924,7 @@ When click on sidebar toggler and also for tablet
 
   .mini-sidebar .left-sidebar,
   .mini-sidebar .sidebar-footer {
-    left: -240px;
+    left: -200px;
   }
 
   .mini-sidebar.show-sidebar .left-sidebar,
@@ -21339,11 +21338,11 @@ File: scss
 
 @media (min-width: 1024px) {
   .page-wrapper {
-    margin-left: 240px;
+    margin-left: 200px;
   }
 
   .footer {
-    left: 240px;
+    left: 200px;
   }
 }
 
@@ -21374,7 +21373,7 @@ File: scss
 
 @media (min-width: 768px) {
   .navbar-header {
-    width: 240px;
+    width: 200px;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }

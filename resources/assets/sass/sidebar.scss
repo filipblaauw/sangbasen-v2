@@ -12,11 +12,11 @@ Main sidebar
 
 .left-sidebar {
     position: absolute;
-    width: 240px;
+    width: 200px;
     height: 100%;
     top: 0px;
     z-index: 20;
-    padding-top: 70px;
+    padding-top: 40px;
     background: $sidebar;
     /*box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);*/
 }
@@ -117,7 +117,7 @@ sidebar footer
     bottom: 0px;
     left: 0px;
     transition:0.2s ease-out;
-    width: 240px;
+    width: 200px;
     background: $sidebar-alt;
     border-top: 1px solid $border;
     a {
@@ -295,7 +295,7 @@ When click on sidebar toggler and also for tablet
             width: 60px;
         }
         .user-profile {
-            padding-bottom: 30px;
+            //padding-bottom: 30px;
             width: 60px;
         }
         .scroll-sidebar{
@@ -340,7 +340,7 @@ When click on sidebar toggler and also for tablet
     .mini-sidebar{
         .left-sidebar{position: fixed;}
         .left-sidebar, .sidebar-footer{
-            left:-240px;
+            left:-200px;
         }
         &.show-sidebar{
            .left-sidebar, .sidebar-footer{

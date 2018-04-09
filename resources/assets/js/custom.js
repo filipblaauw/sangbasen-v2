@@ -44,14 +44,14 @@ $(function () {
             $(".scroll-sidebar, .slimScrollDiv").css("overflow", "hidden").parent().css("overflow", "visible");
             $("body").removeClass("mini-sidebar");
             $('.navbar-brand span').show();
-            $(".sidebartoggler i").addClass("fas fa-bars");
+            //$(".sidebartoggler i").addClass("fas fa-bars");
         }
         else {
             $("body").trigger("resize");
             $(".scroll-sidebar, .slimScrollDiv").css("overflow-x", "visible").parent().css("overflow", "visible");
             $("body").addClass("mini-sidebar");
             $('.navbar-brand span').hide();
-            $(".sidebartoggler i").removeClass("fa-bars");
+            //$(".sidebartoggler i").removeClass("fa-bars");
         }
     });
     // topbar stickey on scroll
@@ -61,11 +61,11 @@ $(function () {
     // this is for close icon when navigation open in mobile view
     $(document).on('click',".nav-toggler",function () {
         $("body").toggleClass("show-sidebar");
-        $(".nav-toggler i").toggleClass("fas fa-bars");
-        $(".nav-toggler i").addClass("fas fa-times");
+        //$(".nav-toggler i").toggleClass("fas fa-bars");
+        //$(".nav-toggler i").addClass("fas fa-times");
     });
     $(".sidebartoggler").on('click', function () {
-        $(".sidebartoggler i").toggleClass("fas fa-times");
+        //$(".sidebartoggler i").toggleClass("fas fa-times");
     });
 
     // ==============================================================
