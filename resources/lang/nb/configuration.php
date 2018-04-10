@@ -4,6 +4,7 @@
   'address_line_2' => 'Leilighet/Oppgang',
   'api_key' => 'Nexmo API Key',
   'api_secret' => 'Nexmo API Secret',
+  'authentication' => 'Autentisering',
   'backup' => 'Aktiver sikkerhetskopi',
   'bottom_left' => 'Bunn venstre',
   'bottom_right' => 'Bunn høyre',

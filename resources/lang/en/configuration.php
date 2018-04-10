@@ -4,6 +4,7 @@
   'address_line_2' => 'Address Line 2',
   'api_key' => 'Nexmo API Key',
   'api_secret' => 'Nexmo API Secret',
+  'authentication' => 'Authentication',
   'backup' => 'Enable Backup',
   'bottom_left' => 'Bottom Left',
   'bottom_right' => 'Bottom Right',
