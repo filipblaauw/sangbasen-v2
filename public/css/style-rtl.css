@@ -20282,11 +20282,16 @@ Login register and recover password Page
 .login-register {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  height: 100%;
+  background-position: bottom center;
+  min-height: 667px;
   width: 100%;
-  padding: 10% 0;
-  position: fixed;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+}
+
+.intro-footer a,
+.intro-footer a:visited {
+  color: white;
 }
 
 .login-box {
@@ -20303,6 +20308,10 @@ Login register and recover password Page
 .login-box .social {
   display: block;
   margin-bottom: 30px;
+}
+
+.login-box img {
+  max-width: 300px;
 }
 
 #recoverform {
@@ -22508,6 +22517,10 @@ File: scss
  ============================================================== */
 
 @media (max-width: 767px) {
+  .intro-image {
+    max-width: 150px;
+  }
+
   /*Header*/
 
   .topbar {
@@ -22784,6 +22797,10 @@ span.species-title.released {
   .card-image {
     height: 140px;
   }
+}
+
+.intro-image {
+  width: 100%;
 }
 
 #fileselector {

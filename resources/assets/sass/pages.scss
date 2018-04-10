@@ -3694,11 +3694,17 @@ Login register and recover password Page
 .login-register{
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  height:100%;
+  background-position: bottom center;
+  min-height: 667px;
   width: 100%;
-  padding:10% 0;
-  position:fixed;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  //position:fixed;
+}
+.intro-footer {
+  a, a:visited {
+    color: white;
+  }
 }
 .login-box{
   width:400px;
@@ -3712,6 +3718,9 @@ Login register and recover password Page
   .social {
     display:block;
     margin-bottom:30px;
+  }
+  img {
+    max-width: 300px;
   }
 }
 #recoverform{

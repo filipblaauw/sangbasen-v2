@@ -36,8 +36,7 @@
                 <h6>{{user.email}}</h6>
                 <small class="text-muted">{{trans('user.date_of_birth')}}</small>
                 <h6>{{user.profile.date_of_birth | moment}}</h6>
-                <small class="text-muted">{{trans('user.date_of_anniversary')}}</small>
-                <h6>{{user.profile.date_of_anniversary | moment}}</h6>
+                
                 <small class="text-muted">{{trans('user.created_at')}}</small>
                 <h6>{{user.created_at | moment}}</h6>
                 <small class="text-muted p-t-30 db" v-if="user.profile.phone">{{trans('user.phone')}}</small>
