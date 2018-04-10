@@ -60,7 +60,8 @@
                                         <td v-text="activity_log.user.profile.first_name+' '+activity_log.user.profile.last_name"></td>
                                         <td v-text="activity_log.ip"></td>
                                         <td v-text="activity_log.user_agent"></td>
-                                        <td>{{trans('activity.'+activity_log.activity,{activity: trans('activity.'+activity_log.module)})}}</td>
+                                        <td v-if="activity_log.sub_module == null">{{trans('activity.'+activity_log.activity,{activity: trans(activity_log.module+'.'+activity_log.module)})}}</td>
+                                        <td v-else>{{trans('activity.'+activity_log.activity,{activity: trans(activity_log.module+'.'+activity_log.sub_module)})}}</td>
                                         <td>{{activity_log.created_at | moment }}</td>
                                         <td class="pull-right">
                                             <div class="btn-group">
@@ -130,6 +131,7 @@
                     .catch(error => {
                         helper.showDataErrorMsg(error);
                     });
+
             },
             confirmDelete(activity_log){
                 return dialog => this.deleteActivityLog(activity_log);

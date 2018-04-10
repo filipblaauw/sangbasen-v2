@@ -10,6 +10,7 @@
   'bottom_right' => 'Bottom Right',
   'city' => 'City',
   'color_theme' => 'Color Theme',
+  'company_logo' => 'Logo',
   'company_name' => 'Company Name',
   'configuration' => 'Configuration',
   'contact' => 'Contact',
@@ -29,6 +30,7 @@
   'logo_removed' => 'Logo removed.',
   'logo_uploaded' => 'Logo uploaded.',
   'ltr' => 'Left to Right',
+  'mail' => 'Mail',
   'maintenance_mode' => 'Enable Maintenance Mode',
   'maintenance_mode_message' => 'Maintenance Mode Message',
   'message' => 'Enable Message',
@@ -36,6 +38,7 @@
   'multilingual' => 'Enable Multilingual',
   'no_logo_uploaded' => 'No logo uploaded.',
   'notification_position' => 'Notification Position',
+  'page_length' => 'Page Length',
   'phone' => 'Phone',
   'receiver_mobile' => 'Mobile Number for Testing',
   'rtl' => 'Right to Left',
@@ -50,6 +53,7 @@
   'show_menu' => 'Show :menu Menu',
   'state' => 'State',
   'stored' => 'Configuration stored.',
+  'system' => 'System config',
   'system_configuration' => 'System Configuration',
   'test_mode' => 'Test Mode',
   'time_format' => 'Time Format',
@@ -70,5 +74,4 @@
   'under_maintenance' => 'Under Maintenance',
   'website' => 'Website',
   'zipcode' => 'Zipcode',
-  'page_length' => 'Page Length'
 );

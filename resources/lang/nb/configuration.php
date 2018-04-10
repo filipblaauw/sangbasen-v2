@@ -10,6 +10,7 @@
   'bottom_right' => 'Bunn høyre',
   'city' => 'Sted',
   'color_theme' => 'Fargepalett',
+  'company_logo' => 'Logo',
   'company_name' => 'Firmanavn',
   'configuration' => 'Konfigurasjon',
   'contact' => 'Kontakt',
@@ -29,6 +30,7 @@
   'logo_removed' => 'Logo fjernet.',
   'logo_uploaded' => 'Logo lastet opp.',
   'ltr' => 'Venstre til høyre',
+  'mail' => 'E-post',
   'maintenance_mode' => 'Aktiver vedlikeholdsmodus',
   'maintenance_mode_message' => 'Melding ved vedlikehold',
   'message' => 'Aktiver meldinger',
@@ -36,6 +38,7 @@
   'multilingual' => 'Aktiver flere språk',
   'no_logo_uploaded' => 'Ingen logo lastet opp.',
   'notification_position' => 'Posisjon for varsler',
+  'page_length' => 'Sidelengde',
   'phone' => 'Telefon',
   'receiver_mobile' => 'Mobilnummer for testing',
   'rtl' => 'Høyre til venstre',
@@ -50,6 +53,7 @@
   'show_menu' => 'Vis :menu i meny',
   'state' => 'Fylke',
   'stored' => 'Konfigurasjon lagret.',
+  'system' => 'Systemkonfigurasjon',
   'system_configuration' => 'Systemkonfigurasjon',
   'test_mode' => 'Testmodus',
   'time_format' => 'Klokkeformat',
@@ -70,5 +74,4 @@
   'under_maintenance' => 'Under vedlikehold',
   'website' => 'Nettside',
   'zipcode' => 'Postnummer',
-  'page_length' => 'Sidelengde'
 );
