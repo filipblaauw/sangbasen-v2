@@ -32,25 +32,11 @@ class FishRepository
     }
 
     /**
-     * Find fish with given id or throw an error.
+     * Find fish with given uuid or throw an error.
      *
-     * @param integer $id
+     * @param integer $uuid
      * @return Fish
      */
-
-    public function findOrFail($id)
-    {
-        $fish = $this->fish->find($id);
-
-        if (! $fish) {
-            throw ValidationException::withMessages(['message' => trans('fish.could_not_find')]);
-        }
-        elseif ($fish->user_id != \Auth::user()->id) {
-            throw ValidationException::withMessages(['message' => trans('fish.unauthorized')]);
-        }
-
-        return $fish;
-    }
 
     public function findByUuidOrFail($uuid)
     {
@@ -58,6 +44,9 @@ class FishRepository
 
         if (! $fish) {
             throw ValidationException::withMessages(['message' => trans('fish.could_not_find')]);
+        }
+        elseif ($fish->user_id != \Auth::user()->id) {
+            throw ValidationException::withMessages(['message' => trans('fish.unauthorized')]);
         }
 
         return $fish;
@@ -173,36 +162,4 @@ class FishRepository
         return $fish->delete();
     }
 
-    /**
-     * Delete multiple fishs.
-     *
-     * @param array $ids
-     * @return bool|null
-     */
-    public function deleteMultiple($ids)
-    {
-        return $this->fish->whereIn('id', $ids)->delete();
-    }
-
-    /**
-     * Toggle given fish status.
-     *
-     * @param Fish $fish
-     * @param array $params
-     *
-     * @return Fish
-     */
-    public function toggle(Fish $fish)
-    {
-        if ($fish->user_id != \Auth::user()->id) {
-            throw ValidationException::withMessages(['message' => trans('fish.unauthorized')]);
-        }
-
-        $fish->forceFill([
-            'completed_at' => (! $fish->status) ? Carbon::now() : null,
-            'status'       => ! $fish->status
-        ])->save();
-
-        return $fish;
-    }
 }
