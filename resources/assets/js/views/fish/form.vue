@@ -367,7 +367,6 @@
             this.fishForm.river = response.river;
             this.fishForm.zone = response.zone;
             this.fishForm.weight = response.weight;
-            this.fishForm.length = response.length;
             this.fishForm.bait = response.bait;
             this.fishForm.line = response.line;
             this.fishForm.waterTemp = response.waterTemp;
@@ -381,7 +380,11 @@
             this.center.lat = parseFloat(response.lat);
 						this.center.lng = parseFloat(response.lng);
 						this.location = {lat: parseFloat(response.lat), lng: parseFloat(response.lng)};
-
+            if (response.length == null) {
+              this.fishForm.length = 0
+            } else {
+              this.fishForm.length = response.length
+            }
           })
           .catch(error => {
             helper.showDataErrorMsg(error);
