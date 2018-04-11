@@ -72,7 +72,11 @@
                 </strong>
                 <p>
                   {{infoSpecies}}
+                  <div v-if="infoPhoto">
+                    <img :src="thumbnail(infoPhoto)" alt="">
+                  </div>
                 </p>
+
                 <a :href="infoLink">{{trans('fish.view_fish')}}</a>
               </gmap-info-window>
               <google-cluster>
@@ -172,6 +176,7 @@
         markers: [],
         infoContent: '',
         infoSpecies: '',
+        infoPhoto: '',
         infoLink: '',
         infoWindowPos: {
           lat: 0,
@@ -205,6 +210,7 @@
                 {lat: parseFloat(r.lat), lng: parseFloat(r.lng)},
               infoText: moment(r.date).format('LL'),
               infoSpecies: r.species + ', ' + r.river,
+              infoPhoto: r.photo,
               infoLink: '/fish/'+r.uuid
              }
           });
@@ -226,6 +232,7 @@
         this.infoWindowPos = marker.latLng;
         this.infoContent = marker.infoText;
         this.infoSpecies = marker.infoSpecies;
+        this.infoPhoto = marker.infoPhoto;
         this.infoLink = marker.infoLink;
         //check if its the same marker that was selected if yes toggle
         if (this.currentMidx == idx) {
@@ -236,7 +243,12 @@
           this.infoWinOpen = true;
           this.currentMidx = idx;
         }
-      }
+      },
+      thumbnail(value) {
+				var img = value
+				var img = img.replace('/upload/', '/upload/t_media_lib_thumb/')
+				return img
+			}
     },
     watch: {
       // Fit map to markers
