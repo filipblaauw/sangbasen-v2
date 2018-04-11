@@ -58,7 +58,7 @@
             <gmap-map
               :center="center"
               :zoom="6"
-              class="map"
+              class="homeMap"
               ref="gmap"
               >
               <gmap-info-window

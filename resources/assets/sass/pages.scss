@@ -3706,9 +3706,12 @@ Login register and recover password Page
     color: white;
   }
 }
-.login-box{
+.login-box {
   width:400px;
   margin:0 auto;
+  &.card {
+    background-color: rgba(white, 0.9);
+  }
 
   .footer{
     width:100%;

@@ -19181,6 +19181,10 @@ Login register and recover password Page
   margin: 0 auto;
 }
 
+.login-box.card {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .login-box .footer {
   width: 100%;
   left: 0px;
@@ -21381,6 +21385,10 @@ File: scss
  ============================================================== */
 
 @media (min-width: 768px) {
+  .homeMap {
+    height: 600px;
+  }
+
   .navbar-header {
     width: 200px;
     -ms-flex-negative: 0;
@@ -21418,6 +21426,10 @@ File: scss
  ============================================================== */
 
 @media (max-width: 767px) {
+  .homeMap {
+    height: 400px;
+  }
+
   .intro-image {
     max-width: 150px;
   }
@@ -21481,7 +21493,7 @@ File: scss
 
   .mini-sidebar .page-wrapper {
     margin-left: 0px;
-    padding-top: 70px;
+    padding-top: 40px;
   }
 
   .comment-text .comment-footer .action-icons {
@@ -21702,6 +21714,7 @@ span.species-title.released {
 
 .intro-image {
   width: 100%;
+  max-width: 300px;
 }
 
 #fileselector {
