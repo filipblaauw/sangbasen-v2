@@ -21,7 +21,11 @@ class Fish extends Model
             return $q;
         }
 
-        return $q->where('river', 'like', '%'.$keyword.'%')->orWhere('species', 'like', '%'.$keyword.'%')->orWhere('description', 'like', '%'.$keyword.'%');
+        return $q ->where('river', 'like', '%'.$keyword.'%')
+                  ->orWhere('zone', 'like', '%'.$keyword.'%')
+                  ->orWhere('bait', 'like', '%'.$keyword.'%')
+                  ->orWhere('species', 'like', '%'.$keyword.'%')
+                  ->orWhere('description', 'like', '%'.$keyword.'%');
     }
 
     public function scopeFilterCompletedFish($q, $status = null)
