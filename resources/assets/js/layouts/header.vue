@@ -19,7 +19,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-logo mr-auto">
                   <li class="nav-item">
-                    <router-link class="nav-link" to="/">{{getConfig('company_name')}}</router-link>
+                    <router-link class="nav-link" to="/">
+                      <img src="/images/fisk-hvit.svg" class="header-logo">
+                      {{getConfig('company_name')}}
+                    </router-link>
                   </li>
                 </ul>
                 <ul class="navbar-nav mr-0 my-lg-0">
