@@ -26,6 +26,7 @@
               <ul class="list-group list-group-flush">
     	          <li class="list-group-item">{{trans('fish.river')}}: <span class="pull-right">{{fish.river}}</span></li>
     	          <li v-if="fish.zone" class="list-group-item">{{trans('fish.zone')}}: <span class="pull-right">{{fish.zone}}</span></li>
+                <li v-if="fish.time" class="list-group-item">{{trans('fish.time')}}: <span class="pull-right">{{fish.time | time }}</span></li>
     	          <li class="list-group-item">{{trans('fish.weight')}}: <span class="pull-right">{{fish.weight | toKg }}</span></li>
     	          <li v-if="fish.length" class="list-group-item">Lengde: <span class="pull-right">{{fish.length}} cm</span></li>
     	          <li v-if="fish.bait" class="list-group-item">{{trans('fish.bait')}}: <span class="pull-right">{{fish.bait}}</span></li>
@@ -155,6 +156,19 @@ export default {
         return i18n.fish.sex_female
       } else {
         return i18n.fish.unknown
+      }
+    },
+    time: function (value) {
+      if (value == 1) {
+        return i18n.fish.time_morning
+      } if (value == 2) {
+        return i18n.fish.time_beforenoon
+      } if (value == 3) {
+        return i18n.fish.time_afternoon
+      } if (value == 4) {
+        return i18n.fish.time_evening
+      } else {
+        return i18n.fish.time_night
       }
     },
     released: function (value) {
