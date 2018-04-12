@@ -5,6 +5,15 @@
 .map {
   height: 400px;
 }
+.vue-map-hidden {
+  display: block !important;
+
+  .btn {
+    position: absolute;
+    top: 40px;
+    right: 12px;
+  }
+}
 .mapcard {
   height: 350px;
   border-top-left-radius: calc(0.25rem - 1px);

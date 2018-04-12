@@ -52,15 +52,15 @@
     </div>
 
     <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
+      <div class="col-12 mb-4">
+
             <gmap-map
               :center="center"
               :zoom="6"
               class="homeMap"
               ref="gmap"
               >
+              <button type="button" v-if="zoomedIn" class="btn btn-dark btn-sm" @click="reset"><i class="fas fa-times"></i></button>
               <gmap-info-window
                 :options="infoOptions"
                 :position="infoWindowPos"
@@ -79,7 +79,7 @@
 
                 <a :href="infoLink">{{trans('fish.view_fish')}}</a>
               </gmap-info-window>
-              <google-cluster>
+              <google-cluster @click="showReset">
                 <gmap-marker
                   :key="index"
                   v-for="(m, index) in markers"
@@ -90,9 +90,8 @@
                 ></gmap-marker>
             </google-cluster>
             </gmap-map>
-          </div>
 
-        </div>
+
 
       </div>
     </div>
@@ -190,7 +189,8 @@
             width: 0,
             height: -35
           }
-        }
+        },
+        zoomedIn: false
       }
     },
     mounted(){
@@ -248,7 +248,19 @@
 				var img = value
 				var img = img.replace('/upload/', '/upload/t_media_lib_thumb/')
 				return img
-			}
+			},
+      showReset: function() {
+        this.zoomedIn = true
+      },
+      reset: function() {
+        var markers = this.markers
+        const bounds = new google.maps.LatLngBounds()
+        for (let m of markers) {
+          bounds.extend(m.latLng)
+        }
+        this.$refs.gmap.$mapObject.fitBounds(bounds)
+        this.zoomedIn = false
+      }
     },
     watch: {
       // Fit map to markers
