@@ -11,254 +11,247 @@ let routes = [
             {
                 path: '/',
                 component: require('./views/fish/index'),
-                meta: {title: appName + ' | Hjem'}
+                meta: {title: appName + ' | ' + i18n.general.home}
             },
             {
                 path: '/home',
                 component: require('./views/pages/home'),
-                meta: {title: appName + ' | Hjem'}
+                meta: {title: appName + ' | ' + i18n.general.home}
             },
             {
                 path: '/profile',
                 component: require('./views/pages/profile'),
-                meta: {title: appName + ' | Profil'}
+                meta: {title: appName + ' | ' + i18n.user.profile}
             },
             {
                 path: '/change-password',
                 component: require('./views/pages/change-password'),
-                meta: {title: appName + ' | Endre passord'}
+                meta: {title: appName + ' | ' + i18n.auth.change_password}
             },
             {
                 path: '/blank',
-                component: require('./views/pages/blank')
+                component: require('./views/pages/blank'),
+                meta: {title: appName }
             },
             {
                 path: '/configuration',
                 component: require('./views/configuration/basic/index'),
-                meta: {title: appName + ' | Konfigurasjon'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration}
             },
             {
                 path: '/configuration/logo',
                 component: require('./views/configuration/logo/index'),
-                meta: {title: appName + ' | Konfigurasjon'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.general.logo}
             },
             {
                 path: '/configuration/mail',
                 component: require('./views/configuration/mail/index'),
-                meta: {title: appName + ' | E-post'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.configuration.mail}
             },
             {
                 path: '/backup',
                 component: require('./views/backup/index'),
-                meta: {title: appName + ' | Backup'}
+                meta: {title: appName + ' | ' + i18n.backup.backup}
             },
             {
                 path: '/configuration/basic',
                 component: require('./views/configuration/basic/index'),
-                meta: {title: appName + ' | Konfigurasjon'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.general.basic}
             },
             {
                 path: '/configuration/system',
                 component: require('./views/configuration/system/index'),
-                meta: {title: appName + ' | Konfigurasjon'}
+                meta: {title: appName + ' | ' + i18n.configuration.system}
             },
             {
                 path: '/configuration/role',
                 component: require('./views/configuration/role/index'),
-                meta: {title: appName + ' | Roller'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.role.role}
             },
             {
                 path: '/configuration/menu',
                 component: require('./views/configuration/menu/index'),
-                meta: {title: appName + ' | Meny'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.general.menu}
             },
             {
                 path: '/configuration/authentication',
                 component: require('./views/configuration/authentication/index'),
-                meta: {title: appName + ' | Autentisiering'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.auth.authentication}
             },
             {
                 path: '/configuration/sms',
                 component: require('./views/configuration/sms/index'),
-                meta: {title: appName + ' | SMS'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.sms.sms}
             },
             {
                 path: '/configuration/scheduled-job',
                 component: require('./views/configuration/scheduled-job/index'),
-                meta: {title: appName + ' | Planlagt jobb'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.configuration.scheduled_job}
             },
             {
                 path: '/configuration/ip-filter',
                 component: require('./views/configuration/ip-filter/index'),
-                meta: {title: appName + ' | IP-filter'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.ip_filter.ip_filter}
             },
             {
                 path: '/configuration/ip-filter/:id/edit',
                 component: require('./views/configuration/ip-filter/edit'),
-                meta: {title: appName + ' | Endre IP-filter'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.ip_filter.edit_ip_filter}
             },
             {
                 path: '/configuration/permission',
                 component: require('./views/configuration/permission/index'),
-                meta: {title: appName + ' | Tillatelser'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.permission.permission}
             },
             {
                 path: '/configuration/permission/assign',
                 component: require('./views/configuration/permission/assign'),
-                meta: {title: appName + ' | Tillatelser'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.permission.assign_permission}
             },
             {
                 path: '/configuration/locale',
                 component: require('./views/configuration/locale/index'),
-                meta: {title: appName + ' | Språk'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.locale.locale}
             },
             {
                 path: '/configuration/locale/:id/edit',
                 component: require('./views/configuration/locale/edit'),
-                meta: {title: appName + ' | Endre språk'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.locale.edit_locale}
             },
             {
                 path: '/configuration/locale/:locale',
                 component: require('./views/configuration/locale/view'),
-                meta: {title: appName + ' | Vis språk'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.locale.locale}
             },
             {
                 path: '/configuration/locale/:locale/:module',
                 component: require('./views/configuration/locale/view'),
-                meta: {title: appName + ' | Vis språk'}
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.locale.module}
             },
             {
                 path: '/email-template',
                 component: require('./views/email-template/index'),
-                meta: {title: appName + ' | E-postmaler'}
+                meta: {title: appName + ' | ' + i18n.template.template_list}
             },
             {
                 path: '/email-template/:id/edit',
                 component: require('./views/email-template/edit'),
-                meta: {title: appName + ' | Endre e-postmal'}
+                meta: {title: appName + ' | ' + i18n.template.edit_template}
             },
             {
                 path: '/email-log',
                 component: require('./views/email-log/index'),
-                meta: {title: appName + ' | E-postlogg'}
+                meta: {title: appName + ' | ' + i18n.mail.email_log}
             },
             {
                 path: '/activity-log',
                 component: require('./views/activity-log/index'),
-                meta: {title: appName + ' | Aktivitetslogg'}
-            },
-            {
-                path: '/todo',
-                component: require('./views/todo/index')
-            },
-            {
-                path: '/todo/:uuid/edit',
-                component: require('./views/todo/edit')
+                meta: {title: appName + ' | ' + i18n.activity.activity_log}
             },
             {
                 path: '/fish',
                 component: require('./views/fish/index'),
-                meta: {title: appName + ' | Fangst'}
+                meta: {title: appName + ' | ' + i18n.fish.index}
             },
             {
                 path: '/fish/add',
                 component: require('./views/fish/add'),
-                meta: {title: appName + ' | Legg til fangst'}
+                meta: {title: appName + ' | ' + i18n.fish.add_new_fish}
             },
             {
                 path: '/fish/:uuid',
                 component: require('./views/fish/view'),
-                meta: {title: appName + ' | Vis fangst'}
+                meta: {title: appName + ' | ' + i18n.fish.view_fish}
             },
             {
                 path: '/fish/:uuid/edit',
                 component: require('./views/fish/edit'),
-                meta: {title: appName + ' | Endre fangst'}
+                meta: {title: appName + ' | ' + i18n.fish.edit_fish}
             },
             {
                 path: '/user',
                 component: require('./views/user/index'),
-                meta: {title: appName + ' | Brukere'}
+                meta: {title: appName + ' | ' + i18n.user.user}
             },
             {
                 path: '/user/:id',
                 component: require('./views/user/basic'),
-                meta: {title: appName + ' | Vis bruker'}
+                meta: {title: appName + ' | ' + i18n.user.user + ' - ' + i18n.general.basic}
             },
             {
                 path: '/user/:id/basic',
                 component: require('./views/user/basic'),
-                meta: {title: appName + ' | Vis bruker'}
+                meta: {title: appName + ' | ' + i18n.user.user + ' - ' + i18n.general.basic}
             },
             {
                 path: '/user/:id/contact',
                 component: require('./views/user/contact'),
-                meta: {title: appName + ' | Vis bruker'}
+                meta: {title: appName + ' | ' + i18n.user.user + ' - ' + i18n.user.contact}
             },
             {
                 path: '/user/:id/avatar',
                 component: require('./views/user/avatar'),
-                meta: {title: appName + ' | Vis bruker'}
+                meta: {title: appName + ' | ' + i18n.user.user + ' - ' + i18n.user.avatar}
             },
             {
                 path: '/user/:id/social',
                 component: require('./views/user/social'),
-                meta: {title: appName + ' | Vis bruker'}
+                meta: {title: appName + ' | ' + i18n.user.user + ' - ' + i18n.user.social}
             },
             {
                 path: '/user/:id/password',
                 component: require('./views/user/password'),
-                meta: {title: appName + ' | Vis bruker'}
+                meta: {title: appName + ' | ' + i18n.user.user + ' - ' + i18n.user.password}
             },
             {
                 path: '/user/:id/email',
                 component: require('./views/user/email'),
-                meta: {title: appName + ' | Vis bruker'}
+                meta: {title: appName + ' | ' + i18n.user.user + ' - ' + i18n.user.email}
             },
             {
                 path: '/message',
                 component: require('./views/message/index'),
-                meta: {title: appName + ' | Meldinger'}
+                meta: {title: appName + ' | ' + i18n.message.inbox}
             },
             {
                 path: '/message/compose',
                 component: require('./views/message/index'),
-                meta: {title: appName + ' | Meldinger'}
+                meta: {title: appName + ' | ' + i18n.message.compose}
             },
             {
                 path: '/message/inbox',
                 component: require('./views/message/inbox'),
-                meta: {title: appName + ' | Innboks'}
+                meta: {title: appName + ' | ' + i18n.message.inbox}
             },
             {
                 path: '/message/sent',
                 component: require('./views/message/sent'),
-                meta: {title: appName + ' | Sendte meldinger'}
+                meta: {title: appName + ' | ' + i18n.message.sent_box}
             },
             {
                 path: '/message/important',
                 component: require('./views/message/important'),
-                meta: {title: appName + ' | Viktige meldinger'}
+                meta: {title: appName + ' | ' + i18n.message.important}
             },
             {
                 path: '/message/trash',
                 component: require('./views/message/trash'),
-                meta: {title: appName + ' | Papirkurv'}
+                meta: {title: appName + ' | ' + i18n.message.trash}
             },
             {
                 path: '/message/draft',
                 component: require('./views/message/draft'),
-                meta: {title: appName + ' | Kladder'}
+                meta: {title: appName + ' | ' + i18n.message.draft}
             },
             {
                 path: '/message/:uuid/draft',
                 component: require('./views/message/edit-draft'),
-                meta: {title: appName + ' | Endre kladd'}
+                meta: {title: appName + ' | ' + i18n.message.edit_draft}
             },
             {
                 path: '/message/:uuid',
                 component: require('./views/message/view'),
-                meta: {title: appName + ' | Vis melding'}
+                meta: {title: appName + ' | ' + i18n.message.message}
             },
         ]
     },
@@ -270,12 +263,12 @@ let routes = [
             {
                 path: '/auth/security',
                 component: require('./views/auth/security'),
-                meta: {title: appName + ' | Sikkerhetskode'}
+                meta: {title: appName + ' | ' + i18n.auth.two_factor_code}
             },
             {
                 path: '/auth/lock',
                 component: require('./views/auth/lock'),
-                meta: {title: appName + ' | Låst'}
+                meta: {title: appName + ' | ' + i18n.auth.lock_screen}
             },
         ]
     },
@@ -287,37 +280,37 @@ let routes = [
             {
                 path: '/',
                 component: require('./views/auth/login'),
-                meta: {title: appName + ' | Logg inn'}
+                meta: {title: appName + ' | ' + i18n.auth.login}
             },
             {
                 path: '/login',
                 component: require('./views/auth/login'),
-                meta: {title: appName + ' | Logg inn'}
+                meta: {title: appName + ' | ' + i18n.auth.login}
             },
             {
                 path: '/password',
                 component: require('./views/auth/password'),
-                meta: {title: appName + ' | Nullstill passord'}
+                meta: {title: appName + ' | ' + i18n.user.reset_password}
             },
             {
                 path: '/register',
                 component: require('./views/auth/register'),
-                meta: {title: appName + ' | Registrer bruker'}
+                meta: {title: appName + ' | ' + i18n.auth.register}
             },
             {
                 path: '/auth/:token/activate',
                 component: require('./views/auth/activate'),
-                meta: {title: appName + ' | Aktiver bruker'}
+                meta: {title: appName + ' | ' + i18n.auth.two_factor_code}
             },
             {
                 path: '/password/reset/:token',
                 component: require('./views/auth/reset'),
-                meta: {title: appName + ' | Nullstill passord'}
+                meta: {title: appName + ' | ' + i18n.passwords.reset_password}
             },
             {
                 path: '/auth/social',
                 component: require('./views/auth/social-auth'),
-                meta: {title: appName + ' | Logg inn'}
+                meta: {title: appName + ' | ' + i18n.auth.login}
             }
         ]
     },
@@ -327,7 +320,8 @@ let routes = [
         children: [
             {
                 path: '/terms-and-conditions',
-                component: require('./views/pages/terms-and-conditions')
+                component: require('./views/pages/terms-and-conditions'),
+                meta: {title: appName + ' | ' + i18n.auth.tnc}
             }
         ]
     },
@@ -337,17 +331,18 @@ let routes = [
         children: [
             {
                 path: '/terms-and-conditions',
-                component: require('./views/pages/terms-and-conditions')
+                component: require('./views/pages/terms-and-conditions'),
+                meta: {title: appName + ' | ' + i18n.auth.tnc}
             },
             {
                 path: '/ip-restricted',
                 component: require('./views/errors/ip-restricted'),
-                meta: {title: appName + ' | IP-begrenset'}
+                meta: {title: appName + ' | ' + i18n.general.permission_denied}
             },
             {
                 path: '/maintenance',
                 component: require('./views/errors/maintenance'),
-                meta: {title: appName + ' | Under vedlikehold'}
+                meta: {title: appName + ' | ' + i18n.general.permission_denied}
             }
         ]
     },
@@ -358,7 +353,7 @@ let routes = [
             {
                 path: '*',
                 component: require('./views/errors/page-not-found'),
-                meta: {title: appName + ' | Fant ikke siden'}
+                meta: {title: appName + ' | ' + i18n.general.page_not_found_heading}
             }
         ]
     }
@@ -384,39 +379,6 @@ router.beforeEach((to, from, next) => {
 
     helper.check()
         .then(response => {
-
-          // This goes through the matched routes from last to first, finding the closest route with a title.
-          // eg. if we have /some/deep/nested/route and /some, /deep, and /nested have titles, nested's will be chosen.
-          const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
-
-          // Find the nearest route element with meta tags.
-          const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
-          const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
-
-          // If a route with a title was found, set the document (page) title to that value.
-          if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
-
-          // Remove any stale meta tags from the document using the key attribute we set below.
-          Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
-
-          // Skip rendering meta tags if there are none.
-          if(!nearestWithMeta) return next();
-
-          // Turn the meta tag definitions into actual elements in the head.
-          nearestWithMeta.meta.metaTags.map(tagDef => {
-            const tag = document.createElement('meta');
-
-            Object.keys(tagDef).forEach(key => {
-              tag.setAttribute(key, tagDef[key]);
-            });
-
-            // We use this to track which meta tags we create, so we don't interfere with other ones.
-            tag.setAttribute('data-vue-router-controlled', '');
-
-            return tag;
-          })
-          // Add the meta tags to the document head.
-          .forEach(tag => document.head.appendChild(tag));
 
             // Initialize toastr notification
             helper.notification();
@@ -462,6 +424,39 @@ router.beforeEach((to, from, next) => {
                     }
                 }
             }
+
+            // This goes through the matched routes from last to first, finding the closest route with a title.
+            // eg. if we have /some/deep/nested/route and /some, /deep, and /nested have titles, nested's will be chosen.
+            const nearestWithTitle = to.matched.slice().reverse().find(r => r.meta && r.meta.title);
+
+            // Find the nearest route element with meta tags.
+            const nearestWithMeta = to.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
+            const previousNearestWithMeta = from.matched.slice().reverse().find(r => r.meta && r.meta.metaTags);
+
+            // If a route with a title was found, set the document (page) title to that value.
+            if(nearestWithTitle) document.title = nearestWithTitle.meta.title;
+
+            // Remove any stale meta tags from the document using the key attribute we set below.
+            Array.from(document.querySelectorAll('[data-vue-router-controlled]')).map(el => el.parentNode.removeChild(el));
+
+            // Skip rendering meta tags if there are none.
+            if(!nearestWithMeta) return next();
+
+            // Turn the meta tag definitions into actual elements in the head.
+            nearestWithMeta.meta.metaTags.map(tagDef => {
+              const tag = document.createElement('meta');
+
+              Object.keys(tagDef).forEach(key => {
+                tag.setAttribute(key, tagDef[key]);
+              });
+
+              // We use this to track which meta tags we create, so we don't interfere with other ones.
+              tag.setAttribute('data-vue-router-controlled', '');
+
+              return tag;
+            })
+            // Add the meta tags to the document head.
+            .forEach(tag => document.head.appendChild(tag));
 
         return next()
     })

@@ -17,6 +17,7 @@
   'farmed_farmed' => 'Oppdrettsfisk',
   'farmed_wild' => 'Villfisk',
   'fish' => 'Fiskelogg',
+  'index' => 'Fangst',
   'keyword' => 'Søkeord',
   'lat' => 'Kartposisjon',
   'latest' => 'Dine siste fangster',

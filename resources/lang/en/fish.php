@@ -17,6 +17,7 @@
   'farmed_farmed' => 'Farmed fish',
   'farmed_wild' => 'Wild fish',
   'fish' => 'Fishlog',
+  'index' => 'Catches',
   'keyword' => 'Keyword',
   'lat' => 'Map position',
   'latest' => 'Your latest catches',
