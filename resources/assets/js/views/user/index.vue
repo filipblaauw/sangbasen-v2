@@ -286,8 +286,8 @@
                     status: '',
                     created_at_start_date: '',
                     created_at_end_date: '',
-                    sort_by : 'first_name',
-                    order: 'asc',
+                    sort_by : 'created_at',
+                    order: 'desc',
                     page_length: helper.getConfig('page_length')
                 },
                 userForm: new Form({
@@ -365,6 +365,7 @@
                     .catch(error => {
                         helper.showDataErrorMsg(error);
                     })
+
             },
             confirmDelete(user){
                 return dialog => this.deleteUser(user);
