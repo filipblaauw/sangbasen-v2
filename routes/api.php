@@ -114,7 +114,7 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::post('/user/profile/update','UserController@updateProfile');
     Route::post('/user/profile/avatar/{id}','UserController@uploadAvatar');
     Route::delete('/user/profile/avatar/remove/{id}','UserController@removeAvatar');
-    Route::delete('/user/{uuid}','UserController@destroy');
+    Route::delete('/user/{id}','UserController@destroy');
 
     Route::get('/message/compose/pre-requisite','MessageController@preRequisite');
     Route::post('/message/statistics','MessageController@statistics');

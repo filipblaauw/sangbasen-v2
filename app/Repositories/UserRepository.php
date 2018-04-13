@@ -305,6 +305,17 @@ class UserRepository
     }
 
     /**
+     * Delete user.
+     *
+     * @param integer $id
+     * @return bool|null
+     */
+    public function delete(User $user)
+    {
+        return $user->delete();
+    }
+
+    /**
      * Update given user status.
      *
      * @param User $user

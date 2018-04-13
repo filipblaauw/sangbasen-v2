@@ -18,7 +18,8 @@
         "nexmo/laravel": "^1.0",
         "sentry/sentry-laravel": "^0.8.0",
         "spatie/laravel-permission": "^2.7",
-        "tymon/jwt-auth": "^0.5.12"
+        "tymon/jwt-auth": "^0.5.12",
+        "usmanhalalit/laracsv": "1.*@dev"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
