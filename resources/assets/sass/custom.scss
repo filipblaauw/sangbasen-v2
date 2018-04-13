@@ -78,6 +78,18 @@ span.species-title {
   max-width: 300px;
 }
 
+.Password__badge--error {
+  background: #fb3a3a;
+}
+
+.Password__badge {
+  border-radius: 10px !important;
+  padding: 3px 6px !important;
+  width: 30px !important;
+  height: 20px !important;
+  text-align: center;
+}
+
 #fileselector {
     margin: 10px;
 }
