@@ -5,7 +5,7 @@
   'account_already_activated' => 'Kontoen din er allerede aktivert.',
   'account_approval' => 'Aktiver kontoverifisering',
   'account_banned' => 'Kontoen din er låst. Vennligst kontakt administrator',
-  'account_created' => 'Du ble registrert.',
+  'account_created' => 'Du ble registrert. Vennligst sjekk e-posten din.',
   'already_have_account?' => 'Har du allerede en konto?',
   'auth_required' => 'Du må logge inn for å se denne siden.',
   'authentication' => 'Autentisering',

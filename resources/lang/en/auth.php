@@ -5,7 +5,7 @@
   'account_already_activated' => 'Your account is already activated.',
   'account_approval' => 'Enable Account Approval',
   'account_banned' => 'Your account is banned. Please contact system administrator.',
-  'account_created' => 'You have registered successfully.',
+  'account_created' => 'You have registered successfully. Please check your email.',
   'already_have_account?' => 'Already have an account?',
   'auth_required' => 'Authentication required to perform this action.',
   'authentication' => 'Authentication',
