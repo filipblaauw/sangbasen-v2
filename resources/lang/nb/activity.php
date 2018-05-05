@@ -27,7 +27,7 @@
   'sent' => ':activity sendt',
   'system' => 'System',
   'todo' => 'Todo',
-  'fish' => 'Fangst',
+  'song' => 'Sang',
   'trashed' => ':activity slettet',
   'unlocked' => ':activity låst opp',
   'updated' => ':activity oppdatert',

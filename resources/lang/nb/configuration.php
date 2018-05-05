@@ -23,7 +23,7 @@
   'email_template' => 'Aktiver e-postmal',
   'error_display' => 'Vis feillogg',
   'fax' => 'Fax',
-  'fish' => 'Aktiver Fiskelogg',
+  'song' => 'Aktiver Sangbasen',
   'footer_credit' => 'Footertekst',
   'https' => 'Aktiver HTTPS',
   'ip_filter' => 'Aktiver IP-filter',
