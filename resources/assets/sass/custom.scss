@@ -1,51 +1,39 @@
+// Chord layout
+.chordsheet {
+  tr.empty-line {
+    height: 10px;
+  }
+  td.chord {
+    font-weight: 500;
+    font-size: .9rem;
+  }
+  td.section {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-top: 1rem;
+  }
+}
+.embedObject {
+  width: 100%;
+  height: 800px;
+  @media (max-width: 576px) {
+    font-size: .8em;
+    height: 500px
+  }
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .header-logo {
   width: 40px;
   margin-bottom: 3px;
 }
-.map {
-  height: 400px;
-}
-.vue-map-hidden {
-  display: block !important;
-
-  .btn {
-    position: absolute;
-    top: 40px;
-    right: 12px;
-  }
-}
-.mapcard {
-  height: 350px;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
-  .vue-map {
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
-  }
-}
-.download-image {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
 .show-dropdown-menu {
   display: block;
 }
-span.species-title {
-  border-bottom: 2px solid #7460ee;
-  &.released {
-    border-bottom-color: #55ce63;
-  }
-}
-.fish-image {
-	height: 200px;
-  background-size: cover;
-  background-position: center;
-  @media (max-width: 576px) {
-    height: 140px;
-  }
-}
-.fish-table-list {
+.table tr {
   cursor: pointer;
 }
 .box-shadow {
