@@ -20,14 +20,13 @@
                 <ul class="nav navbar-nav navbar-logo mr-auto">
                   <li class="nav-item">
                     <router-link class="nav-link" to="/">
-                      <img src="/images/fisk-hvit.svg" class="header-logo">
                       {{getConfig('company_name')}}
                     </router-link>
                   </li>
                 </ul>
                 <ul class="navbar-nav mr-0 my-lg-0">
-                    <li class="nav-item" v-tooltip.bottom="trans('fish.fish')" v-if="getConfig('fish') && hasPermission('access-fish')">
-                        <router-link class="nav-link" to="/fish"><i class="far fa-map"></i></router-link>
+                    <li class="nav-item" v-tooltip.bottom="trans('song.song')" v-if="getConfig('song') && hasPermission('access-song')">
+                        <router-link class="nav-link" to="/song"><i class="fas fa-music"></i></router-link>
                     </li>
                     <li class="nav-item" v-tooltip.bottom="trans('message.message')" v-if="getConfig('message') && hasPermission('access-message')">
                         <router-link class="nav-link" to="/message"><i class="fas fa-envelope"></i></router-link>
