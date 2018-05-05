@@ -5,9 +5,11 @@
  *  $data as array of .env key & value
  *  @return nothing
  */
+ use Illuminate\Support\Str;
 
 function envu($data = array())
 {
+  /*
     foreach ($data as $key => $value) {
         if (env($key) === $value) {
             unset($data[$key]);
@@ -35,6 +37,7 @@ function envu($data = array())
     $env = implode("\n", $env);
     file_put_contents(base_path() . '/.env', $env);
     return true;
+    */
 }
 
 //////////////////////////////////////////////////////////////////////// Date helper function starts
@@ -234,12 +237,18 @@ function checkUnicode($string)
 
 function createSlug($string)
 {
+    $slug = Str::slug($string);
+    //dd($slug);
+    /*
     if (checkUnicode($string)) {
         $slug = str_replace(' ', '-', $string);
     } else {
         $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', strtolower($string));
     }
-    return $slug;
+    */
+    $count = App\Song::whereRaw("slug RLIKE '^{$slug}(-[0-9]+)?$'")->count();
+
+    return $count ? "{$slug}-{$count}" : $slug;
 }
 
 /*
