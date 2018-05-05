@@ -36,6 +36,7 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::post('/upload','UploadController@upload');
     Route::post('/upload/extension','UploadController@getAllowedExtension');
     Route::post('/upload/image','UploadController@uploadImage');
+    Route::post('/upload/audio','UploadController@uploadAudio');
     Route::post('/upload/fetch','UploadController@fetch');
     Route::post('/upload/{id}','UploadController@destroy');
 
@@ -86,19 +87,18 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::get('/email-template/{category}/lists','EmailTemplateController@lists');
     Route::get('/email-template/{id}/content','EmailTemplateController@getContent');
 
-    Route::get('/todo','TodoController@index');
-    Route::get('/todo/{uuid}','TodoController@show');
-    Route::post('/todo','TodoController@store');
-    Route::patch('/todo/{uuid}','TodoController@update');
-    Route::delete('/todo/{uuid}','TodoController@destroy');
-    Route::post('/todo/{uuid}/status','TodoController@toggleStatus');
+    Route::get('/genre/all','GenreController@list');
+    Route::get('/genre','GenreController@index');
+    Route::get('/genre/{id}','GenreController@show');
+    Route::patch('/genre/{id}','GenreController@update');
+    Route::post('/genre','GenreController@store');
+    Route::delete('/genre/{id}','GenreController@destroy');
 
-    Route::get('/fish','FishController@index');
-    Route::get('/fish/{uuid}','FishController@show');
-    Route::post('/fish','FishController@store');
-    Route::patch('/fish/{uuid}','FishController@update');
-    Route::delete('/fish/{uuid}','FishController@destroy');
-    Route::post('/fish/{uuid}/status','FishController@toggleStatus');
+    Route::get('/song','SongController@index');
+    Route::get('/song/{slug}','SongController@show');
+    Route::post('/song','SongController@store');
+    Route::patch('/song/{slug}','SongController@update');
+    Route::delete('/song/{slug}','SongController@destroy');
 
     Route::get('/user/pre-requisite','UserController@preRequisite');
     Route::get('/user/detail','UserController@detail');
