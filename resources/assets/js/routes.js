@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router'
 import store from './store'
 
-let appName = 'Fiskelogg.no'
+let appName = 'Sangbasen'
 let routes = [
     {
         path: '/',                                       // all the routes which needs authentication + two factor authentication + lock screen
@@ -10,7 +10,7 @@ let routes = [
         children: [
             {
                 path: '/',
-                component: require('./views/fish/index'),
+                component: require('./views/song/index'),
                 meta: {title: appName + ' | ' + i18n.general.home}
             },
             {
@@ -67,6 +67,16 @@ let routes = [
                 path: '/configuration/role',
                 component: require('./views/configuration/role/index'),
                 meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.role.role}
+            },
+            {
+                path: '/configuration/genre',
+                component: require('./views/configuration/genre/index'),
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.genre.genre}
+            },
+            {
+                path: '/configuration/genre/:id/edit',
+                component: require('./views/configuration/genre/edit'),
+                meta: {title: appName + ' | ' + i18n.configuration.configuration + ' - ' + i18n.genre.edit_genre}
             },
             {
                 path: '/configuration/menu',
@@ -149,24 +159,29 @@ let routes = [
                 meta: {title: appName + ' | ' + i18n.activity.activity_log}
             },
             {
-                path: '/fish',
-                component: require('./views/fish/index'),
-                meta: {title: appName + ' | ' + i18n.fish.index}
+                path: '/song',
+                component: require('./views/song/index'),
+                meta: {title: appName + ' | ' + i18n.song.index}
             },
             {
-                path: '/fish/add',
-                component: require('./views/fish/add'),
-                meta: {title: appName + ' | ' + i18n.fish.add_new_fish}
+                path: '/song/add',
+                component: require('./views/song/add'),
+                meta: {title: appName + ' | ' + i18n.song.add_new_song}
             },
             {
-                path: '/fish/:uuid',
-                component: require('./views/fish/view'),
-                meta: {title: appName + ' | ' + i18n.fish.view_fish}
+                path: '/song/:slug',
+                component: require('./views/song/view'),
+                meta: {title: appName + ' | '}
             },
             {
-                path: '/fish/:uuid/edit',
-                component: require('./views/fish/edit'),
-                meta: {title: appName + ' | ' + i18n.fish.edit_fish}
+                path: '/song/:slug/edit',
+                component: require('./views/song/edit'),
+                meta: {title: appName + ' | ' + i18n.song.edit_song}
+            },
+            {
+                path: '/help',
+                component: require('./views/song/help'),
+                meta: {title: appName + ' | ' + i18n.song.help}
             },
             {
                 path: '/user',
@@ -420,7 +435,7 @@ router.beforeEach((to, from, next) => {
                 if (m.meta.validate.indexOf('guest') > -1){
                     if(helper.isAuth()){
                         toastr.error(i18n.auth.guest_required);
-                        return next({ path: '/fish' })
+                        return next({ path: '/song' })
                     }
                 }
             }

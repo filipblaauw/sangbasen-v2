@@ -11,7 +11,6 @@ import showTip from './components/show-tip'
 import paginationRecord from './components/pagination-record'
 import showError from './components/show-error'
 import moduleInfo from './components/module-info'
-import * as VueGoogleMaps from "vue2-google-maps"
 
 window._get = require('lodash/get');
 window._eachRight = require('lodash/eachRight');
@@ -36,12 +35,7 @@ Vue.prototype.$last = function (item, list) {
   return item == list[list.length - 1]
 };
 
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: "AIzaSyA0o_0_xldFVJxeGjjcwoHF4ZVSfoWdFIM",
-    libraries: "places" // necessary for places input
-  }
-});
+
 Vue.use(VTooltip);
 Vue.use(VueMask);
 Vue.use(VuejsDialog, {
@@ -55,19 +49,11 @@ Vue.component('show-tip',showTip);
 Vue.component('pagination-record',paginationRecord);
 Vue.component('show-error',showError);
 Vue.component('module-info',moduleInfo);
-Vue.component('google-cluster', VueGoogleMaps.Cluster);
 
 moment.locale('nb')
 
 // Global Vue filters
-Vue.filter('toKg', function (value) {
-  if (value < 1000) {
-    return value + ' g'
-  }
-  else {
-    return (value / 1000).toFixed(2).replace(".", ",") + ' kg'
-  }
-})
+
 Vue.filter('formatDate', function (value) {
   if (value) {
     return moment(value, 'YYYY-MM-DD').format('DD. MMMM YYYY')
@@ -81,6 +67,12 @@ Vue.filter('formatUnixDate', function (value) {
 Vue.filter('formatDateTime', function (value) {
   if (value) {
     return moment(value).fromNow()
+  }
+})
+Vue.filter('secondsToMinutes', function (value) {
+  if (value) {
+    var ms = value * 1000
+    return moment.utc(ms).format('mm:ss');
   }
 })
 

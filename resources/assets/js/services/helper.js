@@ -103,6 +103,10 @@ export default {
     isAuth(){
         return store.getters.getAuthStatus;
     },
+    // to get Auth Status
+    isAuthId(){
+        return store.getters.getAuthUser('id');
+    },
 
     // to get Auth user detail
     getAuthUser(name){
