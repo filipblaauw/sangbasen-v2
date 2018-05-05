@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 //use App\Repositories\TodoRepository;
-use App\Repositories\FishRepository;
+use App\Repositories\SongRepository;
 use App\Repositories\UserRepository;
 use App\Repositories\ActivityLogRepository;
 
@@ -14,19 +14,19 @@ class HomeController extends Controller
     protected $user;
     protected $activity;
     //protected $todo;
-    protected $fish;
+    protected $song;
 
     /**
      * Instantiate a new controller instance.
      *
      * @return void
      */
-    public function __construct(UserRepository $user, ActivityLogRepository $activity, FishRepository $fish)
+    public function __construct(UserRepository $user, ActivityLogRepository $activity, SongRepository $song)
     {
         $this->user = $user;
         $this->activity = $activity;
         //$this->todo = $todo;
-        $this->fish = $fish;
+        $this->song = $song;
     }
 
     /**
@@ -57,9 +57,8 @@ class HomeController extends Controller
         $activity_logs = $activity_logs->orderBy('created_at', 'desc')->take(10)->get();
 
         //$todos = $this->todo->getQuery()->filterByUserId(\Auth::user()->id)->orderBy('created_at', 'desc')->take(5)->get();
-        $fishs = $this->fish->getQuery()->filterByUserId(\Auth::user()->id)->orderBy('created_at', 'desc')->take(10)->get();
-        $mappedfishs = $this->fish->getQuery()->filterByUserId(\Auth::user()->id)->select('uuid', 'date', 'species', 'river', 'zone', 'lat', 'lng', 'photo')->get();
+        $songs = $this->song->getQuery()->filterByUserId(\Auth::user()->id)->orderBy('created_at', 'desc')->take(10)->get();
 
-        return $this->success(compact('users', 'today_registered_users', 'weekly_registered_users', 'monthly_registered_users', 'activity_logs', 'fishs', 'mappedfishs'));
+        return $this->success(compact('users', 'today_registered_users', 'weekly_registered_users', 'monthly_registered_users', 'activity_logs', 'songs'));
     }
 }

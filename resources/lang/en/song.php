@@ -85,5 +85,6 @@
   'waterlevel_sinking' => 'Sinking',
   'weight' => 'Weight',
   'weight_in_grams' => 'Weight in grams',
+  'your_latest' => 'Nylig lagt til av deg',
   'zone' => 'Zone/beat',
 );

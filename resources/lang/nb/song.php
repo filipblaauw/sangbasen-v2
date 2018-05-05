@@ -39,4 +39,5 @@
   'unknown' => 'Ukjent',
   'up' => 'Opp',
   'updated' => 'Sangen ble oppdatert',
+  'your_latest' => 'Nylig lagt til av deg',
 );
