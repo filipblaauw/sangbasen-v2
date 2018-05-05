@@ -253,7 +253,7 @@
         this.$router.push('/song/'+song.slug+'/edit');
       },
       viewSong(song){
-        this.$router.push('/song/'+song.slug+'');
+        this.$router.push('/song/'+song.slug);
       },
       confirmDelete(song){
           return dialog => this.deleteSong(song);
