@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use App\Todo;
-use App\Fish;
+use App\Song;
 use App\Policies\TodoPolicy;
-use App\Policies\FishPolicy;
+use App\Policies\SongPolicy;
 use App\User;
 use App\Policies\UserPolicy;
 use Illuminate\Support\Facades\Gate;
@@ -21,7 +21,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         'App\Model' => 'App\Policies\ModelPolicy',
         Todo::class => TodoPolicy::class,
-        Fish::class => FishPolicy::class,
+        Song::class => SongPolicy::class,
         User::class => UserPolicy::class,
     ];
 
