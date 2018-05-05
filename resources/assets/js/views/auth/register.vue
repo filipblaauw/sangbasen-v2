@@ -1,9 +1,6 @@
 <template>
     <section id="wrapper">
-        <div class="login-register" style="background-image:url(/images/salmon.jpg);">
-          <div class="login-box p-4 text-center">
-            <img src="/images/fisk-hvit.svg">
-          </div>
+        <div class="login-register" style="background-image:url(/images/background.jpg);">
             <div class="login-box card">
             <div class="card-body">
                 <form class="form-horizontal form-material" id="registerform" @submit.prevent="submit" @keydown="registerForm.errors.clear($event.target.name)">
@@ -69,7 +66,6 @@
             <guest-footer></guest-footer>
           </div>
         </div>
-        <intro></intro>
         <!-- Modal -->
         <termsAndConditions></termsAndConditions>
 
@@ -80,7 +76,6 @@
     import guestFooter from '../../layouts/guest-footer.vue'
     import password from 'vue-password-strength-meter'
     import termsAndConditions from '../pages/terms-and-conditions.vue'
-    import intro from '../../layouts/intro.vue'
 
     export default {
         data() {
@@ -98,8 +93,7 @@
         components: {
             guestFooter,
             password,
-            termsAndConditions,
-            intro
+            termsAndConditions
         },
         mounted(){
             if(!helper.featureAvailable('registration')){

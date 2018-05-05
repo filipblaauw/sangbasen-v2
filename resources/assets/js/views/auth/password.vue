@@ -1,9 +1,6 @@
 <template>
     <section id="wrapper">
-        <div class="login-register" style="background-image:url(/images/salmon.jpg);">
-          <div class="login-box p-4 text-center">
-            <img src="/images/fisk-hvit.svg">
-          </div>
+        <div class="login-register" style="background-image:url(/images/background.jpg);">
             <div class="login-box card">
             <div class="card-body">
                 <form class="form-horizontal form-material" id="passwordform" @submit.prevent="submit" @keydown="passwordForm.errors.clear($event.target.name)">
@@ -26,13 +23,11 @@
             <guest-footer></guest-footer>
           </div>
         </div>
-        <intro></intro>
     </section>
 </template>
 
 <script>
     import guestFooter from '../../layouts/guest-footer.vue'
-    import intro from '../../layouts/intro.vue'
 
     export default {
         data() {
@@ -43,8 +38,7 @@
             }
         },
         components: {
-            guestFooter,
-            intro
+            guestFooter
         },
         mounted(){
             if(!helper.featureAvailable('reset_password')){

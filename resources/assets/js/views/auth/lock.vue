@@ -1,9 +1,6 @@
 <template>
     <section id="wrapper">
-        <div class="login-register" style="background-image:url(/images/salmon.jpg);">
-          <div class="login-box p-4 text-center">
-            <img src="/images/fisk-hvit.svg">
-          </div>
+        <div class="login-register" style="background-image:url(/images/background.jpg);">
             <div class="login-box card">
             <div class="card-body">
                 <center class="m-t-30"> <img :src="getAuthUser('avatar')" class="img-circle" width="100" />
@@ -28,17 +25,14 @@
             <guest-footer></guest-footer>
           </div>
         </div>
-        <intro></intro>
     </section>
 </template>
 <script>
     import guestFooter from '../../layouts/guest-footer.vue'
-    import intro from '../../layouts/intro.vue'
 
     export default {
         components: {
-          guestFooter,
-          intro
+          guestFooter
         },
         data(){
             return {
