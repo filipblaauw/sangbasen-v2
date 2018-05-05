@@ -19,6 +19,9 @@
             <router-link to="/configuration/role" :class="[menu === 'role' ? 'active' : '', 'list-group-item']">
               <span class="hidden-sm-up"><i class="fas fa-users"></i></span> <span class="hidden-xs-down">{{trans('role.role')}}</span>
             </router-link>
+            <router-link to="/configuration/genre" :class="[menu === 'genre' ? 'active' : '', 'list-group-item']">
+              <span class="hidden-sm-up"><i class="fas fa-users"></i></span> <span class="hidden-xs-down">{{trans('genre.genre')}}</span>
+            </router-link>
             <router-link to="/configuration/permission" :class="[menu === 'permission' ? 'active' : '', 'list-group-item']">
               <span class="hidden-sm-up"><i class="fas fa-users"></i></span> <span class="hidden-xs-down">{{trans('permission.permission')}}</span>
             </router-link>

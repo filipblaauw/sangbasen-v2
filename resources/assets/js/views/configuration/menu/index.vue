@@ -42,9 +42,9 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{{trans('configuration.show_menu',{menu: trans('fish.fish')})}}</td>
+                                                    <td>{{trans('configuration.show_menu',{menu: trans('song.song')})}}</td>
                                                     <td>
-                                                        <switches v-model="configForm.show_fish_menu" theme="bootstrap" color="success"></switches>
+                                                        <switches v-model="configForm.show_song_menu" theme="bootstrap" color="success"></switches>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -109,7 +109,7 @@
                 configForm: new Form({
                     show_user_menu: 0,
                     show_todo_menu: 0,
-                    show_fish_menu: 0,
+                    show_song_menu: 0,
                     show_message_menu: 0,
                     show_configuration_menu: 0,
                     show_backup_menu: 0,
@@ -127,7 +127,7 @@
             }
             this.configForm.show_user_menu = helper.getConfig('show_user_menu');
             this.configForm.show_todo_menu = helper.getConfig('show_todo_menu');
-            this.configForm.show_fish_menu = helper.getConfig('show_fish_menu');
+            this.configForm.show_song_menu = helper.getConfig('show_song_menu');
             this.configForm.show_message_menu = helper.getConfig('show_message_menu');
             this.configForm.show_configuration_menu = helper.getConfig('show_configuration_menu');
             this.configForm.show_backup_menu = helper.getConfig('show_backup_menu');
@@ -140,7 +140,7 @@
                 this.configForm.config_type = 'menu';
                 this.configForm.show_user_menu = (this.configForm.show_user_menu) ? 1 : 0;
                 this.configForm.show_todo_menu = (this.configForm.show_todo_menu) ? 1 : 0;
-                this.configForm.show_fish_menu = (this.configForm.show_fish_menu) ? 1 : 0;
+                this.configForm.show_song_menu = (this.configForm.show_song_menu) ? 1 : 0;
                 this.configForm.show_message_menu = (this.configForm.show_message_menu) ? 1 : 0;
                 this.configForm.show_configuration_menu = (this.configForm.show_configuration_menu) ? 1 : 0;
                 this.configForm.show_backup_menu = (this.configForm.show_backup_menu) ? 1 : 0;

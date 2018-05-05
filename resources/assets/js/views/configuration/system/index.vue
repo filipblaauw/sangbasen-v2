@@ -194,9 +194,9 @@
                                                 </div>
                                                 <div class="col-12 col-md-6">
                                                     <div class="form-group">
-                                                        <label for="">{{trans('configuration.fish')}}</label>
+                                                        <label for="">{{trans('configuration.song')}}</label>
                                                         <div>
-                                                            <switches class="" v-model="configForm.fish" theme="bootstrap" color="success"></switches>
+                                                            <switches class="" v-model="configForm.song" theme="bootstrap" color="success"></switches>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -276,7 +276,7 @@
                     email_log: 0,
                     email_template: 0,
                     todo: 0,
-                    fish: 0,
+                    song: 0,
                     message: 0,
                     backup: 0,
                     maintenance_mode: 0,
@@ -336,7 +336,7 @@
                 this.configForm.email_log = (this.configForm.email_log) ? 1 : 0;
                 this.configForm.email_template = (this.configForm.email_template) ? 1 : 0;
                 this.configForm.todo = (this.configForm.todo) ? 1 : 0;
-                this.configForm.fish = (this.configForm.fish) ? 1 : 0;
+                this.configForm.song = (this.configForm.song) ? 1 : 0;
                 this.configForm.message = (this.configForm.message) ? 1 : 0;
                 this.configForm.backup = (this.configForm.backup) ? 1 : 0;
                 this.configForm.maintenance_mode = (this.configForm.maintenance_mode) ? 1 : 0;

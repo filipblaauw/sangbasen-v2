@@ -137,6 +137,7 @@
                     .then(response => {
                         this.locales = response.locales;
                         this.modules = response.modules;
+                        console.log(this.modules)
                     })
                     .catch(error => {
                         helper.showDataErrorMsg(error);
