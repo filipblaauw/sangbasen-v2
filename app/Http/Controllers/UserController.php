@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
 use App\Http\Requests\RegisterRequest;
@@ -360,6 +361,11 @@ class UserController extends Controller
             $constraint->aspectRatio();
         });
         $img->save($image_path.$filename.".".$extension);
+
+        // DETTE VIRKER::: 
+        $s3 = \Storage::disk('s3');
+        $filePath = '/support-tickets/' . $filename.".".$extension;
+        $s3->put($filePath, file_get_contents($file), 'public');
 
         $profile->avatar = $image_path.$filename.".".$extension;
         $profile->save();

@@ -38,7 +38,6 @@ class RoleController extends Controller
     public function index()
     {
         return $this->repo->paginate($this->request->all());
-        ;
     }
 
     /**
@@ -86,7 +85,6 @@ class RoleController extends Controller
     public function destroy($id)
     {
         $role = $this->repo->deletable($id);
-        
         $this->activity->record([
             'module' => $this->module,
             'module_id' => $role->id,

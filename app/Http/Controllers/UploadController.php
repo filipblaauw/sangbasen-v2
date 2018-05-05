@@ -143,6 +143,18 @@ class UploadController extends Controller
         return $this->success(compact('image_url'));
     }
 
+    public function uploadAudio()
+    {
+        $upload_path = 'uploads/audio';
+
+        $extension = request()->file('file')->getClientOriginalExtension();
+        $filename = uniqid();
+        $file = request()->file('file')->move($upload_path, $filename.".".$extension);
+        $file_url = '/'.$upload_path.'/'.$filename.'.'.$extension;
+
+        return $this->success(compact('file_url'));
+    }
+
     /**
      * Used to delete Upload File
      * @post ("/api/upload/{id}")
