@@ -1,0 +1,18 @@
+<?php return array (
+  'action' => 'Valg',
+  'add_new_genre' => 'Legg til sjanger',
+  'added' => 'Sjanger lagt til.',
+  'could_not_find' => 'Fant ikke valgt sjanger.',
+  'default_cannot_be_deleted' => 'Standard sjanger kan ikke slettes.',
+  'delete_genre' => 'Slett sjanger',
+  'deleted' => 'Sjanger slettet.',
+  'edit_genre' => 'Endre sjanger',
+  'genre' => 'Sjanger',
+  'genre_list' => 'Sjangre',
+  'module_info_description' => 'Manage who can do what. Add multiple genres, assign permission to these genres.',
+  'module_info_title' => 'Legg til sjangre',
+  'name' => 'Navn',
+  'select_genre' => 'Velg sjanger',
+  'songs_count' => 'Antall sanger',
+  'tip_genre' => '',
+);

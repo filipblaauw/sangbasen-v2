@@ -1,0 +1,18 @@
+<?php return array (
+  'action' => 'Valg',
+  'add_new_genre' => 'Add new genre',
+  'added' => 'Genre added.',
+  'could_not_find' => 'Could not find selected genre.',
+  'default_cannot_be_deleted' => 'Default genre cannot be deleted.',
+  'delete_genre' => 'Delete Genre',
+  'deleted' => 'Genre deleted.',
+  'edit_genre' => 'Endre sjanger',
+  'genre' => 'Genre',
+  'genre_list' => 'Genre List',
+  'module_info_description' => 'Manage who can do what. Add multiple genres, assign permission to these genres.',
+  'module_info_title' => 'Add some genre here!',
+  'name' => 'Name',
+  'select_genre' => 'Select Genre',
+  'songs_count' => 'Antall sanger',
+  'tip_genre' => 'By default system supports few genres which cannot be deleted. You can add as many genres you want. Read our documentation to know more about genres.',
+);
