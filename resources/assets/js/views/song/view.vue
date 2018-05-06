@@ -24,22 +24,22 @@
             </div>
             <div class="dropdown pull-right d-print-none">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Last ned
+                {{trans('song.download')}}
               </button>
               <div class="dropdown-menu dropdown-menu-right">
                 <a v-if="chords" class="dropdown-item" href="#" @click="downloadChords">ChordPro</a>
-                <a v-if="chords" class="dropdown-item" :href="'onsong://ImportData/'+song.title+'.chordpro?'+encoded">Åpne i Onsong</a>
-                <a v-if="song.playback" class="dropdown-item" :href="song.playback" download>Playback</a>
+                <a v-if="chords" class="dropdown-item" :href="'onsong://ImportData/'+song.title+'.chordpro?'+encoded">{{trans('song.open_onsong')}}</a>
+                <a v-if="song.playback" class="dropdown-item" :href="song.playback" download>{{trans('song.playback')}}</a>
                 <a v-if="song.image" class="dropdown-item" :href="song.image" download>PDF</a>
-                <a v-if="!song.image" class="dropdown-item" href="#" @click="generatePdf">Generer PDF</a>
-                <a v-if="chords" class="dropdown-item" href="#" @click="downloadLyrics">Sangtekst</a>
-                <a v-if="chords" class="dropdown-item" href="javascript:window.print();">Skriv ut</a>
+                <a v-if="!song.image" class="dropdown-item" href="#" @click="generatePdf">{{trans('song.generate_pdf')}}</a>
+                <a v-if="chords" class="dropdown-item" href="#" @click="downloadLyrics">{{trans('song.lyrics')}}</a>
+                <a v-if="chords" class="dropdown-item" href="javascript:window.print();">{{trans('song.print')}}</a>
               </div>
             </div>
             <h2>{{song.title}}</h2>
             <h5>{{song.artist}}</h5>
 
-            <div class="chordsheet mt-4" v-if="chords" v-html="chords" id="canvas"></div>
+            <div class="chordsheet mt-4" v-if="chords" v-html="chords" id="chords"></div>
 
             <div class="mt-4" v-if="song.image">
               <object :data="song.image" type="application/pdf" class="embedObject" internalinstanceid="5"></object>
@@ -71,14 +71,14 @@
               allowtransparency="true">
               </iframe>
             <div class="small text-muted mt-4 text-center" v-if="song.playback">
-              Playback:
+              {{trans('song.playback')}}:
               <audio controls style="width:100%;">
                 <source :src="song.playback">
               </audio>
             </div>
             <div class="small text-muted text-center mt-4">
-              Lagt til: {{song.created_at | formatDate }} av {{song.user.email}}<br>
-              Sist oppdatert: {{song.updated_at | formatDateTime }}
+              {{trans('song.created')}}: {{song.created_at | formatDate }} av {{song.user.email}}<br>
+              {{trans('song.edited')}}: {{song.updated_at | formatDateTime }}
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default {
       link.click();
     },
     generatePdf() {
-      var element = document.getElementById('canvas');
+      var element = document.getElementById('chords');
       html2pdf(element, {
         margin:       2,
         filename:     this.song.title + '.pdf',

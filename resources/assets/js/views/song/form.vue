@@ -44,7 +44,7 @@
               </div>
             </div>
             <div v-if="this.count > 1" class="small text-muted mt-2">
-              Taps: {{t_tap}} <span class="float-right">Gjennomsnitt: {{t_avg}} BPM</span>
+              Taps: {{t_tap}} <span class="float-right">{{trans('song.bpm_average')}} {{t_avg}} BPM</span>
             </div>
 
             <show-error :form-name="songForm" prop-name="tempo"></show-error>
@@ -97,14 +97,14 @@
           <div class="card text-center bg-light mb-1">
             <div class="card-body">
               <div v-if="!songForm.image" class="card-text">
-                Last opp PDF
+                {{trans('song.upload_pdf')}}
               </div>
               <div v-if="songForm.image" class="card-text">
-                PDF er lastet opp
+                {{trans('song.pdf_uploaded')}}
               </div>
               <label class="btn btn-primary">
-                <span v-if="!songForm.image">Velg fil</span>
-                <span v-else>Erstatt gjeldende fil</span>
+                <span v-if="!songForm.image">{{trans('general.choose_image')}}</span>
+                <span v-else>{{trans('song.replace_file')}}</span>
                 <input id="file-upload" type="file" @change="uploadImage" hidden>
               </label>
               <div v-if="isImageUploading" class="progress" style="height: 20px;">
@@ -121,18 +121,18 @@
           <div class="card text-center bg-light mt-2">
             <div class="card-body">
               <div v-if="!songForm.playback" class="card-text">
-                Last opp playback
-                <p class="small">waw/mp3 maks 100 mb</p>
+                {{trans('song.upload_playback')}}
+                <p class="small">{{trans('song.playback_maxsize')}}</p>
               </div>
               <div v-if="songForm.playback" class="card-text">
-                Playback er lastet opp
+                {{trans('song.playback_uploaded')}}
                   <audio controls style="width:100%;">
                     <source :src="songForm.playback">
                   </audio>
               </div>
               <label class="btn btn-primary">
-                <span v-if="!songForm.playback">Velg fil</span>
-                <span v-else>Erstatt gjeldende fil</span>
+                <span v-if="!songForm.playback">{{trans('general.choose_image')}}</span>
+                <span v-else>{{trans('song.replace_file')}}</span>
                 <input id="file-upload" type="file" @change="uploadAudio" hidden>
               </label>
               <pulse-loader :loading="isPlaybackUploading"></pulse-loader>
