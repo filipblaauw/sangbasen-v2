@@ -59,7 +59,7 @@
                     <select name="order" class="form-control" v-model="filterSongForm.sort_by">
                       <option value="title">{{trans('song.title')}}</option>
                       <option value="artist">{{trans('song.artist')}}</option>
-                      <option value="genre">{{trans('song.genre')}}</option>
+                      <option value="genre_id">{{trans('song.genre')}}</option>
                     </select>
                   </div>
                 </div>
@@ -91,10 +91,26 @@
           <div class="card-body">
             <table class="table table-hover">
               <thead>
-                <th>{{trans('song.title')}}</th>
-                <th>{{trans('song.artist')}}</th>
-                <th>{{trans('song.genre')}}</th>
-                <th class="text-center">{{trans('song.key')}}</th>
+                <th>
+                  <span class="clickable" @click="sortBy('title')">{{trans('song.title')}}</span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'title' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'title' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                </th>
+                <th>
+                  <span class="clickable" @click="sortBy('artist')">{{trans('song.artist')}}</span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'artist' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'artist' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                </th>
+                <th>
+                  <span class="clickable" @click="sortBy('genre_id')">{{trans('song.genre')}}</span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'genre_id' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'genre_id' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                </th>
+                <th class="text-center">
+                  <span class="clickable" @click="sortBy('key')">{{trans('song.key')}}</span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                </th>
                 <th></th>
               </thead>
               <tbody>
@@ -146,7 +162,8 @@
           page_length: helper.getConfig('page_length')
         },
         showFilterPanel: false,
-        showCreatePanel: true
+        showCreatePanel: true,
+        isOpen: false
       };
     },
     mounted(){
@@ -177,6 +194,13 @@
 
     },
     methods: {
+      sortBy(value) {
+        this.filterSongForm.sort_by = value
+      },
+      sortOrder(value) {
+        this.filterSongForm.order = this.filterSongForm.order
+        this.filterSongForm.order = value
+      },
       getQueryVariable(variable) {
         var query = window.location.search.substring(1);
         var vars = query.split("&");
