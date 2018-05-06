@@ -2,10 +2,6 @@
     <form @submit.prevent="proceed" @keydown="songForm.errors.clear($event.target.name)">
       <div class="row">
         <div class="col-12 col-md-4">
-          <div class="text-center" v-if="songForm.image">
-            <img :src="scaledImage(songForm.image)">
-          </div>
-          <input type="text" class="form-control" v-model="songForm.image" hidden>
 
           <div class="form-group">
             <label for="">{{trans('song.title')}}</label>
@@ -149,6 +145,13 @@
             <show-error :form-name="songForm" prop-name="chords"></show-error>
           </div>
         </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="">{{trans('song.author')}}</label>
+            <input type="text" class="form-control" v-model="songForm.author">
+            <show-error :form-name="songForm" prop-name="author"></show-error>
+          </div>
+        </div>
       </div>
 
       <button type="submit" class="btn btn-info waves-effect waves-light pull-right">
@@ -183,7 +186,7 @@
           time: '',
           tempo: '',
           duration: 0,
-          flow: '',
+          author: '',
           chords: ''
         }),
         count: 0,
@@ -200,6 +203,7 @@
       if(this.slug) {
         this.getSong();
       }
+      this.songForm.author = this.getAuthUser('full_name')
     },
     methods: {
       proceed(){
@@ -207,6 +211,9 @@
             this.updateSong();
         else
             this.storeSong();
+      },
+      getAuthUser(name){
+          return helper.getAuthUser(name);
       },
       tapTempo() {
         var timeSeconds = new Date;
@@ -270,7 +277,7 @@
             this.songForm.time = response.time;
             this.songForm.tempo = response.tempo;
             this.songForm.duration = response.duration;
-            this.songForm.flow = response.flow;
+            this.songForm.author = response.author;
             this.songForm.chords = response.chords;
           })
           .catch(error => {

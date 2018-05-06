@@ -34,7 +34,7 @@ class SongRequest extends FormRequest
         'time' => 'required',
         'tempo' => 'required|integer',
         'duration' => 'nullable|integer',
-        'flow' => 'nullable',
+        'author' => 'nullable',
         'chords' => 'nullable',
         'slug' => 'nullable'
       ];
@@ -58,7 +58,7 @@ class SongRequest extends FormRequest
         'time' => trans('song.time'),
         'tempo' => trans('song.tempo'),
         'duration' => trans('song.duration'),
-        'flow' => trans('song.flow'),
+        'author' => trans('song.author'),
         'chords' => trans('song.chords'),
         'slug' => trans('song.title')
       ];

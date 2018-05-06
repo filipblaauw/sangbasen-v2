@@ -29,7 +29,7 @@ class CreateSongsTable extends Migration
           $table->string('time')->nullable();
           $table->integer('tempo')->unsigned()->nullable();
           $table->integer('duration')->unsigned()->nullable();
-          $table->string('flow')->nullable();
+          $table->string('author')->nullable();
           $table->text('chords')->nullable();
           $table->timestamps();
       });

@@ -1,6 +1,7 @@
 <?php return array (
   'add_new_song' => 'Add new catch',
   'added' => 'Catch added',
+  'author' => 'Forfatter av akkordskjema',
   'bait' => 'Fly/bait',
   'bpm_average' => 'Gjennomsnitt',
   'could_not_find' => 'Could not find catch',

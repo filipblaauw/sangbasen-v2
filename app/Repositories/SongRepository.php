@@ -109,7 +109,7 @@ class SongRepository
           'time'      => isset($params['time']) ? $params['time'] : null,
           'tempo'     => isset($params['tempo']) ? $params['tempo'] : null,
           'duration'  => isset($params['duration']) ? $params['duration'] : null,
-          'flow'      => isset($params['flow']) ? $params['flow'] : null,
+          'author'      => isset($params['author']) ? $params['author'] : null,
           'chords'    => isset($params['chords']) ? $params['chords'] : null,
           //'slug'      => isset($params['title']) ? createSlug($params['title']) : null
 

@@ -2,6 +2,7 @@
   'add_new_song' => 'Legg til sang',
   'added' => 'Sangen ble lagt til',
   'artist' => 'Artist',
+  'author' => 'Forfatter av akkordskjema',
   'bpm_average' => 'Gjennomsnitt',
   'chords' => 'Akkordskjema',
   'could_not_find' => 'Fant ikke valgt sang',
