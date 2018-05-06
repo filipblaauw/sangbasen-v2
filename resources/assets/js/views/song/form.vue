@@ -40,9 +40,13 @@
             <div class="input-group">
               <input class="form-control" type="number" min="0" v-model="songForm.tempo" name="tempo" :placeholder="trans('song.tempo')">
               <div class="input-group-append">
-                <div class="input-group-text">BPM</div>
+                <div class="input-group-text" @click="tapTempo" style="cursor: pointer;">TAP</div>
               </div>
             </div>
+            <div v-if="this.count > 1" class="small text-muted mt-2">
+              Taps: {{t_tap}} <span class="float-right">Gjennomsnitt: {{t_avg}} BPM</span>
+            </div>
+
             <show-error :form-name="songForm" prop-name="tempo"></show-error>
           </div>
 
@@ -181,7 +185,13 @@
           duration: 0,
           flow: '',
           chords: ''
-        })
+        }),
+        count: 0,
+        msecsFirst: 0,
+        msecsPrevious: 0,
+        t_tap: 0,
+        t_whole: 0,
+        t_avg: 0
       };
     },
     props: ['slug'],
@@ -197,6 +207,29 @@
             this.updateSong();
         else
             this.storeSong();
+      },
+      tapTempo() {
+        var timeSeconds = new Date;
+        var msecs = timeSeconds.getTime();
+
+        if ((msecs - this.msecsPrevious) > 1000 * 2) {
+          this.count = 0
+        }
+        if (this.count == 0) {
+          this.t_avg = "First Beat"
+          this.t_tap = "First Beat"
+          this.msecsFirst = msecs
+          this.count = 1
+        } else {
+          var bpmAvg = 60000 * this.count / (msecs - this.msecsFirst)
+          this.t_avg = Math.round(bpmAvg * 100) / 100;
+          this.t_whole = Math.round(bpmAvg)
+          this.songForm.tempo = Math.round(bpmAvg)
+          this.count++
+          this.t_tap = this.count
+        }
+        this.msecsPrevious = msecs
+        return true;
       },
       getGenres(){
         axios.get('/api/genre/all')
