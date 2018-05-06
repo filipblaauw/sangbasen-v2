@@ -17,14 +17,14 @@
           <div class="card-body">
             <h2>Skrive sanger i .chordpro format</h2>
             <p>
-              Sangbasen bruker .chordpro formatet for å generere flotte akkordskjemaer.
+              Sangbasen bruker <a href="https://www.chordpro.org/chordpro/index.html" target="_blank">.chordpro</a> formatet for å generere flotte akkordskjemaer.
               Fordelene med dette formatet er at sangen kan transponeres med korrekte
-              intervaller, og at filen kan lastes ned og åpnes i programmer som Onsong.
+              intervaller, og at filen kan lastes ned og åpnes i programmer som <a href="https://onsongapp.com" target="_blank">OnSong</a>.
               Du kan også forhåndsvise hvordan sangen din ser ut på <a href="http://onlinesong.herokuapp.com/" target="_blank">denne siden</a>.
             </p>
             <h4 class="mt-4">Akkorder</h4>
             <p>
-              Akkordene skrives i braketter, som dette:
+              Akkordene skrives i braketter på samme linje som teksten, som dette:
             </p>
             <p>
               <samp>[Db]Når regnet sler imot deg</samp>
@@ -76,7 +76,7 @@
             <h4 class="mt-4">Sangdeler (intro, vers, refreng, etc)</h4>
             <p>
               For å ha en god struktur i akkordskjemaet, begynn hver sangdel med <samp>Intro, Vers, Refreng</samp> etc, etterfølgt av kolon på en egen linje før teksten.
-              Ved å følge denne strukturen vil akkordskjemaet bli kompatibelt med Onsong og EasyWorship.
+              Ved å følge denne strukturen vil akkordskjemaet bli kompatibelt med <a href="https://onsongapp.com" target="_blank">OnSong</a> og <a href="https://easyworship.com" target="_blank">EasyWorship</a>.
             </p>
             <p>
               <samp>
@@ -96,21 +96,15 @@
             <h4 class="mt-4">Finne Spotify-URI</h4>
             <p>
               Vil du ha en Spotify-spiller som spiller sangen sammen med notene, kan du kopiere inn Spotify-URI. Den finner du ved å høyreklikke på
-              sangen i Spotify, og velge "Copy Spotify URI" og lim inn koden i skjemaet.
+              sangen i Spotify, gå til "Share" og velge "Copy Spotify URI". Lim deretter inn koden i skjemaet når du legger til sangen.
             </p>
             <p>
-              <img src="https://qph.ec.quoracdn.net/main-qimg-1dda7fa4478a6d61145f24eaef9404f4?convert_to_webp=true" alt="">
-            </p>
-
-
-            <h4 class="mt-4">Finne tempoet til sangen</h4>
-            <p>
-              Det finnes mange apper som lar deg tappe tempoet mens du hører på sangen. En av dem <a href="https://www.all8.com/tools/bpm.htm" target="_blank">finnes her</a>.
+              <img src="/images/spotify-uri.jpg" alt="">
             </p>
 
             <h4 class="mt-4">Sette varighet</h4>
             <p>
-              Ved å sette varighet (i minutter og sekunder) vil Onsong kunne scrolle automatisk.
+              Ved å sette varighet (i minutter og sekunder) vil <a href="https://onsongapp.com" target="_blank">OnSong</a> kunne scrolle automatisk.
             </p>
           </div>
         </div>
