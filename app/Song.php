@@ -27,7 +27,6 @@ class Song extends Model
 
         return $q ->where('artist', 'like', '%'.$keyword.'%')
                   ->orWhere('title', 'like', '%'.$keyword.'%')
-                  //->orWhere('genre->name', 'like', '%'.$keyword.'%')
                   ->orWhere('chords', 'like', '%'.$keyword.'%');
     }
 
