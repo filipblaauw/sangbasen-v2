@@ -1,8 +1,6 @@
 // Chord layout
 .chordsheet {
-  tr.empty-line {
-    height: 10px;
-  }
+
   td.chord {
     font-weight: 500;
     font-size: .9rem;
@@ -10,7 +8,12 @@
   td.section {
     font-size: 1rem;
     font-weight: 500;
-    padding-top: 1rem;
+  }
+}
+.empty-line {
+  height: 1.5rem;
+  &:first-of-type {
+    height: 0;
   }
 }
 .clickable {

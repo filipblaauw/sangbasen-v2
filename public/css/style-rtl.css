@@ -22848,10 +22848,6 @@ File: scss
   }
 }
 
-.chordsheet tr.empty-line {
-  height: 10px;
-}
-
 .chordsheet td.chord {
   font-weight: 500;
   font-size: .9rem;
@@ -22860,7 +22856,14 @@ File: scss
 .chordsheet td.section {
   font-size: 1rem;
   font-weight: 500;
-  padding-top: 1rem;
+}
+
+.empty-line {
+  height: 1.5rem;
+}
+
+.empty-line:first-of-type {
+  height: 0;
 }
 
 .clickable {
