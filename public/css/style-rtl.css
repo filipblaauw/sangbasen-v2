@@ -22863,6 +22863,10 @@ File: scss
   padding-top: 1rem;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .embedObject {
   width: 100%;
   height: 800px;
@@ -22929,6 +22933,10 @@ File: scss
 .intro-image {
   width: 100%;
   max-width: 300px;
+}
+
+samp {
+  font-size: .9em;
 }
 
 .Password__badge--error {
