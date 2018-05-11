@@ -43,6 +43,8 @@
   'pdf_uploaded' => 'PDF er lastet opp',
   'playback_maxsize' => 'waw/mp3 maks 100 mb',
   'playback_uploaded' => 'Playback er lastet opp',
+  'preview' => 'Forhåndsvis',
+  'preview_song' => 'Forhåndsvisning',
   'print' => 'Skriv ut',
   'released' => 'Released',
   'replace_file' => 'Erstatt gjeldende fil',

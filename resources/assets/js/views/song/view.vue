@@ -22,7 +22,7 @@
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isFlat, 'btn-outline-secondary': !isFlat }" @click="flatKey()">&#9837;</button>
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isSharp, 'btn-outline-secondary': !isSharp }" @click="sharpKey()">&#9839;</button>
             </div>
-            <div class="dropdown pull-right d-print-none">
+            <div class="dropdown pull-right d-print-none" v-if="chords || song.playback || song.image">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{trans('song.download')}}
               </button>
@@ -31,7 +31,7 @@
                 <a v-if="chords" class="dropdown-item" :href="'onsong://ImportData/'+song.title+'.chordpro?'+encoded">{{trans('song.open_onsong')}}</a>
                 <a v-if="song.playback" class="dropdown-item" :href="song.playback" download>{{trans('song.playback')}}</a>
                 <a v-if="song.image" class="dropdown-item" :href="song.image" download>PDF</a>
-                <a v-if="!song.image" class="dropdown-item" href="#" @click="generatePdf">{{trans('song.generate_pdf')}}</a>
+                <a v-if="chords" class="dropdown-item" href="#" @click="generatePdf">{{trans('song.generate_pdf')}}</a>
                 <a v-if="chords" class="dropdown-item" href="#" @click="downloadLyrics">{{trans('song.lyrics')}}</a>
                 <a v-if="chords" class="dropdown-item" href="javascript:window.print();">{{trans('song.print')}}</a>
               </div>
@@ -57,7 +57,7 @@
               <li class="list-group-item">{{trans('song.genre')}}: <span class="float-right"><a :href="'/song/?genre='+song.genre.id">{{song.genre.name}}</a></span></li>
               <li class="list-group-item">{{trans('song.key')}}: <span class="float-right">{{song.key}}</span></li>
               <li class="list-group-item">{{trans('song.time')}}: <span class="float-right">{{song.time}}</span></li>
-              <li class="list-group-item">{{trans('song.tempo')}}: <span class="float-right">{{song.tempo}} BPM</span></li>
+              <li class="list-group-item" v-if="song.tempo">{{trans('song.tempo')}}: <span class="float-right">{{song.tempo}} BPM</span></li>
               <li class="list-group-item" v-if="song.duration">{{trans('song.duration')}}: <span class="float-right">{{song.duration | secondsToMinutes }}</span></li>
             </ul>
             <iframe

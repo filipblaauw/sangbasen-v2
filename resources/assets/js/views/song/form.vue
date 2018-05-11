@@ -140,8 +140,11 @@
 
         <div class="col-12 col-md-8">
           <div class="form-group">
+            <button v-if="chords" type="button" class="btn btn-sm btn-secondary float-right" data-toggle="modal" data-target="#exampleModal">
+              {{trans('song.preview')}}
+            </button>
             <label for="">{{trans('song.chords')}}</label>
-            <textarea class="form-control" v-model="songForm.chords" rows="40" name="chords" :placeholder="this.placeholder" style="resize: vertical;"></textarea>
+            <textarea class="form-control" v-model="songForm.chords" rows="40" name="chords" :placeholder="this.placeholder" style="resize: vertical;" @input="updateChords"></textarea>
             <show-error :form-name="songForm" prop-name="chords"></show-error>
           </div>
         </div>
@@ -159,12 +162,33 @@
         <span v-else>{{trans('general.save')}}</span>
       </button>
       <router-link to="/song" class="btn btn-danger waves-effect waves-light pull-right m-r-10" v-show="slug">{{trans('general.cancel')}}</router-link>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{trans('song.preview_song')}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="chordsheet mt-4" v-if="chords" v-html="chords" id="chords"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('general.close')}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
 </template>
 
 
 <script>
   import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+  import ChordSheetJS from 'chordsheetjs'
+  import Chord from 'chordjs'
   export default {
     components: {
       PulseLoader
@@ -189,6 +213,7 @@
           author: '',
           chords: ''
         }),
+        chords: '',
         count: 0,
         msecsFirst: 0,
         msecsPrevious: 0,
@@ -211,6 +236,16 @@
             this.updateSong();
         else
             this.storeSong();
+      },
+      updateChords(value) {
+        this.chords = this.songForm.chords
+        const chordSheet = this.chords
+        const parser = new ChordSheetJS.ChordProParser()
+        const song = parser.parse(chordSheet)
+        const akkorder = song.lines
+        const formatter = new ChordSheetJS.HtmlTableFormatter()
+        const disp = formatter.format(song)
+        this.chords = disp
       },
       getAuthUser(name){
           return helper.getAuthUser(name);
