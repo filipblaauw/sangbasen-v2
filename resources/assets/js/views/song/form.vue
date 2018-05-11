@@ -314,6 +314,14 @@
             this.songForm.duration = response.duration;
             this.songForm.author = response.author;
             this.songForm.chords = response.chords;
+            this.chords = this.songForm.chords
+            const chordSheet = this.chords
+            const parser = new ChordSheetJS.ChordProParser()
+            const song = parser.parse(chordSheet)
+            const akkorder = song.lines
+            const formatter = new ChordSheetJS.HtmlTableFormatter()
+            const disp = formatter.format(song)
+            this.chords = disp
           })
           .catch(error => {
             helper.showDataErrorMsg(error);
