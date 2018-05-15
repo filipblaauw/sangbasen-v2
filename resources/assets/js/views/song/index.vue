@@ -120,10 +120,10 @@
                   <td>{{song.genre.name}}</td>
                   <td class="text-center">{{song.key}}</td>
                   <td class="text-right">
-                    <i v-if="song.spotify" class="fab fa-spotify text-success"></i>
-                    <i v-if="song.playback" class="fas fa-music"></i>
-                    <i v-if="song.chords" class="far fa-file-alt"></i>
-                    <i v-if="song.image" class="far fa-file-pdf"></i>
+                    <i v-if="song.spotify" class="fab fa-spotify text-success pl-1"></i>
+                    <i v-if="song.playback" class="fas fa-music pl-1"></i>
+                    <i v-if="song.chords" class="far fa-file-alt pl-1"></i>
+                    <i v-if="song.image" class="far fa-file-pdf pl-1"></i>
                   </td>
                 </tr>
               </tbody>
