@@ -77,7 +77,7 @@
               </audio>
             </div>
             <div class="small text-muted text-center mt-4">
-              {{trans('song.created')}}: {{song.created_at | formatDate }} av {{song.user.email}}<br>
+              {{trans('song.created')}}: {{song.created_at | formatDate }} av <a :href="'mailto:'+song.user.email">{{song.author}}</a><br>
               {{trans('song.edited')}}: {{song.updated_at | formatDateTime }}
             </div>
           </div>
