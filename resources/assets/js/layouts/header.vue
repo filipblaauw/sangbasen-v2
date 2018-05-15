@@ -25,6 +25,9 @@
                   </li>
                 </ul>
                 <ul class="navbar-nav mr-0 my-lg-0">
+                    <li class="nav-item" v-tooltip.bottom="trans('song.add_new_song')" v-if="getConfig('song') && hasPermission('access-song')">
+                        <router-link class="nav-link" to="/song/add"><i class="fas fa-pencil-alt"></i></router-link>
+                    </li>
                     <li class="nav-item" v-tooltip.bottom="trans('song.song')" v-if="getConfig('song') && hasPermission('access-song')">
                         <router-link class="nav-link" to="/song"><i class="fas fa-music"></i></router-link>
                     </li>
