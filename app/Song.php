@@ -54,6 +54,6 @@ class Song extends Model
             return $q;
         }
 
-        return $q->where('date', '>=', getStartOfDate($dates['start_date']))->where('date', '<=', getEndOfDate($dates['end_date']));
+        return $q->where('updated_at', '>=', getStartOfDate($dates['start_date']))->where('updated_at', '<=', getEndOfDate($dates['end_date']));
     }
 }
