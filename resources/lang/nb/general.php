@@ -12,7 +12,7 @@
   'choose_image' => 'Velg fil',
   'close' => 'Lukk',
   'command_completed' => 'Kommando utført.',
-  'date_between' => 'Dato mellom',
+  'date_between' => 'Lagt til mellom',
   'date_range' => 'Tidsperiode',
   'delete' => 'Slett',
   'delete_upload' => 'Slett opplastet fil',
