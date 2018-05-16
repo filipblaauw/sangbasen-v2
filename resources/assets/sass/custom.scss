@@ -16,6 +16,12 @@
     height: 0;
   }
 }
+#results td a {
+  color: $bodytext;
+  &:hover {
+    color: $light-text;
+  }
+}
 .clickable {
   cursor: pointer;
 }

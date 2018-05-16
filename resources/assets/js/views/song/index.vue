@@ -96,7 +96,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <table class="table">
+            <table class="table" id="results">
               <thead>
                 <th>
                   <span class="clickable" @click="sortBy('title')">{{trans('song.title')}}</span>

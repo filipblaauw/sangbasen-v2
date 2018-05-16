@@ -21767,6 +21767,14 @@ File: scss
   height: 0;
 }
 
+#results td a {
+  color: #54667a;
+}
+
+#results td a:hover {
+  color: #a6b7bf;
+}
+
 .clickable {
   cursor: pointer;
 }
