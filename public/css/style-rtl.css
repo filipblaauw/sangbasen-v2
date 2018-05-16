@@ -22874,6 +22874,10 @@ File: scss
   color: #a6b7bf;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .clickable {
   cursor: pointer;
 }

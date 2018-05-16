@@ -22,6 +22,9 @@
     color: $light-text;
   }
 }
+.nowrap {
+  white-space:nowrap;
+}
 .clickable {
   cursor: pointer;
 }

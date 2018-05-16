@@ -96,56 +96,58 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <table class="table" id="results">
-              <thead>
-                <th>
-                  <span class="clickable" @click="sortBy('title')">{{trans('song.title')}}</span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'title' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'title' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
-                </th>
-                <th>
-                  <span class="clickable" @click="sortBy('artist')">{{trans('song.artist')}}</span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'artist' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'artist' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
-                </th>
-                <th>
-                  <span class="clickable" @click="sortBy('genre_id')">{{trans('song.genre')}}</span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'genre_id' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'genre_id' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
-                </th>
-                <th class="text-center">
-                  <span class="clickable" @click="sortBy('key')">{{trans('song.key')}}</span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
-                  <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
-                </th>
-                <th></th>
-              </thead>
-              <tbody>
-                <tr v-for="song in songs.data">
-                  <td>
-                    <strong>
-                      <a :href="'/song/'+song.slug">{{song.title}}</a>
-                    </strong>
-                  </td>
-                  <td>
-                    <a href="#" @click="selectedArtist(song.artist)">{{song.artist}}</a>
-                  </td>
-                  <td>
-                    <a href="#" @click="selectedGenre(song.genre)">{{song.genre.name}}</a>
-                  </td>
-                  <td class="text-center">{{song.key}}</td>
-                  <td class="text-right">
-                    <i v-if="song.spotify" class="fab fa-spotify text-success pl-1"></i>
-                    <i v-if="song.playback" class="fas fa-music pl-1"></i>
-                    <i v-if="song.chords" class="far fa-file-alt pl-1"></i>
-                    <i v-if="song.image" class="far fa-file-pdf pl-1"></i>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table" id="results">
+                <thead>
+                  <th>
+                    <span class="clickable" @click="sortBy('title')">{{trans('song.title')}}</span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'title' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'title' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                  </th>
+                  <th>
+                    <span class="clickable" @click="sortBy('artist')">{{trans('song.artist')}}</span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'artist' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'artist' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                  </th>
+                  <th class="d-none d-sm-table-cell">
+                    <span class="clickable" @click="sortBy('genre_id')">{{trans('song.genre')}}</span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'genre_id' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'genre_id' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                  </th>
+                  <th class="text-center d-none d-sm-table-cell">
+                    <span class="clickable" @click="sortBy('key')">{{trans('song.key')}}</span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                  </th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  <tr v-for="song in songs.data">
+                    <td>
+                      <strong>
+                        <a :href="'/song/'+song.slug">{{song.title}}</a>
+                      </strong>
+                    </td>
+                    <td>
+                      <a href="#" @click="selectedArtist(song.artist)">{{song.artist}}</a>
+                    </td>
+                    <td class="d-none d-sm-table-cell">
+                      <a href="#" @click="selectedGenre(song.genre)">{{song.genre.name}}</a>
+                    </td>
+                    <td class="text-center d-none d-sm-table-cell">{{song.key}}</td>
+                    <td class="text-right nowrap">
+                      <i v-if="song.spotify" class="fab fa-spotify text-success pl-1"></i>
+                      <i v-if="song.playback" class="fas fa-music pl-1"></i>
+                      <i v-if="song.chords" class="far fa-file-alt pl-1"></i>
+                      <i v-if="song.image" class="far fa-file-pdf pl-1"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-        <div class="text-center small text-muted">
+        <div class="text-center small text-muted pb-4">
           <i class="fab fa-spotify text-success pl-1"></i> Spotify
           <i class="fas fa-music pl-1"></i> Playback
           <i class="far fa-file-alt pl-1"></i> Chordpro
