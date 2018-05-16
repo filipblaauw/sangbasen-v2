@@ -26,15 +26,20 @@
 
               <div class="col-12">
                 <div class="input-group mb-2">
-                  <input type="text" class="form-control" name="keyword" v-model="filterSongForm.keyword" :placeholder="trans('song.keyword')">
-                  <div class="input-group-append">
-
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{this.currentGenre}}</button>
-                    <div class="dropdown-menu dropdown-menu-right">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{this.currentGenre}}</button>
+                    <div class="dropdown-menu">
                       <a class="dropdown-item" href="#" @click="resetGenre">Alle</a>
                       <a class="dropdown-item" href="#" v-for="genre in genres" @click="selectedGenre(genre)">{{genre.name}}</a>
                     </div>
                   </div>
+                  <input type="text" class="form-control" name="keyword" v-model="filterSongForm.keyword" :placeholder="trans('song.keyword')">
+
+                  <span class="input-group-append" v-if="this.filterSongForm.keyword || this.currentGenre != 'Alle'">
+                    <div class="input-group-text bg-transparent clickable" @click="reset">
+                      <i class="fas fa-times"></i>
+                    </div>
+                  </span>
                 </div>
                 <!--<div class="form-group">
                   <input class="form-control" name="keyword" v-model="filterSongForm.keyword" :placeholder="trans('song.keyword')">
@@ -60,6 +65,8 @@
                       <option value="title">{{trans('song.title')}}</option>
                       <option value="artist">{{trans('song.artist')}}</option>
                       <option value="genre_id">{{trans('song.genre')}}</option>
+                      <option value="updated_at">{{trans('song.created')}}</option>
+                      <option value="updated_at">{{trans('song.updated_at')}}</option>
                     </select>
                   </div>
                 </div>
@@ -89,7 +96,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <table class="table table-hover">
+            <table class="table">
               <thead>
                 <th>
                   <span class="clickable" @click="sortBy('title')">{{trans('song.title')}}</span>
@@ -114,10 +121,18 @@
                 <th></th>
               </thead>
               <tbody>
-                <tr v-for="song in songs.data" @click="viewSong(song)">
-                  <td><strong>{{song.title}}</strong></td>
-                  <td>{{song.artist}}</td>
-                  <td>{{song.genre.name}}</td>
+                <tr v-for="song in songs.data">
+                  <td>
+                    <strong>
+                      <a :href="'/song/'+song.slug">{{song.title}}</a>
+                    </strong>
+                  </td>
+                  <td>
+                    <a href="#" @click="selectedArtist(song.artist)">{{song.artist}}</a>
+                  </td>
+                  <td>
+                    <a href="#" @click="selectedGenre(song.genre)">{{song.genre.name}}</a>
+                  </td>
                   <td class="text-center">{{song.key}}</td>
                   <td class="text-right">
                     <i v-if="song.spotify" class="fab fa-spotify text-success pl-1"></i>
@@ -129,6 +144,12 @@
               </tbody>
             </table>
           </div>
+        </div>
+        <div class="text-center small text-muted">
+          <i class="fab fa-spotify text-success pl-1"></i> Spotify
+          <i class="fas fa-music pl-1"></i> Playback
+          <i class="far fa-file-alt pl-1"></i> Chordpro
+          <i class="far fa-file-pdf pl-1"></i> PDF
         </div>
       </div>
     </div>
@@ -265,9 +286,17 @@
               helper.showDataErrorMsg(error);
           });
       },500),
+      reset() {
+        this.filterSongForm.keyword = null
+        this.currentGenre = 'Alle'
+      },
       selectedGenre(genre) {
+        this.filterSongForm.keyword = null
         this.filterSongForm.genre = genre.id
         this.currentGenre = genre.name
+      },
+      selectedArtist(artist) {
+        this.filterSongForm.keyword = artist
       },
       resetGenre() {
         this.filterSongForm.genre = null
