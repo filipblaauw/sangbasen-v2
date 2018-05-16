@@ -283,9 +283,14 @@
       },
       scaledImage(value) {
 				var img = value
-				var img = img.replace('/upload/', '/upload/t_media_lib_thumb/')
-        var img = img.replace('.pdf', '.jpg')
-				return img
+        if (img.indexOf('amazonaws') !== -1) {
+          return 'https://i.pinimg.com/originals/20/59/4e/20594ec17be5f2b66bbda9f3d2087da9.png'
+        } else {
+          var img = img.replace('/upload/', '/upload/t_media_lib_thumb/')
+          var img = img.replace('.pdf', '.jpg')
+  				return img
+        }
+
 			},
       storeSong(){
         this.songForm.post('/api/song')
