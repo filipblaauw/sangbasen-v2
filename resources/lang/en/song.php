@@ -88,6 +88,7 @@
   'unknown' => 'Unknown',
   'up' => 'Opp',
   'updated' => 'Catch updated',
+  'updated_at' => 'Sist oppdatert',
   'upload_pdf' => 'Last opp PDF',
   'upload_playback' => 'Last opp playback',
   'view_song' => 'View catch',

@@ -52,6 +52,7 @@
   'unknown' => 'Ukjent',
   'up' => 'Opp',
   'updated' => 'Sangen ble oppdatert',
+  'updated_at' => 'Sist oppdatert',
   'upload_pdf' => 'Last opp PDF',
   'upload_playback' => 'Last opp playback',
   'your_latest' => 'Nylig lagt til av deg',
