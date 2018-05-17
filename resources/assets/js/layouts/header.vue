@@ -25,14 +25,20 @@
                   </li>
                 </ul>
                 <ul class="navbar-nav mr-0 my-lg-0">
-                    <li class="nav-item" v-tooltip.bottom="trans('song.add_new_song')" v-if="getConfig('song') && hasPermission('access-song')">
-                        <router-link class="nav-link" to="/song/add"><i class="fas fa-pencil-alt"></i></router-link>
-                    </li>
                     <li class="nav-item" v-tooltip.bottom="trans('song.song')" v-if="getConfig('song') && hasPermission('access-song')">
                         <router-link class="nav-link" to="/song"><i class="fas fa-music"></i></router-link>
                     </li>
+                    <li class="nav-item" v-tooltip.bottom="trans('song.add_new_song')" v-if="getConfig('song') && hasPermission('access-song')">
+                        <router-link class="nav-link" to="/song/add"><i class="fas fa-pencil-alt"></i></router-link>
+                    </li>
                     <li class="nav-item" v-tooltip.bottom="trans('message.message')" v-if="getConfig('message') && hasPermission('access-message')">
                         <router-link class="nav-link" to="/message"><i class="fas fa-envelope"></i></router-link>
+                    </li>
+                    <li class="nav-item" v-tooltip.bottom="trans('song.nightmode_off')" v-if="getConfig('song') && hasPermission('access-song')">
+                        <a class="nav-link clickable" @click="setDayMode"><i class="fas fa-sun"></i></a>
+                    </li>
+                    <li class="nav-item" v-tooltip.bottom="trans('song.nightmode')" v-if="getConfig('song') && hasPermission('access-song')">
+                        <a class="nav-link clickable" @click="setNightMode"><i class="fas fa-moon"></i></a>
                     </li>
                     <li class="nav-item" v-tooltip.bottom="trans('configuration.configuration')" v-if="hasPermission('access-configuration')">
                         <router-link class="nav-link" to="/configuration"><i class="fas fa-cogs"></i></router-link>
@@ -64,7 +70,17 @@
 
 <script>
     export default {
+        data () {
+          return {
+            nightmode: false
+          }
+        },
         mounted() {
+          this.nightmode = helper.isNightmode()
+          if (this.nightmode === true) {
+            $("body").addClass("nightmode");
+            console.log('auto added night')
+          }
         },
         methods : {
             logout(){
@@ -72,6 +88,12 @@
                     this.$store.dispatch('resetAuthUserDetail');
                     this.$router.push('/login')
                 })
+            },
+            setNightMode() {
+              this.$store.dispatch('setNightMode');
+            },
+            setDayMode() {
+              this.$store.dispatch('setDayMode');
             },
             getAuthUser(name){
                 return helper.getAuthUser(name);

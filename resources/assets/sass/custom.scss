@@ -1,3 +1,27 @@
+// nightmode
+body.nightmode {
+  color: #fff !important;
+
+  .page-wrapper, .footer {
+    background: #222;
+  }
+  .card, .list-group-item, .left-sidebar {
+    background-color: #2f2f2f;
+  }
+  .sidebar-nav > ul > li > a {
+    border: 0;
+  }
+  #results td a {
+    color: #fff;
+    &:hover {
+      color: #ccc;
+    }
+  }
+  h1,h2,h3,h4,h5,p {
+    color: white;
+  }
+}
+
 // Chord layout
 .chordsheet {
 

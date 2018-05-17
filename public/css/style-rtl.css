@@ -22848,6 +22848,42 @@ File: scss
   }
 }
 
+body.nightmode {
+  color: #fff !important;
+}
+
+body.nightmode .page-wrapper,
+body.nightmode .footer {
+  background: #222;
+}
+
+body.nightmode .card,
+body.nightmode .list-group-item,
+body.nightmode .left-sidebar {
+  background-color: #2f2f2f;
+}
+
+body.nightmode .sidebar-nav > ul > li > a {
+  border: 0;
+}
+
+body.nightmode #results td a {
+  color: #fff;
+}
+
+body.nightmode #results td a:hover {
+  color: #ccc;
+}
+
+body.nightmode h1,
+body.nightmode h2,
+body.nightmode h3,
+body.nightmode h4,
+body.nightmode h5,
+body.nightmode p {
+  color: white;
+}
+
 .chordsheet td.chord {
   font-weight: 500;
   font-size: .9rem;

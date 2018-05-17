@@ -37,6 +37,8 @@
   'lyrics' => 'Sangtekst',
   'module_info_description' => 'Remember your catches. Upload pictures and keep track of all the details about your catch.',
   'module_info_title' => 'Add catches to your songlog',
+  'nightmode' => 'Nattmodus på/av',
+  'nightmode_off' => 'Nattmodus av',
   'notreleased' => 'Not released',
   'open_onsong' => 'Åpne i OnSong',
   'original' => 'Original',

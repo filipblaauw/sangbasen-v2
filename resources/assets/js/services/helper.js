@@ -98,7 +98,10 @@ export default {
     getLastActivity(){
         return store.getters.getLastActivity;
     },
-
+    // to get nightmode status
+    isNightmode(){
+        return store.getters.getNightmode;
+    },
     // to get Auth Status
     isAuth(){
         return store.getters.getAuthStatus;

@@ -31,6 +31,8 @@
   'lyrics' => 'Sangtekst',
   'module_info_description' => 'Lag transponerbare akkordskjemaer, last opp PDF og backingtracks',
   'module_info_title' => 'Legg til en sang i sangbasen',
+  'nightmode' => 'Nattmodus på',
+  'nightmode_off' => 'Nattmodus av',
   'open_onsong' => 'Åpne i OnSong',
   'original' => 'Original',
   'pdf_uploaded' => 'PDF er lastet opp',

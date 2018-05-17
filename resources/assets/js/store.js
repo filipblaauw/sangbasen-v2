@@ -22,9 +22,18 @@ const store = new Vuex.Store({
         default_role: {
             admin: '',
             user: ''
-        }
+        },
+        nightmode: false
     },
     mutations: {
+        setDayMode (state) {
+          state.nightmode = false
+          $("body").removeClass("nightmode");
+        },
+        setNightMode (state) {
+          state.nightmode = true
+          $("body").addClass("nightmode");
+        },
         setAuthStatus (state) {
             state.is_auth = true;
         },
@@ -75,6 +84,12 @@ const store = new Vuex.Store({
         }
     },
     actions: {
+        setDayMode ({ commit }) {
+            commit('setDayMode');
+        },
+        setNightMode ({ commit }) {
+            commit('setNightMode');
+        },
         setAuthStatus ({ commit }) {
             commit('setAuthStatus');
         },
@@ -133,6 +148,9 @@ const store = new Vuex.Store({
         },
         getDefaultRole: (state) => (name) => {
             return state.default_role[name];
+        },
+        getNightmode: (state) => {
+            return state.nightmode;
         }
     },
     plugins: [
