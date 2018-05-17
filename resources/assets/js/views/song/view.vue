@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-12 col-lg-8">
         <div class="card">
-          <div class="card-body" id="song">
+          <div class="card-body">
             <div class="btn-group mb-4 d-print-none" v-show="chords">
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isOriginal, 'btn-outline-secondary': !isOriginal }" @click="resetChords">{{trans('song.original')}}</button>
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isTransposedDown, 'btn-outline-secondary': !isTransposedDown }" @click="transposeDown()">{{trans('song.down')}}</button>
@@ -36,10 +36,15 @@
                 <a v-if="chords" class="dropdown-item" href="javascript:window.print();">{{trans('song.print')}}</a>
               </div>
             </div>
-            <h2>{{song.title}}</h2>
-            <h5>{{song.artist}}</h5>
+            <div id="song">
+              <h2>{{song.title}}</h2>
+              <h5>{{song.artist}}</h5>
+              <span v-if="song.time" class="badge badge-secondary pl-2 pr-2">{{song.time}}</span>
+              <span v-if="song.tempo" class="badge badge-secondary pl-2 pr-2">{{song.tempo}} BPM</span>
+              <span v-if="song.duration" class="badge badge-secondary pl-2 pr-2">{{song.duration | secondsToMinutes }}</span>
+              <div class="chordsheet mt-4" v-if="chords" v-html="chords"></div>
+            </div>
 
-            <div class="chordsheet mt-4" v-if="chords" v-html="chords" id="chords"></div>
 
             <div class="mt-4" v-if="song.image">
               <object :data="song.image" type="application/pdf" class="embedObject" internalinstanceid="5"></object>
@@ -154,7 +159,7 @@ export default {
       link.click();
     },
     generatePdf() {
-      var element = document.getElementById('chords');
+      var element = document.getElementById('song');
       html2pdf(element, {
         margin:       2,
         filename:     this.song.title + '.pdf',
