@@ -2,14 +2,18 @@
 body.nightmode {
   color: #fff !important;
 
-  .page-wrapper, .footer {
+  .page-wrapper, .footer, .sidebar-footer {
     background: #222;
   }
-  .card, .list-group-item, .left-sidebar {
+  .card, .list-group-item, .left-sidebar, .sidebar-nav {
     background-color: #2f2f2f;
   }
   .sidebar-nav > ul > li > a {
     border: 0;
+    color: white;
+    &:hover {
+      color: #01c0c8;
+    }
   }
   #results td a {
     color: #fff;
@@ -19,6 +23,9 @@ body.nightmode {
   }
   h1,h2,h3,h4,h5,p {
     color: white;
+  }
+  .table td, .table th {
+    border-color: #3e3e3e;
   }
 }
 
@@ -39,6 +46,11 @@ body.nightmode {
   &:first-of-type {
     height: 0;
   }
+}
+#endOfChords {
+  position: absolute;
+  bottom: 0;
+  height: 100vh;
 }
 #results td a {
   color: $bodytext;

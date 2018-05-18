@@ -21754,18 +21754,25 @@ body.nightmode {
 }
 
 body.nightmode .page-wrapper,
-body.nightmode .footer {
+body.nightmode .footer,
+body.nightmode .sidebar-footer {
   background: #222;
 }
 
 body.nightmode .card,
 body.nightmode .list-group-item,
-body.nightmode .left-sidebar {
+body.nightmode .left-sidebar,
+body.nightmode .sidebar-nav {
   background-color: #2f2f2f;
 }
 
 body.nightmode .sidebar-nav > ul > li > a {
   border: 0;
+  color: white;
+}
+
+body.nightmode .sidebar-nav > ul > li > a:hover {
+  color: #01c0c8;
 }
 
 body.nightmode #results td a {
@@ -21785,6 +21792,11 @@ body.nightmode p {
   color: white;
 }
 
+body.nightmode .table td,
+body.nightmode .table th {
+  border-color: #3e3e3e;
+}
+
 .chordsheet td.chord {
   font-weight: 500;
   font-size: .9rem;
@@ -21801,6 +21813,12 @@ body.nightmode p {
 
 .empty-line:first-of-type {
   height: 0;
+}
+
+#endOfChords {
+  position: absolute;
+  bottom: 0;
+  height: 100vh;
 }
 
 #results td a {

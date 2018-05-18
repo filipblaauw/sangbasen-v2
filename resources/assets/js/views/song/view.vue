@@ -42,7 +42,16 @@
               <span v-if="song.time" class="badge badge-secondary pl-2 pr-2">{{song.time}}</span>
               <span v-if="song.tempo" class="badge badge-secondary pl-2 pr-2">{{song.tempo}} BPM</span>
               <span v-if="song.duration" class="badge badge-secondary pl-2 pr-2">{{song.duration | secondsToMinutes }}</span>
+              <a v-if="song.duration && chords" href="#" class="badge badge-secondary pl-2 pr-2 pull-right" v-scroll-to="{
+                el: '#endOfChords',
+                duration: this.scrollDuration,
+                offset: -300,
+                easing: 'linear'
+               }">
+                Autoscroll
+              </a>
               <div class="chordsheet mt-4" v-if="chords" v-html="chords"></div>
+              <div id="endOfChords"></div>
             </div>
 
 
@@ -129,7 +138,8 @@ export default {
       isFlat: false,
       isSharp: false,
       isOriginal: true,
-      currentUser: ''
+      currentUser: '',
+      scrollDuration: 0
     }
   },
 
@@ -182,6 +192,9 @@ export default {
           this.song = res.data
           if (res.data.spotify) {
             this.song.spotify = 'https://open.spotify.com/embed?uri='+res.data.spotify
+          }
+          if (res.data.duration) {
+            this.scrollDuration = res.data.duration * 1000
           }
           if (res.data.chords) {
             this.encoded = Base64.encode('{title: '+this.song.title + '}\n' + '{artist: '+this.song.artist + '}\n' + '{key: '+this.song.key + '}\n' + '{tempo: '+this.song.tempo + '}\n' + '{duration: '+this.song.duration + '}\n' + '{time: '+this.song.time + '}\n\n' + this.song.chords )

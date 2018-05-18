@@ -11,6 +11,7 @@ import showTip from './components/show-tip'
 import paginationRecord from './components/pagination-record'
 import showError from './components/show-error'
 import moduleInfo from './components/module-info'
+const VueScrollTo = require('vue-scrollto')
 
 window._get = require('lodash/get');
 window._eachRight = require('lodash/eachRight');
@@ -36,6 +37,7 @@ Vue.prototype.$last = function (item, list) {
 };
 
 
+Vue.use(VueScrollTo)
 Vue.use(VTooltip);
 Vue.use(VueMask);
 Vue.use(VuejsDialog, {
