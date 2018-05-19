@@ -28,7 +28,7 @@ class GenreController extends Controller
         $this->repo = $repo;
         $this->activity = $activity;
 
-        $this->middleware('permission:access-configuration');
+        $this->middleware('feature.available:song');
     }
 
     /**
@@ -92,7 +92,7 @@ class GenreController extends Controller
      */
      public function update(GenreRequest $request, $id)
      {
-      
+
          $genre = $this->repo->findOrFail($id);
 
          $genre = $this->repo->update($genre, $this->request->all());
