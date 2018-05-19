@@ -115,9 +115,9 @@
                     <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'genre_id' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
                   </th>
                   <th class="text-center d-none d-sm-table-cell">
-                    <span class="clickable" @click="sortBy('key')">{{trans('song.key')}}</span>
-                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
-                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'key' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
+                    <span class="clickable" @click="sortBy('updated_at')">{{trans('song.updated_at')}}</span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'updated_at' && this.filterSongForm.order === 'desc'" @click="sortOrder('asc')"><i class="fas fa-caret-down"></i></span>
+                    <span class="clickable pull-right" v-if="this.filterSongForm.sort_by === 'updated_at' && this.filterSongForm.order === 'asc'" @click="sortOrder('desc')"><i class="fas fa-caret-up"></i></span>
                   </th>
                   <th></th>
                 </thead>
@@ -134,7 +134,7 @@
                     <td class="d-none d-sm-table-cell">
                       <a href="#" @click="selectedGenre(song.genre)">{{song.genre.name}}</a>
                     </td>
-                    <td class="text-center d-none d-sm-table-cell">{{song.key}}</td>
+                    <td class="text-center d-none d-sm-table-cell">{{song.updated_at | formatShortDateTime }}</td>
                     <td class="text-right nowrap">
                       <i v-if="song.spotify" class="fab fa-spotify text-success pl-1"></i>
                       <i v-if="song.playback" class="fas fa-music pl-1"></i>
@@ -180,8 +180,8 @@
         filterSongForm: {
           keyword: '',
           genre: null,
-          sort_by : 'title',
-          order: 'asc',
+          sort_by : 'updated_at',
+          order: 'desc',
           page_length: helper.getConfig('page_length')
         },
         showFilterPanel: false,

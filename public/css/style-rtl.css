@@ -22914,6 +22914,10 @@ body.nightmode .table th {
   height: 0;
 }
 
+#song {
+  position: relative;
+}
+
 #endOfChords {
   position: absolute;
   bottom: 0;

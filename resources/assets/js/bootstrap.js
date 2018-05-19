@@ -61,6 +61,11 @@ Vue.filter('formatDate', function (value) {
     return moment(value, 'YYYY-MM-DD').format('DD. MMMM YYYY')
   }
 })
+Vue.filter('formatShortDateTime', function (value) {
+  if (value) {
+    return moment(value, 'YYYY-MM-DD HH:mm:ss').format('DD. MMM YYYY')
+  }
+})
 Vue.filter('formatUnixDate', function (value) {
   if (value) {
     return moment(value, 'X').format('DD. MMMM YYYY')
