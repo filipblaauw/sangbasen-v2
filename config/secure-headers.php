@@ -50,7 +50,7 @@ return [
      * Available Value: '1', '0', '1; mode=block'
      */
 
-    'x-xss-protection' => '1; mode=block',
+    //'x-xss-protection' => '1; mode=block;',
 
     /*
      * Referrer-Policy
