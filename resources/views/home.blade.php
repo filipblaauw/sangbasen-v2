@@ -9,7 +9,13 @@
         <meta name="author" content="Fiskelogg.no">
         <title>{{ config('app.name') }}</title>
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <link rel="shortcut icon" href="/images/favicon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <link rel="manifest" href="/images/site.webmanifest">
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
         @if(config('config.direction') == 'rtl')
             <link href="{{ mix('/css/style-rtl.css') }}" id="direction" rel="stylesheet">
         @else
