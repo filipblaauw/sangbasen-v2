@@ -158,7 +158,7 @@ export default {
   },
   methods: {
     prepareChordpro(fileName, mimeType) {
-      var elHtml = '{title: '+this.song.title + '}\n' + '{artist: '+this.song.artist + '}\n' + '{key: '+this.song.key + '}\n' + '{tempo: '+this.song.tempo + '}\n' + '{duration: '+this.song.duration + '}\n' + '{time: '+this.song.time + '}\n\n' + this.song.chords;
+      var elHtml = '{title: '+this.song.title + '}\n' + '{artist: '+this.song.artist + '}\n' + '{key: '+this.song.key + '}\n' + '{tempo: '+this.song.tempo + '}\n' + '{duration: '+this.song.duration + '}\n' + '{time: '+this.song.time + '}\n' + '{comments: '+this.song.comments + '}\n\n' + this.song.chords;
       var link = document.createElement('a');
       mimeType = mimeType || 'text/plain';
 
@@ -204,7 +204,7 @@ export default {
             this.scrollDuration = res.data.duration * 700
           }
           if (res.data.chords) {
-            this.encoded = Base64.encode('{title: '+this.song.title + '}\n' + '{artist: '+this.song.artist + '}\n' + '{key: '+this.song.key + '}\n' + '{tempo: '+this.song.tempo + '}\n' + '{duration: '+this.song.duration + '}\n' + '{time: '+this.song.time + '}\n\n' + this.song.chords )
+            this.encoded = Base64.encode('{title: '+this.song.title + '}\n' + '{artist: '+this.song.artist + '}\n' + '{key: '+this.song.key + '}\n' + '{tempo: '+this.song.tempo + '}\n' + '{duration: '+this.song.duration + '}\n' + '{time: '+this.song.time + '}\n' + '{comments: '+this.song.comments + '}\n\n' + this.song.chords )
             this.chordData = res.data.chords
             const chordSheet = res.data.chords
             const parser = new ChordSheetJS.ChordProParser()
