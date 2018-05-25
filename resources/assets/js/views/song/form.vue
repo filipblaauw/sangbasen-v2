@@ -154,8 +154,8 @@
             <show-error :form-name="songForm" prop-name="chords"></show-error>
           </div>
           <div class="form-group">
-            <label for="">{{trans('song.com')}}</label>
-            <textarea class="form-control" v-model="songForm.comments" rows="5" name="comments" :placeholder="trans('song.com_placeholder')" style="resize: vertical;"></textarea>
+            <label for="">{{trans('song.comm')}}</label>
+            <textarea class="form-control" v-model="songForm.comments" rows="5" name="comments" :placeholder="trans('song.comm_placeholder')" style="resize: vertical;"></textarea>
             <show-error :form-name="songForm" prop-name="comments"></show-error>
           </div>
         </div>
