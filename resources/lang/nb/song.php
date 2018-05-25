@@ -5,8 +5,6 @@
   'author' => 'Forfatter av akkordskjema',
   'bpm_average' => 'Gjennomsnitt',
   'chords' => 'Akkordskjema',
-  'comments' => 'Kommentarer',
-  'comments_placeholder' => 'Hvordan sangen spilles, andre notater. Vil følge med i OnSong-formatet.',
   'could_not_find' => 'Fant ikke valgt sang',
   'created' => 'Lagt til',
   'date' => 'Dato',
