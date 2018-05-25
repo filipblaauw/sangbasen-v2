@@ -4,6 +4,8 @@
   'author' => 'Forfatter av akkordskjema',
   'bait' => 'Fly/bait',
   'bpm_average' => 'Gjennomsnitt',
+  'comments' => 'Kommentarer',
+  'comments_placeholder' => 'Hvordan sangen spilles, andre notater. Vil følge med i OnSong-formatet.',
   'could_not_find' => 'Could not find catch',
   'created' => 'Created',
   'date' => 'Date',
