@@ -50,6 +50,13 @@
                }">
                 Autoscroll
               </a>
+
+              <div v-if="song.comments" class="card bg-light mt-3 mb-0 small">
+                <div class="card-body p-2">
+                  <p class="card-text text-primary">{{song.comments}}</p>
+                </div>
+              </div>
+
               <div class="chordsheet mt-4" v-if="chords" v-html="chords"></div>
               <div id="endOfChords"></div>
             </div>

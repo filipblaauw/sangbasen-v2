@@ -36,6 +36,7 @@ class SongRequest extends FormRequest
         'duration' => 'nullable|integer',
         'author' => 'nullable',
         'chords' => 'nullable',
+        'comments' => 'nullable',
         'slug' => 'nullable'
       ];
     }
@@ -60,6 +61,7 @@ class SongRequest extends FormRequest
         'duration' => trans('song.duration'),
         'author' => trans('song.author'),
         'chords' => trans('song.chords'),
+        'comments' => trans('song.comments'),
         'slug' => trans('song.title')
       ];
     }

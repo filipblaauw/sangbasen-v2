@@ -90,6 +90,12 @@
 						<show-error :form-name="songForm" prop-name="key"></show-error>
 					</div>
 
+          <div class="form-group">
+            <label for="">{{trans('song.author')}}</label>
+            <input type="text" class="form-control" v-model="songForm.author">
+            <show-error :form-name="songForm" prop-name="author"></show-error>
+          </div>
+
           <div class="card text-center bg-light mb-1">
             <div class="card-body">
               <div v-if="!songForm.image" class="card-text">
@@ -147,14 +153,13 @@
             <textarea class="form-control" v-model="songForm.chords" rows="40" name="chords" :placeholder="this.placeholder" style="resize: vertical;" @input="updateChords"></textarea>
             <show-error :form-name="songForm" prop-name="chords"></show-error>
           </div>
-        </div>
-        <div class="col-12">
           <div class="form-group">
-            <label for="">{{trans('song.author')}}</label>
-            <input type="text" class="form-control" v-model="songForm.author">
-            <show-error :form-name="songForm" prop-name="author"></show-error>
+            <label for="">{{trans('song.comments')}}</label>
+            <textarea class="form-control" v-model="songForm.comments" rows="5" name="comments" :placeholder="trans('song.comments_placeholder')" style="resize: vertical;"></textarea>
+            <show-error :form-name="songForm" prop-name="comments"></show-error>
           </div>
         </div>
+
       </div>
 
       <button type="submit" class="btn btn-info waves-effect waves-light pull-right">
@@ -211,7 +216,8 @@
           tempo: '',
           duration: 0,
           author: '',
-          chords: ''
+          chords: '',
+          comments: '',
         }),
         chords: '',
         count: 0,
@@ -307,18 +313,19 @@
         axios.get('/api/song/'+this.slug)
           .then(response => response.data)
           .then(response => {
-            this.songForm.title = response.title;
-            this.songForm.artist = response.artist;
-            this.songForm.spotify = response.spotify;
-            this.songForm.genre_id = response.genre_id;
-            this.songForm.playback = response.playback;
-            this.songForm.image = response.image;
-            this.songForm.key = response.key;
-            this.songForm.time = response.time;
-            this.songForm.tempo = response.tempo;
-            this.songForm.duration = response.duration;
-            this.songForm.author = response.author;
-            this.songForm.chords = response.chords;
+            this.songForm.title = response.title
+            this.songForm.artist = response.artist
+            this.songForm.spotify = response.spotify
+            this.songForm.genre_id = response.genre_id
+            this.songForm.playback = response.playback
+            this.songForm.image = response.image
+            this.songForm.key = response.key
+            this.songForm.time = response.time
+            this.songForm.tempo = response.tempo
+            this.songForm.duration = response.duration
+            this.songForm.author = response.author
+            this.songForm.chords = response.chords
+            this.songForm.comments = response.comments
             this.chords = this.songForm.chords
             const chordSheet = this.chords
             const parser = new ChordSheetJS.ChordProParser()

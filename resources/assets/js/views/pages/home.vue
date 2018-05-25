@@ -58,7 +58,7 @@
             <h4 class="card-title">{{trans('song.your_latest')}}</h4>
             <h6 class="card-subtitle" v-if="!songs.length">{{trans('general.no_result_found')}}</h6>
             <div class="table-responsive" v-if="songs.length">
-              <table class="table table-hover">
+              <table class="table" id="results">
                 <thead>
                   <tr>
                     <th>{{trans('song.title')}}</th>
@@ -66,9 +66,9 @@
                   </tr>
                 </thead>
                   <tbody>
-                    <tr v-for="song in songs" @click="viewSong(song)">
-                      <td v-text="song.title"></td>
-                      <td v-text="song.artist"></td>
+                    <tr v-for="song in songs">
+                      <td><a :href="'/song/'+song.slug">{{song.title}}</a></td>
+                      <td><a :href="'/song/?search='+song.artist">{{song.artist}}</a></td>
                     </tr>
                   </tbody>
               </table>

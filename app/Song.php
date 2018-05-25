@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Song extends Model
 {
-    protected $fillable = ['artist', 'title', 'genre_id', 'spotify', 'playback', 'image', 'key', 'time', 'tempo', 'duration', 'author', 'chords', 'slug'];
+    protected $fillable = ['artist', 'title', 'genre_id', 'spotify', 'playback', 'image', 'key', 'time', 'tempo', 'duration', 'author', 'chords', 'comments', 'slug'];
     protected $primaryKey = 'id';
     protected $table = 'songs';
 
