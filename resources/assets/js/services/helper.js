@@ -110,6 +110,10 @@ export default {
     isAuthId(){
         return store.getters.getAuthUser('id');
     },
+    isIOS() {
+      var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      return iOS;
+    },
 
     // to get Auth user detail
     getAuthUser(name){

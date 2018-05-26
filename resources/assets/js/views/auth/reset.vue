@@ -7,7 +7,7 @@
                 <div v-if="!showMessage">
                     <form class="form-horizontal form-material" id="resetform" @submit.prevent="submit" @keydown="resetForm.errors.clear($event.target.name)">
                         <div class="form-group ">
-                            <input type="text" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="resetForm.email">
+                            <input type="email" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="resetForm.email" autocapitalize="none">
                             <show-error :form-name="resetForm" prop-name="email"></show-error>
                         </div>
                         <div class="form-group">

@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="form-group ">
-                        <input type="text" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="registerForm.email">
+                        <input type="email" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="registerForm.email" autocapitalize="none">
                         <show-error :form-name="registerForm" prop-name="email"></show-error>
                     </div>
                     <div class="row">

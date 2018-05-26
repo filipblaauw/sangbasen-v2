@@ -6,7 +6,7 @@
                     <form class="form-horizontal form-material" id="loginform" @submit.prevent="submit" @keydown="loginForm.errors.clear($event.target.name)">
                         <h3 class="box-title m-b-20">{{trans('auth.login')}}</h3>
                         <div class="form-group ">
-                            <input type="text" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="loginForm.email">
+                            <input type="email" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="loginForm.email" autocapitalize="none">
                             <show-error :form-name="loginForm" prop-name="email"></show-error>
                         </div>
                         <div class="form-group">

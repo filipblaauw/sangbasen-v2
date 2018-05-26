@@ -6,7 +6,7 @@
                 <form class="form-horizontal form-material" id="passwordform" @submit.prevent="submit" @keydown="passwordForm.errors.clear($event.target.name)">
                     <h3 class="box-title m-b-20">{{trans('passwords.reset_password')}}</h3>
                     <div class="form-group ">
-                        <input type="text" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="passwordForm.email">
+                        <input type="email" name="email" class="form-control" :placeholder="trans('auth.email')" v-model="passwordForm.email" autocapitalize="none">
                         <show-error :form-name="passwordForm" prop-name="email"></show-error>
                     </div>
                     <div class="g-recaptcha" v-if="getConfig('recaptcha') && getConfig('reset_password_recaptcha')" :data-sitekey="getConfig('recaptcha_key')"></div>

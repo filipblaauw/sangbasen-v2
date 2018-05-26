@@ -28,7 +28,7 @@
               </button>
               <div class="dropdown-menu dropdown-menu-right">
                 <a v-if="chords" class="dropdown-item" href="#" @click="downloadChords">ChordPro</a>
-                <a v-if="chords" class="dropdown-item" :href="'onsong://ImportData/'+song.title+'.chordpro?'+encoded">{{trans('song.open_onsong')}}</a>
+                <a v-if="chords && iOS" class="dropdown-item" :href="'onsong://ImportData/'+song.title+'.chordpro?'+encoded">{{trans('song.open_onsong')}}</a>
                 <a v-if="song.playback" class="dropdown-item" :href="song.playback" download>{{trans('song.playback')}}</a>
                 <a v-if="song.image" class="dropdown-item" :href="song.image" download>PDF</a>
                 <a v-if="chords" class="dropdown-item" href="#" @click="generatePdf">{{trans('song.generate_pdf')}}</a>
@@ -146,7 +146,8 @@ export default {
       isSharp: false,
       isOriginal: true,
       currentUser: '',
-      scrollDuration: 0
+      scrollDuration: 0,
+      iOS: false
     }
   },
 
@@ -155,6 +156,7 @@ export default {
   },
   mounted() {
     this.currentUser = helper.isAuthId()
+    this.iOS = helper.isIOS()
   },
   methods: {
     prepareChordpro(fileName, mimeType) {
@@ -230,6 +232,7 @@ export default {
           document.title = 'Sangbasen | ' + this.song.title
         })
         .catch(error => {
+          console.log(error)
           helper.showDataErrorMsg(error);
           this.$router.push('/song');
         });
