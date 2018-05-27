@@ -5,7 +5,9 @@
         <h3 class="text-themecolor m-b-0 m-t-0">{{trans('song.song')}}</h3>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><router-link to="/home">{{trans('general.home')}}</router-link></li>
-          <li class="breadcrumb-item active">{{trans('song.song')}}</li>
+          <li class="breadcrumb-item" :class="{ active: !filterSongForm.keyword }"><router-link to="/song">{{trans('song.song')}}</router-link></li>
+          <li v-if="filterSongForm.keyword" class ="breadcrumb-item active">{{filterSongForm.keyword}}</li>
+          <li v-if="currentGenre" class ="breadcrumb-item active">{{currentGenre}}</li>
         </ol>
       </div>
       <div class="col-6 text-right align-self-center">

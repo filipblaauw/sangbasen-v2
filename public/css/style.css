@@ -21544,12 +21544,12 @@ File: scss
  ============================================================== */
 
 @media (max-width: 767px) {
-  .homeMap {
-    height: 400px;
+  .breadcrumb-item {
+    font-size: 12px;
   }
 
-  .intro-image {
-    max-width: 150px;
+  .page-titles .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    font-size: 12px;
   }
 
   /*Header*/
@@ -21822,6 +21822,7 @@ body.nightmode .table th {
 
 #song {
   position: relative;
+  overflow: scroll;
 }
 
 #endOfChords {

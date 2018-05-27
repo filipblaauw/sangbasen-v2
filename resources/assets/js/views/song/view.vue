@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="row page-titles d-print-none">
-      <div class="col-md-6 col-12 align-self-center">
+      <div class="col-12 align-self-center">
         <h3 class="text-themecolor m-b-0 m-t-0">{{trans('song.view_song')}}</h3>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><router-link to="/home">{{trans('general.home')}}</router-link></li>
           <li class="breadcrumb-item"><router-link to="/song">{{trans('song.song')}}</router-link></li>
-          <li class="breadcrumb-item active">{{trans('song.view_song')}}</li>
+          <li class="breadcrumb-item"><a :href="'/song/?search='+song.artist">{{song.artist}}</a></li>
+          <li class="breadcrumb-item active">{{song.title}}</li>
         </ol>
       </div>
     </div>
@@ -48,7 +49,7 @@
                 offset: 50,
                 easing: 'linear'
                }">
-                Autoscroll
+               <i class="fas fa-caret-down"></i> Autoscroll
               </a>
 
               <div v-if="song.comments" class="card bg-light mt-3 mb-0 small">
