@@ -22896,6 +22896,11 @@ body.nightmode .table th {
   border-color: #3e3e3e;
 }
 
+.chordsheet td.lyrics {
+  padding: 0;
+  white-space: pre;
+}
+
 .chordsheet td.chord {
   font-weight: 500;
   font-size: .9rem;

@@ -31,6 +31,10 @@ body.nightmode {
 
 // Chord layout
 .chordsheet {
+  td.lyrics {
+    padding: 0;
+    white-space: pre;
+  }
 
   td.chord {
     font-weight: 500;
