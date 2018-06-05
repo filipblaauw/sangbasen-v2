@@ -22896,9 +22896,13 @@ body.nightmode .table th {
   border-color: #3e3e3e;
 }
 
+.chordsheet {
+  overflow: scroll;
+}
+
 .chordsheet td.lyrics {
-  padding: 0;
-  white-space: pre;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 
 .chordsheet td.chord {
@@ -22921,7 +22925,6 @@ body.nightmode .table th {
 
 #song {
   position: relative;
-  overflow: scroll;
 }
 
 #endOfChords {

@@ -31,9 +31,11 @@ body.nightmode {
 
 // Chord layout
 .chordsheet {
+  overflow: scroll;
+  
   td.lyrics {
-    padding: 0;
-    white-space: pre;
+    line-height: 1.5;
+    white-space: nowrap;
   }
 
   td.chord {
@@ -53,7 +55,6 @@ body.nightmode {
 }
 #song {
   position: relative;
-  overflow: scroll;
 }
 #endOfChords {
   position: absolute;
