@@ -105,7 +105,7 @@
           </div>
         </div>
 
-        <div class="btn-group d-flex justify-content-center" v-if="this.currentUser === song.user_id">
+        <div class="btn-group d-flex justify-content-center" v-if="this.currentUser === song.user_id || this.isAdmin === 1">
           <button class="btn btn-info" v-tooltip="trans('song.edit_song')" @click.prevent="editSong(song)"><i class="fas fa-edit"></i> {{trans('song.edit_song')}}</button>
           <button class="btn btn-danger" :key="song.slug" v-confirm="{ok: confirmDelete(song)}" v-tooltip="trans('song.delete_song')"><i class="fas fa-trash"></i> {{trans('song.delete_song')}}</button>
         </div>
@@ -147,6 +147,7 @@ export default {
       isSharp: false,
       isOriginal: true,
       currentUser: '',
+      isAdmin: 0,
       scrollDuration: 0,
       iOS: false
     }
@@ -157,6 +158,7 @@ export default {
   },
   mounted() {
     this.currentUser = helper.isAuthId()
+    this.isAdmin = helper.hasAdminRole()
     this.iOS = helper.isIOS()
   },
   methods: {
