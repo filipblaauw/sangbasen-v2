@@ -2,7 +2,7 @@
     <div>
         <div class="row page-titles">
             <div class="col-md-6 col-8 align-self-center">
-                <h3 class="text-themecolor m-b-0 m-t-0">{{trans('template.template')}}</h3>
+                <h3 class="m-b-0 m-t-0">{{trans('template.template')}}</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><router-link to="/home">{{trans('general.home')}}</router-link></li>
                     <li class="breadcrumb-item active">{{trans('template.template')}}</li>
@@ -25,7 +25,7 @@
                                             <show-error :form-name="templateForm" prop-name="name"></show-error>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6">                                    
+                                    <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label for="">{{trans('template.category')}}</label>
                                             <v-select label="name" v-model="selected_category" name="category" id="category" :options="categories" :placeholder="trans('template.select_category')" @select="templateForm.errors.clear('category')" @close="templateForm.category = selected_category.id" @remove="templateForm.category = ''"></v-select>

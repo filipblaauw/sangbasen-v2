@@ -2,6 +2,10 @@
 body.nightmode {
   color: #fff !important;
 
+  a {
+    color: #67a4c7;
+  }
+
   .page-wrapper, .footer, .sidebar-footer {
     background: #222;
   }
@@ -11,8 +15,12 @@ body.nightmode {
   .sidebar-nav > ul > li > a {
     border: 0;
     color: white;
-    &:hover {
-      color: #01c0c8;
+    &:hover, &.active {
+      color: $light;
+      background: $dark-text;
+    }
+    i {
+      color: white;
     }
   }
   #results td a {
@@ -32,19 +40,25 @@ body.nightmode {
 // Chord layout
 .chordsheet {
   overflow: scroll;
-  
+
   td.lyrics {
     line-height: 1.5;
     white-space: nowrap;
   }
 
   td.chord {
-    font-weight: 500;
+    font-weight: bold;
     font-size: .9rem;
   }
   td.section {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: bold;
+  }
+  td.comment {
+    font-weight: 400;
+    padding-left: 1em;
+    font-style: italic;
+    border-left: 4px solid $bodytext;
   }
 }
 .empty-line {

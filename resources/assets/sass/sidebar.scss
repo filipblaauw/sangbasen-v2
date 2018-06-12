@@ -189,7 +189,6 @@ sidebar navigation
     }
     > ul > li {
         &.active > a {
-            border-left: 3px solid $themecolor;
             color: $themecolor;
             i {
                 color: $themecolor;
@@ -197,10 +196,8 @@ sidebar navigation
         }
     }
     > ul > li > a {
-        border-left: 3px solid $sidebar;
         &.active,
         &:hover {
-            border-left: 3px solid $themecolor;
             i {
                 color: $themecolor;
             }

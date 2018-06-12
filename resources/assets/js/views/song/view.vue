@@ -99,7 +99,11 @@
               </audio>
             </div>
             <div class="small text-muted text-center mt-4">
-              {{trans('song.created')}}: {{song.created_at | formatDate }} av <a :href="'mailto:'+song.user.email">{{song.author}}</a><br>
+              {{trans('song.created')}}: {{song.created_at | formatDate }} av
+                <a :href="'mailto:'+song.user.email">
+                  <p v-if="song.author">{{song.author}}</p>
+                  <p v-else>{{song.user.email}}</p>
+                </a>
               {{trans('song.edited')}}: {{song.updated_at | formatDateTime }}
             </div>
           </div>

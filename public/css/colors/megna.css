@@ -44,13 +44,7 @@ File: scss
 *******************/
 
 .topbar {
-  background: #01c0c8;
-  /* Old browsers */
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#01c0c8), to(#1f72a2));
-  background: linear-gradient(to right, #01c0c8 0%, #1f72a2 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #24292e;
 }
 
 .topbar .navbar-header {
@@ -72,17 +66,8 @@ File: scss
 /*General Elements
 *******************/
 
-a {
-  color: #01c0c8;
-}
-
-a.link:hover,
-a.link:focus {
-  color: #01c0c8 !important;
-}
-
 .bg-theme {
-  background-color: #01c0c8 !important;
+  background-color: #007bff !important;
 }
 
 .pagination > .active > a,
@@ -91,32 +76,32 @@ a.link:focus {
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  background-color: #01c0c8;
-  border-color: #01c0c8;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .right-sidebar .rpanel-title {
-  background: #01c0c8;
+  background: #007bff;
 }
 
 .stylish-table tbody tr:hover,
 .stylish-table tbody tr.active {
-  border-right: 4px solid #01c0c8;
+  border-right: 4px solid #007bff;
 }
 
 .text-themecolor {
-  color: #01c0c8 !important;
+  color: #007bff !important;
 }
 
 .profile-tab li a.nav-link.active,
 .customtab li a.nav-link.active {
-  border-bottom: 2px solid #01c0c8;
-  color: #01c0c8;
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
 }
 
 .profile-tab li a.nav-link:hover,
 .customtab li a.nav-link:hover {
-  color: #01c0c8;
+  color: #007bff;
 }
 
 /*******************
@@ -125,16 +110,16 @@ a.link:focus {
 
 .btn-themecolor,
 .btn-themecolor.disabled {
-  background: #01c0c8;
+  background: #007bff;
   color: #ffffff;
-  border: 1px solid #01c0c8;
+  border: 1px solid #007bff;
 }
 
 .btn-themecolor:hover,
 .btn-themecolor.disabled:hover {
-  background: #01c0c8;
+  background: #007bff;
   opacity: 0.7;
-  border: 1px solid #01c0c8;
+  border: 1px solid #007bff;
 }
 
 .btn-themecolor.active,
@@ -158,7 +143,7 @@ a.link:focus {
 
 .sidebar-nav ul li a.active,
 .sidebar-nav ul li a:hover {
-  color: #01c0c8;
+  color: #007bff;
 }
 
 .sidebar-nav ul li a.active {
@@ -170,26 +155,22 @@ a.link:focus {
 }
 
 .sidebar-nav > ul > li.active > a {
-  border-right: 3px solid #01c0c8;
-  color: #01c0c8;
+  color: #007bff;
+  background: #f5f5f5;
 }
 
 .sidebar-nav > ul > li.active > a i {
-  color: #01c0c8;
-}
-
-.sidebar-nav > ul > li > a {
-  border-right: 3px solid #fff;
+  color: #007bff;
 }
 
 .sidebar-nav > ul > li > a.active,
 .sidebar-nav > ul > li > a:hover {
-  border-right: 3px solid #01c0c8;
+  background: #f5f5f5;
 }
 
 .sidebar-nav > ul > li > a.active i,
 .sidebar-nav > ul > li > a:hover i {
-  color: #01c0c8;
+  color: #007bff;
 }
 
 .sidebar-nav > ul > li > a i {
@@ -199,7 +180,7 @@ a.link:focus {
 .sidebar-nav > ul > li > a.active {
   font-weight: 400;
   background: #ffffff;
-  color: #01c0c8;
+  color: #007bff;
 }
 
 

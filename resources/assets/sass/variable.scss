@@ -7,8 +7,8 @@ File: scss
 // Variables
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900');
 
-$bodyfont:'Rubik', sans-serif;
-$headingfont:'Rubik', sans-serif;
+$bodyfont: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+$headingfont: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 
 
 /*Theme Colors*/
@@ -19,7 +19,7 @@ $sidebar-white: #ffffff;
 $sidebar-alt:#e8eff0;
 $bodycolor: #fff;
 $headingtext: #2c2b2e;
-$bodytext: #54667a;
+$bodytext: #444d56;
 $sidebar-text: #54667a;
 $sidebar-icons: #a6b7bf;
 
@@ -36,7 +36,7 @@ $info: #009efb;
 $inverse: #2f3d4a;
 $muted: #90a4ae;
 $dark: #263238;
-$light: #f2f7f8;
+$light: #f5f5f5;
 $extra-light: #ebf3f5;
 $secondary: #868e96;
 

@@ -2,7 +2,7 @@
   <div>
     <div class="row page-titles">
       <div class="col-md-6 col-12 align-self-center">
-        <h3 class="text-themecolor m-b-0 m-t-0">{{trans('song.help')}}</h3>
+        <h3 class="m-b-0 m-t-0">{{trans('song.help')}}</h3>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><router-link to="/home">{{trans('general.home')}}</router-link></li>
           <li class="breadcrumb-item"><router-link to="/song">{{trans('song.song')}}</router-link></li>
