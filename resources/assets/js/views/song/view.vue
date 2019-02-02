@@ -16,6 +16,9 @@
       <div class="col-12 col-lg-8">
         <div class="card">
           <div class="card-body">
+            <div class="btn-group mb-4 d-print-none">
+
+            </div>
             <div class="btn-group mb-4 d-print-none" v-show="chords">
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isOriginal, 'btn-outline-secondary': !isOriginal }" @click="resetChords">{{trans('song.original')}}</button>
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isTransposedDown, 'btn-outline-secondary': !isTransposedDown }" @click="transposeDown()">{{trans('song.down')}}</button>
@@ -23,7 +26,7 @@
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isFlat, 'btn-outline-secondary': !isFlat }" @click="flatKey()">&#9837;</button>
               <button type="button" class="btn btn-sm" :class="{'btn-secondary': isSharp, 'btn-outline-secondary': !isSharp }" @click="sharpKey()">&#9839;</button>
             </div>
-            <div class="dropdown pull-right d-print-none" v-if="chords || song.playback || song.image">
+            <div class="dropdown d-print-none pull-right" v-if="chords || song.playback || song.image">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{trans('song.download')}}
               </button>
@@ -31,7 +34,8 @@
                 <a v-if="chords" class="dropdown-item" href="#" @click="downloadChords">ChordPro</a>
                 <a v-if="chords && iOS" class="dropdown-item" :href="'onsong://ImportData/'+song.title+'.chordpro?'+encoded">{{trans('song.open_onsong')}}</a>
                 <a v-if="song.playback" class="dropdown-item" :href="song.playback" download>{{trans('song.playback')}}</a>
-                <a v-if="song.image" class="dropdown-item" :href="song.image" download>PDF</a>
+                <a v-if="song.image" class="dropdown-item" :href="song.image" :download="song.title">PDF</a>
+                <a v-if="song.image" class="dropdown-item" :href="song.image" target="_blank">Åpne PDF i ny fane</a>
                 <a v-if="chords" class="dropdown-item" href="#" @click="generatePdf">{{trans('song.generate_pdf')}}</a>
                 <a v-if="chords" class="dropdown-item" href="#" @click="downloadLyrics">{{trans('song.lyrics')}}</a>
                 <a v-if="chords" class="dropdown-item" href="javascript:window.print();">{{trans('song.print')}}</a>
